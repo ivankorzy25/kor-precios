@@ -2052,7 +2052,7 @@ const PRODUCTOS = PRODUCTS;
                         <div class="rich-hero-badges">
                             ${detail.badges.map(b => `<span class="rich-hero-badge"><i class="fas fa-bolt"></i> ${b}</span>`).join('')}
                         </div>
-                        <div class="rich-hero-title">${product.marca} <span>${product.modelo}</span></div>
+                        <div class="rich-hero-title">${product.modelo.startsWith(product.marca) ? '' : product.marca + ' '}<span>${product.modelo}</span></div>
                         <div class="rich-hero-subtitle">${detail.subtitle}</div>
                     </div>
                     <div class="rich-hero-power">
