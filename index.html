@@ -1130,7 +1130,34 @@
                 font-size: 2rem;
             }
         }
-    </style>
+    
+@media (max-width: 768px) {
+    header { flex-wrap: wrap; gap: 0.5rem; padding: 0.5rem 1rem; }
+    .logo { font-size: 1.1rem; }
+    .logo i { font-size: 1.5rem; }
+    .search-container { max-width: 100%; margin: 0.5rem 0; order: 3; flex-basis: 100%; }
+    .type-bar { padding: 0.4rem 0.5rem; gap: 0.3rem; top: auto; position: relative; }
+    .type-button { padding: 0.4rem 0.6rem; font-size: 0.65rem; }
+    .type-button i { font-size: 1rem; }
+    .main-container { padding: 1rem; }
+    .layout-with-sidebar { grid-template-columns: 1fr; }
+    .sidebar { margin-bottom: 1rem; }
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    .grid { gap: 0.75rem; }
+    .card { padding: 0.8rem; }
+    .product-detail { grid-template-columns: 1fr; }
+    .hero { padding: 1.5rem 1rem; margin-bottom: 1rem; }
+    .hero-title { font-size: 1.5rem; }
+    .budget-panel { width: 100%; }
+    .breadcrumb { padding: 0.4rem 1rem; font-size: 0.8rem; }
+}
+
+
+.budget-content::-webkit-scrollbar { width: 6px; }
+.budget-content::-webkit-scrollbar-track { background: var(--bg-tertiary); }
+.budget-content::-webkit-scrollbar-thumb { background: var(--accent-primary); border-radius: 3px; }
+
+</style>
 </head>
 <body>
     <!-- Internal Mode Indicator -->
