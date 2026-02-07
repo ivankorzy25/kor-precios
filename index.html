@@ -911,6 +911,293 @@
             flex-shrink: 0;
         }
 
+        /* ========== VIDEO ========== */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            background: var(--bg-secondary);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* ========== PRICING ========== */
+        .pricing-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .pricing-total {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+        }
+
+        .pricing-total-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-total-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-total-sub {
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+
+        .pricing-breakdown {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .pricing-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        .pricing-card.highlight {
+            border-color: var(--accent);
+            background: rgba(255, 107, 0, 0.05);
+        }
+
+        .pricing-card-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pricing-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .pricing-card h4 {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .pricing-line {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.9rem;
+        }
+
+        .pricing-line:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-line.pricing-subtotal {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--accent);
+            margin-top: 0.5rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--border);
+            border-bottom: none;
+        }
+
+        .pricing-note {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .pricing-note i {
+            color: var(--info);
+            font-size: 1.2rem;
+        }
+
+        /* ========== INSTALLATION ========== */
+        .installation-detail {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .installation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .installation-card {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .installation-header {
+            padding: 1rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 600;
+        }
+
+        .installation-header.success {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: white;
+        }
+
+        .installation-header.warning {
+            background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+            color: white;
+        }
+
+        .installation-header i {
+            font-size: 1.3rem;
+        }
+
+        .installation-header h4 {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .installation-list {
+            list-style: none;
+            padding: 1.25rem;
+            margin: 0;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-top: none;
+        }
+
+        .installation-list li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .installation-list li:last-child {
+            border-bottom: none;
+        }
+
+        .installation-list li i {
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .installation-card.included .installation-list li i {
+            color: var(--success);
+        }
+
+        .installation-card.not-included .installation-list li i {
+            color: #ef4444;
+        }
+
+        .installation-note {
+            display: flex;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: rgba(255, 107, 0, 0.05);
+            border: 1px solid rgba(255, 107, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .installation-note i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .installation-note h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .installation-note p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ========== WARRANTY ========== */
+        .warranty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+
+        .warranty-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .warranty-card:hover {
+            border-color: var(--accent);
+            background: var(--bg-hover);
+            transform: translateY(-2px);
+        }
+
+        .warranty-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .warranty-card h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .warranty-card p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
         /* ========== EMPTY STATE ========== */
         .empty-state {
             text-align: center;
@@ -1140,6 +1427,48 @@
                         advantages: ['Mismo grupo empresario (Generac)', 'TTA incluido vs opcional', 'WiFi incluido vs opcional', 'Precio menor con prestaciones equivalentes'],
                         summary: 'Tecnología equivalente a Kohler (mismo grupo) pero con mejor relación precio-prestaciones. PRAMAC incluye de serie lo que Kohler cobra extra.'
                     }
+                },
+                video_url: 'https://www.youtube.com/embed/VIDEO_ID',
+                pdf_url: 'assets/data/GA8000.pdf',
+                pricing: {
+                    equipment: {
+                        base: 5500,
+                        iva: 578,
+                        subtotal: 6078
+                    },
+                    installation: {
+                        base: 1000,
+                        iva: 0,
+                        subtotal: 1000
+                    },
+                    total: 7078,
+                    currency: 'USD'
+                },
+                warranty: [
+                    { icon: '📅', title: '2 Años de Garantía', desc: 'Equipo completo cubierto' },
+                    { icon: '🇺🇸', title: 'Motor Generac G-Force', desc: 'Tecnología USA probada' },
+                    { icon: '🇮🇹', title: 'Fabricación Italiana', desc: 'PRAMAC S.p.A. desde 1966' },
+                    { icon: '🔧', title: 'Servicio Técnico', desc: 'Red autorizada en Argentina' }
+                ],
+                installation: {
+                    included: [
+                        'Traslado del equipo al domicilio',
+                        'Base de apoyo Retack hormigonada',
+                        'Hasta 5 metros de cañería flexible',
+                        'Conexión eléctrica completa',
+                        'Batería de arranque 12V',
+                        'Puesta en marcha y pruebas',
+                        'Registro de garantía oficial',
+                        'Zanjeo por tierra incluido'
+                    ],
+                    not_included: [
+                        'Roturas de piso o paredes',
+                        'Trámite y habilitación ENARGAS',
+                        'Trabajos de albañilería extra',
+                        'Metros adicionales de cañería (USD 15/mt)',
+                        'Instalación trifásica especial'
+                    ],
+                    note: 'La mayoría de instalaciones se realizan sin roturas. Si tu caso requiere trabajos adicionales, te informaremos con presupuesto separado antes de comenzar.'
                 }
             },
             { id: 'GA10000', name: 'PRAMAC GA10000', brand: 'PRAMAC', family: 'gas-residencial', power: 10, unit: 'kVA', voltage: '220V', fuel: 'gas', price: 6200, motor: 'G-Force 760', start: 'Automatico TTA', weight: 170, noise: '66-71 dB', tags: ['gas', 'tta', 'silent'], img: 'https://static.wixstatic.com/media/49d5f8_28b07fb710aa467db8fcba080ea68bb6~mv2.png', desc: 'Generador automatico a gas de 10 kVA con TTA incluido. Mayor potencia para casas grandes.', specs: { 'Potencia': '10 kVA', 'Tension': '220V', 'Motor': 'Generac G-Force 760', 'Peso': '170 kg' }, faq: [] },
@@ -1475,14 +1804,144 @@
 
             const tags = p.tags.map(t => `<span class="badge ${t === 'tta' ? 'success' : 'info'}">${t.toUpperCase()}</span>`).join('');
 
+            // === VIDEO ===
+            let videoHtml = '';
+            if (p.video_url) {
+                videoHtml = `
+                    <div class="video-container">
+                        <iframe src="${p.video_url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                `;
+            } else {
+                videoHtml = '<p style="color:var(--text-muted)">No hay video disponible para este producto.</p>';
+            }
+
+            // === PRICING ===
+            let pricingHtml = '';
+            if (p.pricing) {
+                pricingHtml = `
+                    <div class="pricing-detail">
+                        <div class="pricing-total">
+                            <div class="pricing-total-label">Inversión Total "Llave en Mano"</div>
+                            <div class="pricing-total-value">${p.pricing.currency} ${p.pricing.total.toLocaleString()}</div>
+                            <div class="pricing-total-sub">Equipo + Instalación Completa</div>
+                        </div>
+                        <div class="pricing-breakdown">
+                            <div class="pricing-card">
+                                <div class="pricing-card-header">
+                                    <span class="pricing-num">1</span>
+                                    <h4>Equipo Generador</h4>
+                                </div>
+                                <div class="pricing-line">
+                                    <span>Generador ${p.name}</span>
+                                    <span>${p.pricing.currency} ${p.pricing.equipment.base.toLocaleString()}</span>
+                                </div>
+                                <div class="pricing-line">
+                                    <span>IVA 10.5%</span>
+                                    <span>${p.pricing.currency} ${p.pricing.equipment.iva.toLocaleString()}</span>
+                                </div>
+                                <div class="pricing-line pricing-subtotal">
+                                    <span>Subtotal Equipo</span>
+                                    <span>${p.pricing.currency} ${p.pricing.equipment.subtotal.toLocaleString()}</span>
+                                </div>
+                            </div>
+                            <div class="pricing-card highlight">
+                                <div class="pricing-card-header">
+                                    <span class="pricing-num">2</span>
+                                    <h4>Instalación Completa</h4>
+                                </div>
+                                <div class="pricing-line">
+                                    <span>Traslado e instalación</span>
+                                    <span>${p.pricing.currency} ${p.pricing.installation.base.toLocaleString()}</span>
+                                </div>
+                                <div class="pricing-line">
+                                    <span>IVA</span>
+                                    <span>Exento</span>
+                                </div>
+                                <div class="pricing-line pricing-subtotal">
+                                    <span>Subtotal Instalación</span>
+                                    <span>${p.pricing.currency} ${p.pricing.installation.subtotal.toLocaleString()}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pricing-note">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Presupuesto válido por 15 días. Precios sujetos a disponibilidad de stock.</span>
+                        </div>
+                    </div>
+                `;
+            } else {
+                pricingHtml = '<p style="color:var(--text-muted)">No hay información de precios detallada.</p>';
+            }
+
+            // === INSTALLATION ===
+            let installationHtml = '';
+            if (p.installation) {
+                installationHtml = `
+                    <div class="installation-detail">
+                        <div class="installation-grid">
+                            <div class="installation-card included">
+                                <div class="installation-header success">
+                                    <i class="fas fa-check-circle"></i>
+                                    <h4>INCLUIDO en el precio</h4>
+                                </div>
+                                <ul class="installation-list">
+                                    ${p.installation.included.map(item => `<li><i class="fas fa-check"></i> ${item}</li>`).join('')}
+                                </ul>
+                            </div>
+                            <div class="installation-card not-included">
+                                <div class="installation-header warning">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <h4>NO incluido (costo adicional)</h4>
+                                </div>
+                                <ul class="installation-list">
+                                    ${p.installation.not_included.map(item => `<li><i class="fas fa-times"></i> ${item}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="installation-note">
+                            <i class="fas fa-lightbulb"></i>
+                            <div>
+                                <h4>Importante sobre la instalación</h4>
+                                <p>${p.installation.note}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                installationHtml = '<p style="color:var(--text-muted)">No hay información de instalación disponible.</p>';
+            }
+
+            // === WARRANTY ===
+            let warrantyHtml = '';
+            if (p.warranty && p.warranty.length > 0) {
+                warrantyHtml = `
+                    <div class="warranty-grid">
+                        ${p.warranty.map(w => `
+                            <div class="warranty-card">
+                                <div class="warranty-icon">${w.icon}</div>
+                                <h4>${w.title}</h4>
+                                <p>${w.desc}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+            } else {
+                warrantyHtml = '<p style="color:var(--text-muted)">No hay información de garantía disponible.</p>';
+            }
+
             // === TABS ===
             const hasTabs = (p.advantages && p.advantages.length > 0) || p.comparison;
             const tabsHtml = `
                 <div class="detail-tabs">
-                    <button class="tab-btn active" onclick="switchTab(this,'specs')">Especificaciones</button>
-                    <button class="tab-btn" onclick="switchTab(this,'faq')">FAQ</button>
-                    ${p.advantages && p.advantages.length > 0 ? `<button class="tab-btn" onclick="switchTab(this,'advantages')">Ventajas</button>` : ''}
-                    ${p.comparison ? `<button class="tab-btn" onclick="switchTab(this,'comparison')">Comparativas</button>` : ''}
+                    <button class="tab-btn active" onclick="switchTab(this,'specs')"><i class="fas fa-cogs"></i> Especificaciones</button>
+                    <button class="tab-btn" onclick="switchTab(this,'faq')"><i class="fas fa-question-circle"></i> FAQ</button>
+                    ${p.advantages && p.advantages.length > 0 ? `<button class="tab-btn" onclick="switchTab(this,'advantages')"><i class="fas fa-star"></i> Ventajas</button>` : ''}
+                    ${p.comparison ? `<button class="tab-btn" onclick="switchTab(this,'comparison')"><i class="fas fa-balance-scale"></i> Comparativas</button>` : ''}
+                    ${p.video_url ? `<button class="tab-btn" onclick="switchTab(this,'video')"><i class="fas fa-play-circle"></i> Video</button>` : ''}
+                    ${p.pricing ? `<button class="tab-btn" onclick="switchTab(this,'pricing')"><i class="fas fa-dollar-sign"></i> Precio</button>` : ''}
+                    ${p.installation ? `<button class="tab-btn" onclick="switchTab(this,'installation')"><i class="fas fa-tools"></i> Instalación</button>` : ''}
+                    ${p.warranty ? `<button class="tab-btn" onclick="switchTab(this,'warranty')"><i class="fas fa-shield-alt"></i> Garantía</button>` : ''}
                 </div>
             `;
 
@@ -1532,6 +1991,10 @@
                         <div class="tab-content" id="tab-faq">${faqHtml}</div>
                         ${p.advantages && p.advantages.length > 0 ? `<div class="tab-content" id="tab-advantages">${advantagesHtml}</div>` : ''}
                         ${p.comparison ? `<div class="tab-content" id="tab-comparison">${comparisonHtml}</div>` : ''}
+                        ${p.video_url ? `<div class="tab-content" id="tab-video">${videoHtml}</div>` : ''}
+                        ${p.pricing ? `<div class="tab-content" id="tab-pricing">${pricingHtml}</div>` : ''}
+                        ${p.installation ? `<div class="tab-content" id="tab-installation">${installationHtml}</div>` : ''}
+                        ${p.warranty ? `<div class="tab-content" id="tab-warranty">${warrantyHtml}</div>` : ''}
                     </div>
                 </div>
             `;
