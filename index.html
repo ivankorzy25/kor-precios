@@ -6,32 +6,27 @@
     <title>KOR Generadores - Lista de Precios</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-tertiary: #1a1a25;
-            --bg-card: #15151f;
-            --text-primary: #f0f0f0;
-            --text-secondary: #9090a0;
+            --bg-primary: #08080c;
+            --bg-secondary: #0f0f15;
+            --bg-card: #131318;
+            --bg-hover: #1a1a22;
+            --text-primary: #f5f5f5;
+            --text-secondary: #888;
+            --text-muted: #555;
             --accent: #ff6b00;
-            --accent-light: #ff8533;
-            --accent-dark: #cc5500;
-            --border: #2a2a3a;
-            --success: #22c55e;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --info: #3b82f6;
-            --purple: #a855f7;
-            --cyan: #06b6d4;
+            --accent-hover: #ff8533;
+            --border: #222;
+            --border-light: #333;
             --gas: #22c55e;
-            --diesel: #64748b;
+            --diesel: #6b7280;
             --nafta: #f59e0b;
+            --cummins: #ef4444;
+            --success: #10b981;
+            --info: #3b82f6;
+            --purple: #8b5cf6;
         }
 
         body {
@@ -39,78 +34,77 @@
             background: var(--bg-primary);
             color: var(--text-primary);
             min-height: 100vh;
+            font-size: 14px;
         }
 
-        /* ========== HEADER COMPACTO ========== */
+        /* ========== HEADER MINIMALISTA ========== */
         .header {
-            background: linear-gradient(135deg, var(--bg-secondary) 0%, #1a1025 100%);
-            padding: 0.75rem 1.5rem;
+            background: var(--bg-secondary);
+            padding: 0.5rem 1rem;
             display: flex;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1rem;
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 100;
+            transition: all 0.3s;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            white-space: nowrap;
         }
 
-        .logo i { font-size: 1.5rem; }
-
-        /* Buscador */
-        .search-box {
+        .search-container {
             flex: 1;
-            max-width: 500px;
+            max-width: 600px;
             position: relative;
         }
 
         .search-input {
             width: 100%;
-            padding: 0.6rem 1rem 0.6rem 2.5rem;
-            background: var(--bg-tertiary);
+            padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+            background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 6px;
             color: var(--text-primary);
             font-size: 0.9rem;
-            transition: all 0.2s;
         }
 
         .search-input:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(255, 107, 0, 0.1);
         }
 
-        .search-box i {
+        .search-container i {
             position: absolute;
-            left: 0.9rem;
+            left: 0.75rem;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--text-secondary);
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
 
-        .header-controls {
+        .header-actions {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
         }
 
-        .exchange-input {
-            width: 90px;
-            padding: 0.5rem;
-            background: var(--bg-tertiary);
+        .tc-input {
+            width: 80px;
+            padding: 0.4rem 0.5rem;
+            background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 6px;
+            border-radius: 4px;
             color: var(--text-primary);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-align: center;
         }
 
@@ -118,269 +112,263 @@
             background: none;
             border: none;
             color: var(--text-secondary);
-            font-size: 1.2rem;
             cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 6px;
-            transition: all 0.2s;
+            padding: 0.4rem;
+            border-radius: 4px;
+            font-size: 1rem;
         }
 
-        .btn-icon:hover { color: var(--accent); background: var(--bg-tertiary); }
-        .btn-icon.active { color: var(--accent); }
+        .btn-icon:hover { color: var(--accent); background: var(--bg-card); }
 
-        /* ========== LAYOUT PRINCIPAL ========== */
-        .main-layout {
+        /* ========== MODO FOCUS (al buscar) ========== */
+        body.focus-mode .header {
+            padding: 0.35rem 1rem;
+        }
+
+        body.focus-mode .logo,
+        body.focus-mode .header-actions {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        body.focus-mode .search-container {
+            max-width: 100%;
+        }
+
+        body.focus-mode .sidebar {
+            width: 200px;
+        }
+
+        body.focus-mode .family-name {
+            font-size: 0.75rem;
+        }
+
+        /* ========== LAYOUT ========== */
+        .app-layout {
             display: grid;
-            grid-template-columns: 280px 1fr;
-            min-height: calc(100vh - 60px);
+            grid-template-columns: 240px 1fr;
+            min-height: calc(100vh - 45px);
         }
 
-        /* Ocultar sidebar en modo busqueda */
-        body.search-mode .sidebar { display: none; }
-        body.search-mode .main-layout { grid-template-columns: 1fr; }
-        body.search-mode .header .logo,
-        body.search-mode .header-controls { opacity: 0.3; }
-        body.search-mode .search-box { max-width: 800px; }
-
-        /* ========== SIDEBAR - ARBOL DE FAMILIAS ========== */
+        /* ========== SIDEBAR COMPACTO ========== */
         .sidebar {
             background: var(--bg-secondary);
             border-right: 1px solid var(--border);
-            padding: 1rem 0;
             overflow-y: auto;
-            height: calc(100vh - 60px);
-            position: sticky;
-            top: 60px;
+            padding: 0.5rem 0;
+            transition: width 0.3s;
         }
 
-        .sidebar-title {
-            padding: 0.5rem 1rem;
-            font-size: 0.7rem;
+        .sidebar-section {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--text-secondary);
+            color: var(--text-muted);
             font-weight: 600;
         }
 
-        .family-group {
-            margin-bottom: 0.25rem;
-        }
-
-        .family-header {
+        .family-item {
             display: flex;
             align-items: center;
-            padding: 0.6rem 1rem;
+            padding: 0.5rem 0.75rem;
             cursor: pointer;
+            border-left: 2px solid transparent;
             transition: all 0.15s;
-            border-left: 3px solid transparent;
+            gap: 0.5rem;
         }
 
-        .family-header:hover {
-            background: var(--bg-tertiary);
+        .family-item:hover {
+            background: var(--bg-hover);
         }
 
-        .family-header.active {
-            background: rgba(255, 107, 0, 0.1);
+        .family-item.active {
+            background: rgba(255, 107, 0, 0.08);
             border-left-color: var(--accent);
         }
 
         .family-icon {
-            width: 28px;
-            height: 28px;
-            border-radius: 6px;
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 0.75rem;
-            font-size: 0.9rem;
+            font-size: 0.7rem;
+            flex-shrink: 0;
         }
 
-        .family-icon.gas { background: rgba(34, 197, 94, 0.2); color: var(--gas); }
-        .family-icon.diesel { background: rgba(100, 116, 139, 0.2); color: var(--diesel); }
-        .family-icon.nafta { background: rgba(245, 158, 11, 0.2); color: var(--nafta); }
-        .family-icon.cummins { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+        .family-icon.gas { background: rgba(34,197,94,0.15); color: var(--gas); }
+        .family-icon.diesel { background: rgba(107,114,128,0.15); color: var(--diesel); }
+        .family-icon.nafta { background: rgba(245,158,11,0.15); color: var(--nafta); }
+        .family-icon.cummins { background: rgba(239,68,68,0.15); color: var(--cummins); }
 
         .family-name {
             flex: 1;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .family-count {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-            background: var(--bg-tertiary);
-            padding: 0.15rem 0.5rem;
-            border-radius: 10px;
-            margin-right: 0.5rem;
-        }
-
-        .family-arrow {
-            color: var(--text-secondary);
-            font-size: 0.7rem;
-            transition: transform 0.2s;
-        }
-
-        .family-group.open .family-arrow { transform: rotate(90deg); }
-
-        .family-products {
-            display: none;
-            padding-left: 2.5rem;
-        }
-
-        .family-group.open .family-products { display: block; }
-
-        .product-link {
-            display: block;
-            padding: 0.4rem 1rem;
             font-size: 0.8rem;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all 0.15s;
-        }
-
-        .product-link:hover {
-            color: var(--accent);
-            background: var(--bg-tertiary);
-        }
-
-        /* ========== CONTENIDO PRINCIPAL ========== */
-        .main-content {
-            padding: 1.5rem;
-            overflow-y: auto;
-        }
-
-        /* Vista de breadcrumb */
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .breadcrumb a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .breadcrumb a:hover { color: var(--accent); }
-        .breadcrumb .current { color: var(--text-primary); }
-
-        /* Titulo de seccion */
-        .section-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .view-controls {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .view-btn {
-            padding: 0.5rem 0.75rem;
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            color: var(--text-secondary);
-            cursor: pointer;
-            transition: all 0.15s;
-        }
-
-        .view-btn:hover, .view-btn.active {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-
-        /* ========== LISTA DE PRODUCTOS (VISTA FILA) ========== */
-        .products-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .product-row {
-            display: grid;
-            grid-template-columns: 100px 1fr 120px 100px 140px 50px;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .product-row:hover {
-            border-color: var(--accent);
-            transform: translateX(4px);
-            box-shadow: 0 4px 20px rgba(255, 107, 0, 0.1);
-        }
-
-        .product-image {
-            width: 100px;
-            height: 70px;
-            background: var(--bg-tertiary);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .product-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .product-image i {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-        }
-
-        .product-info {
-            min-width: 0;
-        }
-
-        .product-name {
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
+            color: var(--text-primary);
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
 
-        .product-specs {
+        .family-count {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            background: var(--bg-card);
+            padding: 0.1rem 0.4rem;
+            border-radius: 8px;
+        }
+
+        .family-item.all-products {
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 0.25rem;
+            padding-bottom: 0.75rem;
+        }
+
+        .family-item.all-products .family-icon {
+            background: rgba(255,107,0,0.15);
+            color: var(--accent);
+        }
+
+        /* ========== CONTENIDO PRINCIPAL ========== */
+        .main-content {
+            padding: 1rem;
+            overflow-y: auto;
+            background: var(--bg-primary);
+        }
+
+        .content-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .content-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .content-title .count {
             font-size: 0.8rem;
             color: var(--text-secondary);
+            font-weight: normal;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .view-btn {
+            padding: 0.4rem 0.6rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .view-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
+        }
+
+        /* ========== LISTA DE PRODUCTOS EN FILA ========== */
+        .products-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .product-row {
+            display: grid;
+            grid-template-columns: 90px 1fr 90px 130px 120px 40px;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .product-row:hover {
+            border-color: var(--accent);
+            background: var(--bg-hover);
+            transform: translateX(2px);
+        }
+
+        .product-thumb {
+            width: 90px;
+            height: 60px;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-thumb img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-thumb i {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .product-details {
+            min-width: 0;
+        }
+
+        .product-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .product-name .brand {
+            font-size: 0.7rem;
+            padding: 0.15rem 0.4rem;
+            background: var(--bg-secondary);
+            border-radius: 3px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .product-specs {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
         }
 
-        .spec-item {
+        .product-specs span {
             display: flex;
             align-items: center;
-            gap: 0.3rem;
+            gap: 0.25rem;
         }
 
-        .spec-item i {
-            font-size: 0.7rem;
+        .product-specs i {
             color: var(--accent);
+            font-size: 0.65rem;
         }
 
         .product-power {
@@ -388,156 +376,88 @@
         }
 
         .power-value {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--accent);
+            line-height: 1;
         }
 
         .power-unit {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
         }
 
         .product-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.3rem;
+            justify-content: flex-start;
         }
 
         .tag {
-            font-size: 0.65rem;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
+            font-size: 0.6rem;
+            padding: 0.2rem 0.45rem;
+            border-radius: 3px;
             font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 0.3px;
         }
 
-        .tag.gas { background: rgba(34, 197, 94, 0.2); color: var(--gas); }
-        .tag.diesel { background: rgba(100, 116, 139, 0.2); color: #94a3b8; }
-        .tag.nafta { background: rgba(245, 158, 11, 0.2); color: var(--nafta); }
-        .tag.silent { background: rgba(59, 130, 246, 0.2); color: var(--info); }
-        .tag.tta { background: rgba(168, 85, 247, 0.2); color: var(--purple); }
-        .tag.inverter { background: rgba(6, 182, 212, 0.2); color: var(--cyan); }
-        .tag.trifasico { background: rgba(239, 68, 68, 0.2); color: var(--danger); }
+        .tag.gas { background: rgba(34,197,94,0.15); color: var(--gas); }
+        .tag.diesel { background: rgba(107,114,128,0.2); color: #9ca3af; }
+        .tag.nafta { background: rgba(245,158,11,0.15); color: var(--nafta); }
+        .tag.tta { background: rgba(139,92,246,0.15); color: var(--purple); }
+        .tag.silent { background: rgba(59,130,246,0.15); color: var(--info); }
+        .tag.trifasico { background: rgba(239,68,68,0.15); color: var(--cummins); }
+        .tag.inverter { background: rgba(6,182,212,0.15); color: #06b6d4; }
 
         .product-price {
             text-align: right;
         }
 
         .price-usd {
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
             color: var(--accent);
         }
 
         .price-ars {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
+            font-size: 0.7rem;
+            color: var(--text-muted);
         }
 
         .product-action {
-            text-align: center;
+            display: flex;
+            justify-content: center;
         }
 
-        .btn-detail {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
+        .btn-view {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
             border: 1px solid var(--border);
-            background: var(--bg-tertiary);
+            background: var(--bg-secondary);
             color: var(--text-secondary);
             cursor: pointer;
-            transition: all 0.15s;
-        }
-
-        .btn-detail:hover {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-
-        /* ========== VISTA GRID ========== */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 1rem;
-        }
-
-        .product-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .product-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(255, 107, 0, 0.15);
-        }
-
-        .card-image {
-            height: 140px;
-            background: var(--bg-tertiary);
-            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-
-        .card-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 0.75rem;
-        }
-
-        .card-title {
-            font-weight: 600;
-            font-size: 1rem;
-        }
-
-        .card-brand {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
-
-        .card-power {
-            text-align: right;
-        }
-
-        .card-specs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
             font-size: 0.8rem;
-            color: var(--text-secondary);
+            transition: all 0.15s;
         }
 
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 0.75rem;
-            border-top: 1px solid var(--border);
+        .btn-view:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: white;
         }
 
-        /* ========== MODAL DETALLE PRODUCTO ========== */
+        /* ========== MODAL ========== */
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0,0,0,0.85);
             z-index: 1000;
             display: none;
             align-items: flex-start;
@@ -550,126 +470,82 @@
 
         .modal-content {
             background: var(--bg-secondary);
-            border-radius: 16px;
+            border-radius: 12px;
             width: 100%;
-            max-width: 1100px;
-            max-height: 90vh;
-            overflow-y: auto;
+            max-width: 1000px;
             border: 1px solid var(--border);
+            overflow: hidden;
         }
 
         .modal-header {
-            position: sticky;
-            top: 0;
-            background: var(--bg-secondary);
-            padding: 1.5rem;
+            padding: 1rem 1.25rem;
             border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 10;
+            background: var(--bg-card);
         }
 
         .modal-title {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 600;
         }
 
         .modal-close {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
             border: none;
-            background: var(--bg-tertiary);
+            background: var(--bg-secondary);
             color: var(--text-primary);
             cursor: pointer;
-            font-size: 1.2rem;
-            transition: all 0.15s;
+            font-size: 1rem;
         }
 
-        .modal-close:hover {
-            background: var(--danger);
-        }
+        .modal-close:hover { background: var(--cummins); }
 
         .modal-body {
             padding: 1.5rem;
         }
 
-        .detail-layout {
+        .detail-grid {
             display: grid;
-            grid-template-columns: 400px 1fr;
+            grid-template-columns: 350px 1fr;
             gap: 2rem;
         }
 
-        /* Galeria */
-        .detail-gallery {
-            position: sticky;
-            top: 100px;
-        }
-
-        .gallery-main {
-            width: 100%;
+        .detail-image {
+            background: var(--bg-card);
+            border-radius: 10px;
             aspect-ratio: 1;
-            background: var(--bg-tertiary);
-            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
             overflow: hidden;
         }
 
-        .gallery-main img {
+        .detail-image img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
         }
 
-        .gallery-thumbs {
-            display: flex;
-            gap: 0.5rem;
-            overflow-x: auto;
-        }
-
-        .gallery-thumb {
-            width: 60px;
-            height: 60px;
-            background: var(--bg-tertiary);
-            border: 2px solid var(--border);
-            border-radius: 8px;
-            cursor: pointer;
-            flex-shrink: 0;
-            overflow: hidden;
-        }
-
-        .gallery-thumb.active,
-        .gallery-thumb:hover {
-            border-color: var(--accent);
-        }
-
-        .gallery-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Info producto */
         .detail-info {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1.25rem;
         }
 
         .detail-badges {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.4rem;
         }
 
         .badge {
-            padding: 0.4rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            padding: 0.35rem 0.7rem;
+            border-radius: 15px;
+            font-size: 0.7rem;
             font-weight: 600;
         }
 
@@ -677,51 +553,44 @@
         .badge.success { background: var(--success); color: white; }
         .badge.info { background: var(--info); color: white; }
 
-        .detail-description {
-            font-size: 0.95rem;
+        .detail-desc {
             color: var(--text-secondary);
-            line-height: 1.6;
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
-        /* Precio destacado */
         .price-box {
-            background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, rgba(255, 107, 0, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(255,107,0,0.1), rgba(255,107,0,0.05));
             border: 1px solid var(--accent);
-            border-radius: 12px;
-            padding: 1.25rem;
+            border-radius: 10px;
+            padding: 1rem;
         }
 
-        .price-box-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 1rem;
-        }
-
-        .price-main {
-            font-size: 2rem;
+        .price-box .main-price {
+            font-size: 1.75rem;
             font-weight: 700;
             color: var(--accent);
         }
 
-        .price-iva {
+        .price-box .sub-price {
             font-size: 0.85rem;
             color: var(--text-secondary);
         }
 
-        .price-actions {
+        .price-box .actions {
             display: flex;
-            gap: 0.75rem;
+            gap: 0.5rem;
+            margin-top: 1rem;
         }
 
         .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
+            padding: 0.6rem 1.25rem;
+            border-radius: 6px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.15s;
+            font-size: 0.85rem;
             border: none;
-            font-size: 0.9rem;
+            transition: all 0.15s;
         }
 
         .btn-primary {
@@ -730,65 +599,60 @@
         }
 
         .btn-primary:hover {
-            background: var(--accent-light);
-            box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+            background: var(--accent-hover);
         }
 
-        .btn-secondary {
-            background: var(--bg-tertiary);
-            color: var(--text-primary);
+        .btn-outline {
+            background: transparent;
             border: 1px solid var(--border);
+            color: var(--text-primary);
         }
 
-        .btn-secondary:hover {
+        .btn-outline:hover {
             border-color: var(--accent);
             color: var(--accent);
         }
 
-        /* Especificaciones */
-        .specs-grid {
+        .specs-quick {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
         }
 
-        .spec-card {
-            background: var(--bg-tertiary);
-            border-radius: 10px;
-            padding: 1rem;
+        .spec-item {
+            background: var(--bg-card);
+            padding: 0.75rem;
+            border-radius: 6px;
+            text-align: center;
         }
 
-        .spec-label {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
+        .spec-item .label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
         }
 
-        .spec-value {
-            font-size: 1.1rem;
+        .spec-item .value {
+            font-size: 0.95rem;
             font-weight: 600;
         }
 
-        /* Tabs */
         .detail-tabs {
-            border-bottom: 1px solid var(--border);
             display: flex;
             gap: 0;
-            margin-top: 1rem;
+            border-bottom: 1px solid var(--border);
+            margin-top: 0.5rem;
         }
 
         .tab-btn {
-            padding: 1rem 1.5rem;
+            padding: 0.75rem 1.25rem;
             background: none;
             border: none;
             color: var(--text-secondary);
             cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 0.85rem;
             position: relative;
-            transition: color 0.15s;
         }
 
         .tab-btn:hover { color: var(--text-primary); }
@@ -809,220 +673,276 @@
 
         .tab-content {
             display: none;
-            padding: 1.5rem 0;
+            padding-top: 1rem;
         }
 
         .tab-content.active { display: block; }
 
-        /* Tabla de specs */
         .specs-table {
             width: 100%;
             border-collapse: collapse;
+            font-size: 0.85rem;
         }
 
-        .specs-table tr {
-            border-bottom: 1px solid var(--border);
-        }
-
-        .specs-table td {
-            padding: 0.75rem 0;
-        }
-
-        .specs-table td:first-child {
-            color: var(--text-secondary);
-            width: 40%;
-        }
-
-        /* FAQ Accordion */
-        .faq-section {
-            margin-bottom: 1.5rem;
-        }
-
-        .faq-category {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border);
-            color: var(--accent);
-        }
+        .specs-table tr { border-bottom: 1px solid var(--border); }
+        .specs-table td { padding: 0.6rem 0; }
+        .specs-table td:first-child { color: var(--text-secondary); width: 40%; }
 
         .faq-item {
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 6px;
             margin-bottom: 0.5rem;
             overflow: hidden;
         }
 
-        .faq-question {
-            padding: 1rem;
-            background: var(--bg-tertiary);
+        .faq-q {
+            padding: 0.75rem 1rem;
+            background: var(--bg-card);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 500;
+            font-size: 0.9rem;
         }
 
-        .faq-question:hover {
-            background: var(--bg-card);
-        }
+        .faq-q:hover { background: var(--bg-hover); }
 
-        .faq-question i {
-            transition: transform 0.2s;
-        }
-
-        .faq-item.open .faq-question i {
-            transform: rotate(180deg);
-        }
-
-        .faq-answer {
+        .faq-a {
             display: none;
             padding: 1rem;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.5;
             border-top: 1px solid var(--border);
         }
 
-        .faq-item.open .faq-answer { display: block; }
+        .faq-item.open .faq-a { display: block; }
+        .faq-item.open .faq-q i { transform: rotate(180deg); }
 
-        /* ========== HOME - CATEGORIAS ========== */
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+        .faq-category {
+            margin-bottom: 1.5rem;
         }
 
-        .category-card {
-            background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 1.5rem;
-            cursor: pointer;
-            transition: all 0.25s;
-            position: relative;
+        .faq-category h4 {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* ========== GALLERY ========== */
+        .gallery-container {
+            background: var(--bg-card);
+            border-radius: 10px;
             overflow: hidden;
         }
 
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transition: transform 0.25s;
-        }
-
-        .category-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-6px);
-            box-shadow: 0 12px 40px rgba(255, 107, 0, 0.15);
-        }
-
-        .category-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .category-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
+        .gallery-main {
+            position: relative;
+            aspect-ratio: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
+            background: var(--bg-secondary);
         }
 
-        .category-card.gas .category-icon { background: rgba(34, 197, 94, 0.15); color: var(--gas); }
-        .category-card.diesel .category-icon { background: rgba(100, 116, 139, 0.15); color: #94a3b8; }
-        .category-card.nafta .category-icon { background: rgba(245, 158, 11, 0.15); color: var(--nafta); }
-        .category-card.cummins .category-icon { background: rgba(239, 68, 68, 0.15); color: var(--danger); }
+        .gallery-main img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
 
-        .category-title {
-            font-size: 1.1rem;
-            font-weight: 600;
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.7);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .gallery-nav:hover {
+            background: var(--accent);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .gallery-nav.prev { left: 10px; }
+        .gallery-nav.next { right: 10px; }
+
+        .gallery-thumbnails {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: var(--bg-primary);
+        }
+
+        .gallery-thumbnails img {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .gallery-thumbnails img:hover {
+            border-color: var(--text-secondary);
+        }
+
+        .gallery-thumbnails img.active {
+            border-color: var(--accent);
+        }
+
+        /* ========== ADVANTAGES ========== */
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .advantage-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all 0.3s;
+        }
+
+        .advantage-card:hover {
+            border-color: var(--accent);
+            background: var(--bg-hover);
+        }
+
+        .advantage-card h4 {
+            font-size: 0.9rem;
+            color: var(--accent);
             margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
-        .category-subtitle {
+        .advantage-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ========== COMPARISON ========== */
+        .comparison-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .comparison-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        .comparison-card h4 {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .price-diff {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .price-diff.higher {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+        }
+
+        .price-diff.lower {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+        }
+
+        .comparison-summary {
             font-size: 0.85rem;
             color: var(--text-secondary);
             margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            border-radius: 6px;
+            border-left: 3px solid var(--accent);
         }
 
-        .category-stats {
+        .comparison-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .comparison-list li {
+            padding: 0.5rem 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
             display: flex;
-            gap: 1rem;
-            font-size: 0.8rem;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .comparison-list li i {
+            color: var(--success);
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        /* ========== EMPTY STATE ========== */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
             color: var(--text-secondary);
         }
 
-        .category-stat {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-muted);
         }
-
-        .category-stat i { color: var(--accent); }
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 1024px) {
-            .main-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                display: none;
-            }
-
+            .app-layout { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
             .product-row {
-                grid-template-columns: 80px 1fr 80px;
+                grid-template-columns: 70px 1fr 70px 100px;
             }
-
-            .product-tags,
-            .product-power {
-                display: none;
-            }
-
-            .detail-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .detail-gallery {
-                position: static;
-            }
+            .product-tags, .product-action { display: none; }
+            .detail-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 640px) {
-            .header {
-                flex-wrap: wrap;
-                gap: 0.75rem;
-            }
-
-            .search-box {
-                order: 3;
-                max-width: 100%;
-                width: 100%;
-            }
-
             .product-row {
                 grid-template-columns: 1fr;
                 gap: 0.75rem;
             }
-
-            .product-image {
-                width: 100%;
-                height: 120px;
-            }
-
-            .specs-grid {
-                grid-template-columns: 1fr;
-            }
+            .product-thumb { width: 100%; height: 100px; }
+            .product-power, .product-price { text-align: left; }
+            .specs-quick { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
@@ -1030,1094 +950,641 @@
     <!-- HEADER -->
     <header class="header">
         <div class="logo">
-            <i class="fas fa-bolt"></i>
-            <span>KOR Generadores</span>
+            <i class="fas fa-bolt"></i> KOR
         </div>
-
-        <div class="search-box">
+        <div class="search-container">
             <i class="fas fa-search"></i>
-            <input type="text" class="search-input" placeholder="Buscar generador por modelo, potencia, tipo..." id="searchInput">
+            <input type="text" class="search-input" placeholder="Buscar por modelo, potencia, marca..." id="searchInput">
         </div>
-
-        <div class="header-controls">
-            <label style="font-size: 0.8rem; color: var(--text-secondary);">USD</label>
-            <input type="number" class="exchange-input" id="exchangeRate" value="1200" step="10">
-            <button class="btn-icon" id="toggleInternal" title="Modo interno">
-                <i class="fas fa-user-shield"></i>
-            </button>
-            <button class="btn-icon" id="openBudget" title="Presupuesto">
-                <i class="fas fa-file-invoice-dollar"></i>
-            </button>
+        <div class="header-actions">
+            <span style="font-size:0.75rem;color:var(--text-muted)">TC</span>
+            <input type="number" class="tc-input" id="tcInput" value="1200">
+            <button class="btn-icon" title="Presupuesto"><i class="fas fa-file-invoice"></i></button>
         </div>
     </header>
 
-    <!-- LAYOUT PRINCIPAL -->
-    <div class="main-layout">
+    <!-- LAYOUT -->
+    <div class="app-layout">
         <!-- SIDEBAR -->
         <aside class="sidebar" id="sidebar">
-            <div class="sidebar-title">Categorias</div>
+            <div class="sidebar-section">Navegacion</div>
 
-            <!-- Gas Residenciales -->
-            <div class="family-group" data-family="gas-residencial">
-                <div class="family-header" onclick="toggleFamily(this)">
-                    <div class="family-icon gas"><i class="fas fa-home"></i></div>
-                    <span class="family-name">Gas Residenciales</span>
-                    <span class="family-count">10</span>
-                    <i class="fas fa-chevron-right family-arrow"></i>
+            <div class="family-item all-products active" onclick="showAllProducts()">
+                <div class="family-icon" style="background:rgba(255,107,0,0.15);color:var(--accent)">
+                    <i class="fas fa-th-list"></i>
                 </div>
-                <div class="family-products">
-                    <div class="product-link" onclick="showProduct('GA8000')">GA8000 - 8 kVA</div>
-                    <div class="product-link" onclick="showProduct('GA10000')">GA10000 - 10 kVA</div>
-                    <div class="product-link" onclick="showProduct('GA13000')">GA13000 - 13 kVA</div>
-                    <div class="product-link" onclick="showProduct('GA20000')">GA20000 - 20 kVA</div>
-                    <div class="product-link" onclick="showProduct('GLG8000EM')">GLG8000EM - 8 kVA</div>
-                    <div class="product-link" onclick="showProduct('GLG13000EM')">GLG13000EM - 13 kVA</div>
-                    <div class="product-link" onclick="showProduct('GLG20000EM')">GLG20000EM - 20 kVA</div>
-                    <div class="product-link" onclick="showProduct('GLG20000ET')">GLG20000ET - 20 kVA Trif</div>
-                    <div class="product-link" onclick="showProduct('GLT9500E')">GLT9500E - 9.5 kVA</div>
-                </div>
+                <span class="family-name">Todos los Generadores</span>
+                <span class="family-count" id="totalCount">91</span>
             </div>
 
-            <!-- Gas Comerciales -->
-            <div class="family-group" data-family="gas-comercial">
-                <div class="family-header" onclick="toggleFamily(this)">
-                    <div class="family-icon gas"><i class="fas fa-store"></i></div>
-                    <span class="family-name">Gas Comerciales</span>
-                    <span class="family-count">1</span>
-                    <i class="fas fa-chevron-right family-arrow"></i>
-                </div>
-                <div class="family-products">
-                    <div class="product-link" onclick="showProduct('GL027')">Pramac GL027 - 27 kVA</div>
-                </div>
+            <div class="sidebar-section">Gas</div>
+            <div class="family-item" data-family="gas-residencial" onclick="showFamily('gas-residencial')">
+                <div class="family-icon gas"><i class="fas fa-home"></i></div>
+                <span class="family-name">Residenciales</span>
+                <span class="family-count">10</span>
+            </div>
+            <div class="family-item" data-family="gas-comercial" onclick="showFamily('gas-comercial')">
+                <div class="family-icon gas"><i class="fas fa-store"></i></div>
+                <span class="family-name">Comerciales</span>
+                <span class="family-count">1</span>
+            </div>
+            <div class="family-item" data-family="gas-industrial" onclick="showFamily('gas-industrial')">
+                <div class="family-icon gas"><i class="fas fa-industry"></i></div>
+                <span class="family-name">Industriales</span>
+                <span class="family-count">8</span>
             </div>
 
-            <!-- Gas Industriales -->
-            <div class="family-group" data-family="gas-industrial">
-                <div class="family-header" onclick="toggleFamily(this)">
-                    <div class="family-icon gas"><i class="fas fa-industry"></i></div>
-                    <span class="family-name">Gas Industriales</span>
-                    <span class="family-count">8</span>
-                    <i class="fas fa-chevron-right family-arrow"></i>
-                </div>
-                <div class="family-products">
-                    <div class="product-link" onclick="showProduct('GGW035')">GGW035 - 35 kVA</div>
-                    <div class="product-link" onclick="showProduct('GGW050')">GGW050 - 50 kVA</div>
-                    <div class="product-link" onclick="showProduct('GGW070')">GGW070 - 70 kVA</div>
-                    <div class="product-link" onclick="showProduct('GGW080')">GGW080 - 80 kVA</div>
-                    <div class="product-link" onclick="showProduct('GGW100G')">GGW100G - 100 kVA</div>
-                    <div class="product-link" onclick="showProduct('LOGUS41BRGAS')">Logus 41BR Gas - 41 kVA</div>
-                    <div class="product-link" onclick="showProduct('LOGUS69BRGAS')">Logus 69BR Gas - 69 kVA</div>
-                    <div class="product-link" onclick="showProduct('LOGUS125BRGAS')">Logus 125BR Gas - 125 kVA</div>
-                </div>
+            <div class="sidebar-section">Diesel</div>
+            <div class="family-item" data-family="diesel-silent" onclick="showFamily('diesel-silent')">
+                <div class="family-icon diesel"><i class="fas fa-volume-mute"></i></div>
+                <span class="family-name">Silent 1500 RPM</span>
+                <span class="family-count">8</span>
+            </div>
+            <div class="family-item" data-family="diesel-abierto" onclick="showFamily('diesel-abierto')">
+                <div class="family-icon diesel"><i class="fas fa-cogs"></i></div>
+                <span class="family-name">Abierto 1500 RPM</span>
+                <span class="family-count">4</span>
+            </div>
+            <div class="family-item" data-family="diesel-3000" onclick="showFamily('diesel-3000')">
+                <div class="family-icon diesel"><i class="fas fa-tachometer-alt"></i></div>
+                <span class="family-name">3000 RPM</span>
+                <span class="family-count">9</span>
+            </div>
+            <div class="family-item" data-family="diesel-ultra" onclick="showFamily('diesel-ultra')">
+                <div class="family-icon diesel"><i class="fas fa-moon"></i></div>
+                <span class="family-name">Ultra Silent</span>
+                <span class="family-count">2</span>
             </div>
 
-            <!-- Diesel Silent 1500 RPM -->
-            <div class="family-group" data-family="diesel-silent">
-                <div class="family-header" onclick="toggleFamily(this)">
-                    <div class="family-icon diesel"><i class="fas fa-volume-mute"></i></div>
-                    <span class="family-name">Diesel Silent 1500</span>
-                    <span class="family-count">8</span>
-                    <i class="fas fa-chevron-right family-arrow"></i>
-                </div>
-                <div class="family-products">
-                    <div class="product-link" onclick="showProduct('LOGUS21BRS')">Logus 21BR Silent - 21 kVA</div>
-                    <div class="product-link" onclick="showProduct('LOGUS41BRS')">Logus 41BR Silent - 41 kVA</div>
-                    <div class="product-link" onclick="showProduct('LOGUS69BRS')">Logus 69BR Silent - 69 kVA</div>
-                    <div class="product-link" onclick="showProduct('LOGUS100BRS')">Logus 100BR Silent - 100 kVA</div>
-                    <div class="product-link" onclick="showProduct('LOGUS125BRS')">Logus 125BR Silent - 125 kVA</div>
-                    <div class="product-link" onclick="showProduct('LOGUS165BRS')">Logus 165BR Silent - 165 kVA</div>
-                    <div class="product-link" onclick="showProduct('LOGUS200BRS')">Logus 200BR Silent - 200 kVA</div>
-                    <div class="product-link" onclick="showProduct('LOGUS450BRS')">Logus 450BR Silent - 450 kVA</div>
-                </div>
+            <div class="sidebar-section">Cummins</div>
+            <div class="family-item" data-family="cummins-cs" onclick="showFamily('cummins-cs')">
+                <div class="family-icon cummins"><i class="fas fa-truck"></i></div>
+                <span class="family-name">Serie CS</span>
+                <span class="family-count">13</span>
+            </div>
+            <div class="family-item" data-family="cummins-yns" onclick="showFamily('cummins-yns')">
+                <div class="family-icon cummins"><i class="fas fa-truck-moving"></i></div>
+                <span class="family-name">Serie YNS</span>
+                <span class="family-count">11</span>
             </div>
 
-            <!-- Diesel Abierto 1500 RPM -->
-            <div class="family-group" data-family="diesel-abierto">
-                <div class="family-header" onclick="toggleFamily(this)">
-                    <div class="family-icon diesel"><i class="fas fa-cogs"></i></div>
-                    <span class="family-name">Diesel Abierto 1500</span>
-                    <span class="family-count">4</span>
-                    <i class="fas fa-chevron-right family-arrow"></i>
-                </div>
-                <div class="family-products">
-                    <div class="product-link" onclick="showProduct('LOGUS21BRA')">Logus 21BR Abierto - 21 kVA</div>
-                    <div class="product-link" onclick="showProduct('LOGUS41BRA')">Logus 41BR Abierto - 41 kVA</div>
-                    <div class="product-link" onclick="showProduct('LOGUS69BRA')">Logus 69BR Abierto - 69 kVA</div>
-                    <div class="product-link" onclick="showProduct('LOGUS125BRA')">Logus 125BR Abierto - 125 kVA</div>
-                </div>
+            <div class="sidebar-section">Nafta</div>
+            <div class="family-item" data-family="nafta-3000" onclick="showFamily('nafta-3000')">
+                <div class="family-icon nafta"><i class="fas fa-gas-pump"></i></div>
+                <span class="family-name">3000 RPM</span>
+                <span class="family-count">14</span>
             </div>
-
-            <!-- Diesel 3000 RPM -->
-            <div class="family-group" data-family="diesel-3000">
-                <div class="family-header" onclick="toggleFamily(this)">
-                    <div class="family-icon diesel"><i class="fas fa-tachometer-alt"></i></div>
-                    <span class="family-name">Diesel 3000 RPM</span>
-                    <span class="family-count">9</span>
-                    <i class="fas fa-chevron-right family-arrow"></i>
-                </div>
-                <div class="family-products">
-                    <div class="product-link" onclick="showProduct('KDE6500T')">Kipor KDE6500T Silent</div>
-                    <div class="product-link" onclick="showProduct('KDE6500T3')">Kipor KDE6500T3 Silent</div>
-                    <div class="product-link" onclick="showProduct('KDE12STAF')">Kipor KDE12STAF Silent</div>
-                    <div class="product-link" onclick="showProduct('KDE12STAF3')">Kipor KDE12STAF3 Silent</div>
-                    <div class="product-link" onclick="showProduct('KDE19STA')">Kipor KDE19STA Silent</div>
-                    <div class="product-link" onclick="showProduct('KDE19STA3')">Kipor KDE19STA3 Silent</div>
-                    <div class="product-link" onclick="showProduct('KDE12EAF')">Kipor KDE12EAF Open</div>
-                    <div class="product-link" onclick="showProduct('KDE12EAF3')">Kipor KDE12EAF3 Open</div>
-                    <div class="product-link" onclick="showProduct('GLD9500ED')">Logus GLD9500ED Dual</div>
-                </div>
-            </div>
-
-            <!-- Diesel Ultra Silent -->
-            <div class="family-group" data-family="diesel-ultra">
-                <div class="family-header" onclick="toggleFamily(this)">
-                    <div class="family-icon diesel"><i class="fas fa-moon"></i></div>
-                    <span class="family-name">Diesel Ultra Silent</span>
-                    <span class="family-count">2</span>
-                    <i class="fas fa-chevron-right family-arrow"></i>
-                </div>
-                <div class="family-products">
-                    <div class="product-link" onclick="showProduct('KDE20SS3')">KDE20SS3 Ultra Silent</div>
-                    <div class="product-link" onclick="showProduct('KDE30SS3')">KDE30SS3 Ultra Silent</div>
-                </div>
-            </div>
-
-            <!-- Cummins CS -->
-            <div class="family-group" data-family="cummins-cs">
-                <div class="family-header" onclick="toggleFamily(this)">
-                    <div class="family-icon cummins"><i class="fas fa-truck"></i></div>
-                    <span class="family-name">Cummins Serie CS</span>
-                    <span class="family-count">13</span>
-                    <i class="fas fa-chevron-right family-arrow"></i>
-                </div>
-                <div class="family-products">
-                    <div class="product-link" onclick="showProduct('CS200S')">CS200S Silent - 200 kVA</div>
-                    <div class="product-link" onclick="showProduct('CS375S')">CS375S Silent - 375 kVA</div>
-                    <div class="product-link" onclick="showProduct('CS450S')">CS450S Silent - 450 kVA</div>
-                    <div class="product-link" onclick="showProduct('CS550S')">CS550S Silent - 550 kVA</div>
-                    <div class="product-link" onclick="showProduct('CS650S')">CS650S Silent - 650 kVA</div>
-                    <div class="product-link" onclick="showProduct('CS1000S')">CS1000S Silent - 1000 kVA</div>
-                    <div class="product-link" onclick="showProduct('CS200A')">CS200A Abierto - 200 kVA</div>
-                    <div class="product-link" onclick="showProduct('CS275A')">CS275A Abierto - 275 kVA</div>
-                    <div class="product-link" onclick="showProduct('CS360A')">CS360A Abierto - 360 kVA</div>
-                    <div class="product-link" onclick="showProduct('CS450A')">CS450A Abierto - 450 kVA</div>
-                    <div class="product-link" onclick="showProduct('CS550A')">CS550A Abierto - 550 kVA</div>
-                    <div class="product-link" onclick="showProduct('CS1000A')">CS1000A Abierto - 1000 kVA</div>
-                </div>
-            </div>
-
-            <!-- Cummins YNS -->
-            <div class="family-group" data-family="cummins-yns">
-                <div class="family-header" onclick="toggleFamily(this)">
-                    <div class="family-icon cummins"><i class="fas fa-truck-moving"></i></div>
-                    <span class="family-name">Cummins Serie YNS</span>
-                    <span class="family-count">11</span>
-                    <i class="fas fa-chevron-right family-arrow"></i>
-                </div>
-                <div class="family-products">
-                    <div class="product-link" onclick="showProduct('YNS42S')">YNS42S Silent - 42 kVA</div>
-                    <div class="product-link" onclick="showProduct('YNS65S')">YNS65S Silent - 65 kVA</div>
-                    <div class="product-link" onclick="showProduct('YNS88S')">YNS88S Silent - 88 kVA</div>
-                    <div class="product-link" onclick="showProduct('YNS110S')">YNS110S Silent - 110 kVA</div>
-                    <div class="product-link" onclick="showProduct('YNS170S')">YNS170S Silent - 170 kVA</div>
-                    <div class="product-link" onclick="showProduct('YNS200S')">YNS200S Silent - 200 kVA</div>
-                    <div class="product-link" onclick="showProduct('YNS275S')">YNS275S Silent - 275 kVA</div>
-                    <div class="product-link" onclick="showProduct('YNS350S')">YNS350S Silent - 350 kVA</div>
-                    <div class="product-link" onclick="showProduct('YNS110A')">YNS110A Abierto - 110 kVA</div>
-                    <div class="product-link" onclick="showProduct('YNS170A')">YNS170A Abierto - 170 kVA</div>
-                    <div class="product-link" onclick="showProduct('YNS200A')">YNS200A Abierto - 200 kVA</div>
-                </div>
-            </div>
-
-            <!-- Nafteros 3000 RPM -->
-            <div class="family-group" data-family="nafta-3000">
-                <div class="family-header" onclick="toggleFamily(this)">
-                    <div class="family-icon nafta"><i class="fas fa-gas-pump"></i></div>
-                    <span class="family-name">Nafteros 3000 RPM</span>
-                    <span class="family-count">14</span>
-                    <i class="fas fa-chevron-right family-arrow"></i>
-                </div>
-                <div class="family-products">
-                    <div class="product-link" onclick="showProduct('GL3300E')">Logus GL3300E</div>
-                    <div class="product-link" onclick="showProduct('GL5500E')">Logus GL5500E Premium</div>
-                    <div class="product-link" onclick="showProduct('GL5500EATS')">Logus GL5500E ATS c/TTA</div>
-                    <div class="product-link" onclick="showProduct('GL6500E')">Logus GL6500E Premium</div>
-                    <div class="product-link" onclick="showProduct('GL6500EGAS')">Logus GL6500E Gas</div>
-                    <div class="product-link" onclick="showProduct('GL7500EATS')">Logus GL7500E ATS c/TTA</div>
-                    <div class="product-link" onclick="showProduct('GL8500E')">Logus GL8500E Premium</div>
-                    <div class="product-link" onclick="showProduct('GL8500EGAS')">Logus GL8500E Gas</div>
-                    <div class="product-link" onclick="showProduct('GL8500E3')">Logus GL8500E3 Premium</div>
-                    <div class="product-link" onclick="showProduct('GE3300E')">Logus GE3300E Premium</div>
-                    <div class="product-link" onclick="showProduct('GL3300AM')">Logus GL3300AM</div>
-                    <div class="product-link" onclick="showProduct('GL12E')">Logus GL12E</div>
-                    <div class="product-link" onclick="showProduct('GL12E3')">Logus GL12E3</div>
-                    <div class="product-link" onclick="showProduct('KGE12E')">Kipor KGE12E</div>
-                </div>
-            </div>
-
-            <!-- Nafteros Silent/Inverter -->
-            <div class="family-group" data-family="nafta-silent">
-                <div class="family-header" onclick="toggleFamily(this)">
-                    <div class="family-icon nafta"><i class="fas fa-microchip"></i></div>
-                    <span class="family-name">Nafteros Silent/Inverter</span>
-                    <span class="family-count">11</span>
-                    <i class="fas fa-chevron-right family-arrow"></i>
-                </div>
-                <div class="family-products">
-                    <div class="product-link" onclick="showProduct('G11000')">Logus G11000 Silent</div>
-                    <div class="product-link" onclick="showProduct('G12000')">Logus G12000 Silent</div>
-                    <div class="product-link" onclick="showProduct('G14500')">Logus G14500 Silent</div>
-                    <div class="product-link" onclick="showProduct('G14500E')">Logus G14500E Silent</div>
-                    <div class="product-link" onclick="showProduct('G15500')">Logus G15500 Silent</div>
-                    <div class="product-link" onclick="showProduct('Gl1000')">Logus Gl1000 Silent</div>
-                    <div class="product-link" onclick="showProduct('Gl2000')">Logus Gl2000 Silent</div>
-                    <div class="product-link" onclick="showProduct('Gl4500')">Logus Gl4500 Silent</div>
-                    <div class="product-link" onclick="showProduct('Gl4500E')">Logus Gl4500E Silent</div>
-                    <div class="product-link" onclick="showProduct('Gl5500')">Logus Gl5500 Silent</div>
-                </div>
+            <div class="family-item" data-family="nafta-silent" onclick="showFamily('nafta-silent')">
+                <div class="family-icon nafta"><i class="fas fa-microchip"></i></div>
+                <span class="family-name">Silent / Inverter</span>
+                <span class="family-count">11</span>
             </div>
         </aside>
 
-        <!-- CONTENIDO -->
+        <!-- MAIN -->
         <main class="main-content" id="mainContent">
-            <!-- Se renderiza dinamicamente -->
+            <!-- Rendered by JS -->
         </main>
     </div>
 
-    <!-- MODAL DETALLE PRODUCTO -->
-    <div class="modal-overlay" id="productModal">
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title" id="modalTitle">PRAMAC GA8000</h2>
-                <button class="modal-close" onclick="closeModal()">
-                    <i class="fas fa-times"></i>
-                </button>
+                <h2 class="modal-title" id="modalTitle">Producto</h2>
+                <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
             </div>
-            <div class="modal-body" id="modalBody">
-                <!-- Contenido dinamico -->
-            </div>
+            <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
 
     <script>
-        // ========== DATOS DE PRODUCTOS ==========
-        const productsData = {
-            // GAS RESIDENCIALES - PRAMAC SERIE GA
-            'GA8000': {
+        // ========== DATA ==========
+        const products = [
+            // GAS RESIDENCIALES
+            {
                 id: 'GA8000',
-                name: 'PRAMAC GA8000',
+                name: 'PRAMAC GA8000 Powerknight',
                 brand: 'PRAMAC',
                 family: 'gas-residencial',
-                subtitle: 'Generador 8 kVA Gas - Arranque Automatico TTA',
-                description: 'Generador automatico a gas de 8 kVA, insonorizado y cabinado, con tablero de transferencia automatica incluido. Ideal para proteccion residencial y comercial ante cortes de luz.',
                 power: 8,
-                powerUnit: 'kVA',
+                unit: 'kVA',
                 voltage: '220V',
                 fuel: 'gas',
                 price: 5500,
-                motor: 'G-Force 500 Series',
-                motorBrand: 'Generac',
-                alternator: 'Brushless AVR',
-                startType: 'Automatico TTA',
-                dimensions: '1218 x 638 x 732 mm',
+                motor: 'Generac G-Force 500',
+                start: 'Automatico TTA',
                 weight: 155,
                 noise: '65-70 dB',
-                consumption: '3.9 m3/h',
-                features: ['TTA Incluido', 'WiFi Mobile Link', 'ENARGAS', 'Insonorizado'],
-                tags: ['gas', 'tta', 'silent'],
-                images: [
-                    'https://static.wixstatic.com/media/49d5f8_28b07fb710aa467db8fcba080ea68bb6~mv2.png'
+                tags: ['gas', 'tta', 'silent', 'wifi'],
+                img: 'assets/images/products/ga8000/GA8000_20251014_165627_1.webp',
+                gallery: [
+                    'assets/images/products/ga8000/GA8000_20251014_165627_1.webp',
+                    'assets/images/products/ga8000/GA8000_20251014_165627_2.webp',
+                    'assets/images/products/ga8000/GA8000_20251014_165627_3.webp',
+                    'assets/images/products/ga8000/GA8000_20251014_165627_4.webp',
+                    'assets/images/products/ga8000/GA8000_20251014_165627_5.webp',
+                    'assets/images/products/ga8000/GA8000_20251014_165627_6.webp',
+                    'assets/images/products/ga8000/ga8000_story_01.png',
+                    'assets/images/products/ga8000/ga8000_story_02.png',
+                    'assets/images/products/ga8000/ga8000_story_03.png',
+                    'assets/images/products/ga8000/ga8000_story_04.png'
                 ],
+                desc: 'Generador automático a gas de 8 kVA con TTA incluido, insonorizado y cabinado. Equipado con motor Generac G-Force 500 Series, arranque automático en <10 segundos, WiFi Mobile Link y gabinete Rino Coat. Ideal para protección residencial y comercial ante cortes de luz.',
                 specs: {
-                    'Potencia Stand-By': '8 kVA',
-                    'Potencia Prime': '7.5 kVA',
-                    'Tension': '220V Monofasico',
-                    'Frecuencia': '50 Hz',
-                    'Factor de Potencia': '0.8',
-                    'Motor': 'Generac G-Force 500 Series',
-                    'Cilindros': '2 en V',
-                    'Cilindrada': '530 cc',
-                    'Combustible': 'Gas Natural / GLP',
-                    'Consumo 100%': '3.9 m3/h',
-                    'Alternador': 'Brushless Autoexcitado',
-                    'Regulacion': 'AVR ±1%',
-                    'Panel Control': 'Evolution Controller Digital',
-                    'Arranque': 'Automatico con TTA incluido',
-                    'Nivel Ruido': '65-70 dB @ 7m',
+                    'Potencia Stand-By': '8 kVA / 6.4 kW',
+                    'Potencia Prime': '7.5 kVA / 6.0 kW',
+                    'Tensión': '220V Monofásico',
+                    'Corriente': '31-40 Amperes',
+                    'Motor': 'Generac G-Force 500 (530cc, 2 cil. en V)',
+                    'Alternador': 'Brushless con AVR ±1%',
+                    'Combustible': 'Gas Natural / GLP Bi-Fuel',
+                    'Consumo 100%': '3.9 m³/h (GN) / 3.2 kg/h (GLP)',
+                    'Arranque': 'Automático TTA incluido',
+                    'Tiempo Arranque': '<10 segundos',
+                    'Nivel Ruido': '65-70 dB(A) @ 7m',
                     'Dimensiones': '1218 x 638 x 732 mm',
                     'Peso': '155 kg',
-                    'Garantia': '2 anos'
+                    'Conectividad': 'WiFi Mobile Link incluido',
+                    'Gabinete': 'Insonorizado Rino Coat',
+                    'Garantía': '2 años',
+                    'Vida Útil': '20.000+ horas'
                 },
                 faq: [
-                    {
-                        category: 'Funcionamiento',
-                        questions: [
-                            {
-                                q: 'Que electrodomesticos puedo conectar con 8 kVA?',
-                                a: 'Con 8 kVA (36 amperes en 220V) podes manejar: heladera + freezer + iluminacion LED + 2-3 TVs + computadoras + WiFi + bomba de agua + porton electrico + split de 1.5-2 ton + alarma + camaras. Lo importante es no prender todo simultaneamente.'
-                            },
-                            {
-                                q: 'Como funciona el arranque automatico?',
-                                a: 'Es 100% automatico. El tablero TTA monitorea la red electrica 24/7. Cuando detecta un corte, en 5 segundos envia senal al generador, arranca el motor, y en 15-20 segundos ya tenes energia. Cuando vuelve la luz, revierte automaticamente.'
-                            },
-                            {
-                                q: 'Puedo controlarlo desde el celular?',
-                                a: 'Si, viene con WiFi incluido y la app Mobile Link (iOS y Android). Desde el celu podes ver el estado del generador, nivel de aceite, proximo mantenimiento, historial de arranques, alarmas. Te manda notificaciones si hay algun problema.'
-                            }
-                        ]
-                    },
-                    {
-                        category: 'Combustible',
-                        questions: [
-                            {
-                                q: 'Funciona con gas natural de red o necesito tanque?',
-                                a: 'Funciona perfecto con gas natural de red domiciliaria, esa es su aplicacion ideal. Lo conectas directamente al cano de gas que ya tenes. Es bi-fuel, significa que tambien podes usarlo con GLP si no tenes gas natural.'
-                            },
-                            {
-                                q: 'Cuanto gas consume por hora?',
-                                a: 'Consume 3.9 m3/h a plena carga (8 kVA), pero en uso real (50-60% carga) consume aprox 2.5-3 m3/h. Una hora de funcionamiento real te sale aprox USD 0.30-0.50 en gas.'
-                            }
-                        ]
-                    },
-                    {
-                        category: 'Precio e Instalacion',
-                        questions: [
-                            {
-                                q: 'Que incluye el precio?',
-                                a: 'Incluye: generador completo con motor Generac, alternador, panel de control digital, tablero TTA automatico (valor USD 1000), WiFi Mobile Link, cabina insonorizada Rino Coat, conector flexible de gas, manual de operacion, certificado de garantia 2 anos.'
-                            },
-                            {
-                                q: 'Cuanto cuesta la instalacion completa?',
-                                a: 'La instalacion completa (electricidad + gas + base + puesta en marcha + habilitacion) sale entre USD 1.000-2.000 segun complejidad y zona. La instalacion demora 5-7 dias habiles.'
-                            }
-                        ]
-                    }
+                    { cat: 'Técnico', q: '¿Qué electrodomésticos puedo conectar con 8 kVA?', a: 'Con 8 kVA (36 amperes) podés manejar: heladera, freezer, iluminación LED completa, TVs, WiFi/internet, bomba de agua, portón automático, split 1.5-2 ton, alarma, cámaras de seguridad, computadoras y cargadores. Te sobra margen del 40%.' },
+                    { cat: 'Técnico', q: '¿Cómo funciona el arranque automático?', a: 'El TTA (Tablero de Transferencia Automática) incluido monitorea la red eléctrica 24/7. Cuando detecta un corte, en menos de 10 segundos arranca el generador y transfiere automáticamente la energía. Cuando vuelve la red, transfiere de nuevo y apaga el equipo.' },
+                    { cat: 'Instalación', q: '¿Funciona con gas de red o necesito tanque?', a: 'Funciona perfecto con gas natural de red domiciliaria (su uso ideal). Es bi-fuel: también podés usar GLP en tanque si no tenés gas de red. La conexión es directa al caño de gas con instalación certificada.' },
+                    { cat: 'Instalación', q: '¿Incluye instalación?', a: 'No, la instalación va aparte (USD 1.000-2.000 según complejidad). Incluye: base de hormigón, conexión eléctrica, instalación de gas con habilitación, puesta en marcha y capacitación. Tenemos red de instaladores certificados.' },
+                    { cat: 'Mantenimiento', q: '¿Qué mantenimiento requiere?', a: 'Primer cambio de aceite a las 50 horas, luego cada 200 horas o anual. El equipo hace autotest semanal automático. Servicio técnico cada 400 horas o cada 2 años. Muy bajo mantenimiento comparado con diesel.' },
+                    { cat: 'Comercial', q: '¿Por qué es más caro que uno chino?', a: 'PRAMAC ofrece: repuestos en 24-48hs (vs 45-90 días), servicio técnico en Argentina, consumo 20% menor, vida útil 3-4x superior (20.000hs vs 5.000hs), garantía real de 2 años, y valor de reventa. El chino sale más caro a largo plazo.' },
+                    { cat: 'Comercial', q: '¿Viene con WiFi incluido?', a: 'Sí, incluye módulo WiFi Mobile Link de fábrica. Te permite monitorear y controlar el generador desde tu celular: ver estado, historial, consumo, alarmas. Otras marcas lo cobran USD 200-400 aparte.' }
                 ],
                 advantages: [
-                    { title: 'TTA Incluido de Fabrica', desc: 'Unico que incluye Tablero de Transferencia Automatica. La competencia lo vende como opcional (USD 800-1200 extra).' },
-                    { title: 'WiFi Mobile Link de serie', desc: 'Monitoreo remoto via WiFi incluido sin costo adicional. Otros cobran USD 200-400 por modulo WiFi.' },
-                    { title: 'Certificacion ENARGAS', desc: 'Homologado para operar con todas las prestadoras de gas de Argentina sin tramites complejos.' },
-                    { title: 'Motor Generac G-Force', desc: 'Motor especificamente disenado para generadores, optimizado para arranques frecuentes y operacion en vacio.' }
-                ]
+                    { title: 'TTA Incluido', desc: 'Tablero de transferencia automática de fábrica. Otras marcas lo cobran USD 800-1.200 extra.' },
+                    { title: 'WiFi Mobile Link', desc: 'Monitoreo remoto incluido. Controlá y monitoreá desde tu celular.' },
+                    { title: 'Ultra Silencioso', desc: '65-70 dB @ 7m. Más silencioso que una conversación normal. Gabinete Rino Coat premium.' },
+                    { title: 'Arranque <10 seg', desc: 'Detección de corte y toma de carga en menos de 10 segundos. Ni te das cuenta.' },
+                    { title: 'Bi-Fuel', desc: 'Funciona con Gas Natural de red o GLP. Máxima flexibilidad de combustible.' },
+                    { title: 'Bajo Consumo', desc: '3.9 m³/h. 15-20% más eficiente que competencia. Ahorro de USD 30-50/mes.' },
+                    { title: 'Motor Generac', desc: 'G-Force 500 Series con 20.000+ horas de vida útil. Componentes industriales.' },
+                    { title: 'Repuestos Rápidos', desc: 'Stock en Argentina 24-48hs. Servicio técnico certificado en todo el país.' }
+                ],
+                comparison: {
+                    vs_generico: {
+                        price_diff: '+40-60%',
+                        advantages: ['Vida útil 3-4x mayor', 'Repuestos 24-48hs vs 45-90 días', 'Consumo 20% menor', 'Garantía real 2 años', 'Valor de reventa existe'],
+                        summary: 'El genérico es más barato inicial, pero PRAMAC sale más rentable a 3-5 años por menor consumo, repuestos rápidos y durabilidad superior.'
+                    },
+                    vs_kohler: {
+                        price_diff: '-25-35%',
+                        advantages: ['Mismo grupo empresario (Generac)', 'TTA incluido vs opcional', 'WiFi incluido vs opcional', 'Precio menor con prestaciones equivalentes'],
+                        summary: 'Tecnología equivalente a Kohler (mismo grupo) pero con mejor relación precio-prestaciones. PRAMAC incluye de serie lo que Kohler cobra extra.'
+                    }
+                }
             },
-            'GA10000': {
-                id: 'GA10000',
-                name: 'PRAMAC GA10000',
-                brand: 'PRAMAC',
-                family: 'gas-residencial',
-                subtitle: 'Generador 10 kVA Gas - Arranque Automatico TTA',
-                description: 'Generador automatico a gas de 10 kVA con tablero de transferencia automatica incluido. Mayor potencia para casas grandes y comercios.',
-                power: 10,
-                powerUnit: 'kVA',
-                voltage: '220V',
-                fuel: 'gas',
-                price: 6200,
-                motor: 'G-Force 760 Series',
-                motorBrand: 'Generac',
-                alternator: 'Brushless AVR',
-                startType: 'Automatico TTA',
-                dimensions: '1218 x 638 x 732 mm',
-                weight: 170,
-                noise: '66-71 dB',
-                consumption: '4.5 m3/h',
-                features: ['TTA Incluido', 'WiFi Mobile Link', 'ENARGAS', 'Insonorizado'],
-                tags: ['gas', 'tta', 'silent'],
-                images: ['https://static.wixstatic.com/media/49d5f8_28b07fb710aa467db8fcba080ea68bb6~mv2.png'],
-                specs: {
-                    'Potencia Stand-By': '10 kVA',
-                    'Potencia Prime': '9 kVA',
-                    'Tension': '220V Monofasico',
-                    'Frecuencia': '50 Hz',
-                    'Motor': 'Generac G-Force 760 Series',
-                    'Combustible': 'Gas Natural / GLP',
-                    'Panel Control': 'Evolution Controller Digital',
-                    'Arranque': 'Automatico con TTA incluido',
-                    'Nivel Ruido': '66-71 dB @ 7m',
-                    'Peso': '170 kg',
-                    'Garantia': '2 anos'
-                },
-                faq: [],
-                advantages: []
-            },
-            'GA13000': {
-                id: 'GA13000',
-                name: 'PRAMAC GA13000',
-                brand: 'PRAMAC',
-                family: 'gas-residencial',
-                subtitle: 'Generador 13 kVA Gas - Arranque Automatico TTA',
-                description: 'Generador automatico a gas de 13 kVA, ideal para casas grandes con multiples aires acondicionados.',
-                power: 13,
-                powerUnit: 'kVA',
-                voltage: '220V',
-                fuel: 'gas',
-                price: 7500,
-                motor: 'G-Force 999 Series',
-                motorBrand: 'Generac',
-                alternator: 'Brushless AVR',
-                startType: 'Automatico TTA',
-                dimensions: '1295 x 638 x 732 mm',
-                weight: 190,
-                noise: '68-73 dB',
-                consumption: '5.2 m3/h',
-                features: ['TTA Incluido', 'WiFi Mobile Link', 'ENARGAS', 'Insonorizado'],
-                tags: ['gas', 'tta', 'silent'],
-                images: ['https://static.wixstatic.com/media/49d5f8_28b07fb710aa467db8fcba080ea68bb6~mv2.png'],
-                specs: {
-                    'Potencia Stand-By': '13 kVA',
-                    'Potencia Prime': '11.7 kVA',
-                    'Tension': '220V Monofasico',
-                    'Motor': 'Generac G-Force 999 Series',
-                    'Combustible': 'Gas Natural / GLP',
-                    'Nivel Ruido': '68-73 dB @ 7m',
-                    'Peso': '190 kg',
-                    'Garantia': '2 anos'
-                },
-                faq: [],
-                advantages: []
-            },
-            'GA20000': {
-                id: 'GA20000',
-                name: 'PRAMAC GA20000',
-                brand: 'PRAMAC',
-                family: 'gas-residencial',
-                subtitle: 'Generador 20 kVA Gas - Arranque Automatico TTA',
-                description: 'Generador automatico a gas de 20 kVA, maxima potencia de la linea residencial para casas de gran consumo.',
-                power: 20,
-                powerUnit: 'kVA',
-                voltage: '220V',
-                fuel: 'gas',
-                price: 9800,
-                motor: 'G-Force 999 Series',
-                motorBrand: 'Generac',
-                alternator: 'Brushless AVR',
-                startType: 'Automatico TTA',
-                dimensions: '1295 x 638 x 732 mm',
-                weight: 220,
-                noise: '70-75 dB',
-                consumption: '7.5 m3/h',
-                features: ['TTA Incluido', 'WiFi Mobile Link', 'ENARGAS', 'Insonorizado'],
-                tags: ['gas', 'tta', 'silent'],
-                images: ['https://static.wixstatic.com/media/49d5f8_28b07fb710aa467db8fcba080ea68bb6~mv2.png'],
-                specs: {
-                    'Potencia Stand-By': '20 kVA',
-                    'Potencia Prime': '18 kVA',
-                    'Tension': '220V Monofasico',
-                    'Motor': 'Generac G-Force 999 Series',
-                    'Combustible': 'Gas Natural / GLP',
-                    'Nivel Ruido': '70-75 dB @ 7m',
-                    'Peso': '220 kg',
-                    'Garantia': '2 anos'
-                },
-                faq: [],
-                advantages: []
-            },
-            // DIESEL SILENT - LOGUS BR
-            'LOGUS21BRS': {
-                id: 'LOGUS21BRS',
-                name: 'LOGUS 21BR Silent',
-                brand: 'LOGUS',
-                family: 'diesel-silent',
-                subtitle: 'Generador 21 kVA Diesel Silent 1500 RPM',
-                description: 'Generador diesel insonorizado de 21 kVA con motor de alta durabilidad y bajo consumo.',
-                power: 21,
-                powerUnit: 'kVA',
-                voltage: '380V / 220V',
-                fuel: 'diesel',
-                price: 8500,
-                motor: 'Diesel 4 cilindros',
-                alternator: 'Brushless AVR',
-                startType: 'Electrico',
-                dimensions: '1600 x 800 x 1100 mm',
-                weight: 450,
-                noise: '68 dB',
-                consumption: '4.5 L/h',
-                features: ['1500 RPM', 'Cabina Silent', 'Trifasico'],
-                tags: ['diesel', 'silent', 'trifasico'],
-                images: [],
-                specs: {
-                    'Potencia Stand-By': '21 kVA',
-                    'Potencia Prime': '19 kVA',
-                    'Tension': '380V Trifasico / 220V Mono',
-                    'Motor': 'Diesel 4 cilindros 1500 RPM',
-                    'Consumo': '4.5 L/h',
-                    'Tanque': '50 L',
-                    'Autonomia': '11 horas',
-                    'Nivel Ruido': '68 dB @ 7m',
-                    'Peso': '450 kg'
-                },
-                faq: [],
-                advantages: []
-            },
-            'LOGUS41BRS': {
-                id: 'LOGUS41BRS',
-                name: 'LOGUS 41BR Silent',
-                brand: 'LOGUS',
-                family: 'diesel-silent',
-                subtitle: 'Generador 41 kVA Diesel Silent 1500 RPM',
-                description: 'Generador diesel insonorizado de 41 kVA, ideal para comercios y pequenas industrias.',
-                power: 41,
-                powerUnit: 'kVA',
-                voltage: '380V / 220V',
-                fuel: 'diesel',
-                price: 12500,
-                motor: 'Diesel 4 cilindros Turbo',
-                alternator: 'Brushless AVR',
-                startType: 'Electrico',
-                dimensions: '1900 x 900 x 1200 mm',
-                weight: 650,
-                noise: '70 dB',
-                consumption: '8.5 L/h',
-                features: ['1500 RPM', 'Cabina Silent', 'Trifasico'],
-                tags: ['diesel', 'silent', 'trifasico'],
-                images: [],
-                specs: {
-                    'Potencia Stand-By': '41 kVA',
-                    'Potencia Prime': '37 kVA',
-                    'Tension': '380V Trifasico / 220V Mono',
-                    'Motor': 'Diesel 4 cilindros Turbo 1500 RPM',
-                    'Consumo': '8.5 L/h',
-                    'Tanque': '100 L',
-                    'Autonomia': '11 horas',
-                    'Nivel Ruido': '70 dB @ 7m',
-                    'Peso': '650 kg'
-                },
-                faq: [],
-                advantages: []
-            },
-            // NAFTEROS
-            'GL8500E': {
-                id: 'GL8500E',
-                name: 'Logus GL8500E Premium',
-                brand: 'LOGUS',
-                family: 'nafta-3000',
-                subtitle: 'Generador 8.5 kVA Nafta - Arranque Electrico',
-                description: 'Generador a nafta de 8.5 kVA con arranque electrico, ideal para uso residencial y eventos.',
-                power: 8.5,
-                powerUnit: 'kVA',
-                voltage: '220V',
-                fuel: 'nafta',
-                price: 1200,
-                motor: 'OHV 420cc',
-                alternator: 'Brushless',
-                startType: 'Electrico',
-                dimensions: '700 x 530 x 550 mm',
-                weight: 85,
-                noise: '76 dB',
-                consumption: '2.8 L/h',
-                features: ['Arranque Electrico', 'AVR', 'Ruedas'],
-                tags: ['nafta'],
-                images: ['https://acdn-us.mitiendanube.com/stores/006/185/083/products/layout-generadores-gi-02-a3c5e04281bfe6a0e817507694295190-480-0.webp'],
-                specs: {
-                    'Potencia Maxima': '8.5 kVA',
-                    'Potencia Nominal': '8 kVA',
-                    'Tension': '220V Monofasico',
-                    'Motor': 'OHV 420cc',
-                    'Combustible': 'Nafta',
-                    'Consumo': '2.8 L/h',
-                    'Tanque': '25 L',
-                    'Autonomia': '9 horas',
-                    'Nivel Ruido': '76 dB @ 7m',
-                    'Peso': '85 kg'
-                },
-                faq: [],
-                advantages: []
-            },
-            // Agregar mas productos aqui...
-        };
+            { id: 'GA10000', name: 'PRAMAC GA10000', brand: 'PRAMAC', family: 'gas-residencial', power: 10, unit: 'kVA', voltage: '220V', fuel: 'gas', price: 6200, motor: 'G-Force 760', start: 'Automatico TTA', weight: 170, noise: '66-71 dB', tags: ['gas', 'tta', 'silent'], img: 'https://static.wixstatic.com/media/49d5f8_28b07fb710aa467db8fcba080ea68bb6~mv2.png', desc: 'Generador automatico a gas de 10 kVA con TTA incluido. Mayor potencia para casas grandes.', specs: { 'Potencia': '10 kVA', 'Tension': '220V', 'Motor': 'Generac G-Force 760', 'Peso': '170 kg' }, faq: [] },
+            { id: 'GA13000', name: 'PRAMAC GA13000', brand: 'PRAMAC', family: 'gas-residencial', power: 13, unit: 'kVA', voltage: '220V', fuel: 'gas', price: 7500, motor: 'G-Force 999', start: 'Automatico TTA', weight: 190, noise: '68-73 dB', tags: ['gas', 'tta', 'silent'], img: 'https://static.wixstatic.com/media/49d5f8_28b07fb710aa467db8fcba080ea68bb6~mv2.png', desc: 'Generador automatico a gas de 13 kVA. Ideal para casas con multiples aires.', specs: { 'Potencia': '13 kVA', 'Tension': '220V', 'Motor': 'Generac G-Force 999', 'Peso': '190 kg' }, faq: [] },
+            { id: 'GA20000', name: 'PRAMAC GA20000', brand: 'PRAMAC', family: 'gas-residencial', power: 20, unit: 'kVA', voltage: '220V', fuel: 'gas', price: 9800, motor: 'G-Force 999', start: 'Automatico TTA', weight: 220, noise: '70-75 dB', tags: ['gas', 'tta', 'silent'], img: 'https://static.wixstatic.com/media/49d5f8_28b07fb710aa467db8fcba080ea68bb6~mv2.png', desc: 'Maxima potencia de la linea residencial. 20 kVA para grandes consumos.', specs: { 'Potencia': '20 kVA', 'Tension': '220V', 'Peso': '220 kg' }, faq: [] },
+            { id: 'GLG8000EM', name: 'Logus GLG8000EM', brand: 'LOGUS', family: 'gas-residencial', power: 8, unit: 'kVA', voltage: '220V', fuel: 'gas', price: 3200, motor: 'OHV 420cc', start: 'Electrico', weight: 95, noise: '72 dB', tags: ['gas'], img: '', desc: 'Generador a gas 8 kVA economico con arranque electrico.', specs: { 'Potencia': '8 kVA', 'Motor': 'OHV 420cc' }, faq: [] },
+            { id: 'GLG13000EM', name: 'Logus GLG13000EM', brand: 'LOGUS', family: 'gas-residencial', power: 13, unit: 'kVA', voltage: '220V', fuel: 'gas', price: 4500, motor: 'OHV V-Twin', start: 'Electrico', weight: 120, noise: '74 dB', tags: ['gas'], img: '', desc: 'Generador a gas 13 kVA con motor V-Twin.', specs: { 'Potencia': '13 kVA' }, faq: [] },
+            { id: 'GLG20000EM', name: 'Logus GLG20000EM', brand: 'LOGUS', family: 'gas-residencial', power: 20, unit: 'kVA', voltage: '220V', fuel: 'gas', price: 6800, motor: 'V-Twin 999cc', start: 'Electrico', weight: 180, noise: '76 dB', tags: ['gas'], img: '', desc: 'Generador a gas 20 kVA monofasico.', specs: { 'Potencia': '20 kVA' }, faq: [] },
+            { id: 'GLG20000ET', name: 'Logus GLG20000ET', brand: 'LOGUS', family: 'gas-residencial', power: 20, unit: 'kVA', voltage: '380V', fuel: 'gas', price: 7200, motor: 'V-Twin 999cc', start: 'Electrico', weight: 185, noise: '76 dB', tags: ['gas', 'trifasico'], img: '', desc: 'Generador a gas 20 kVA trifasico.', specs: { 'Potencia': '20 kVA', 'Tension': '380V Trifasico' }, faq: [] },
+            { id: 'GLT9500E', name: 'Logus GLT9500E', brand: 'LOGUS', family: 'gas-residencial', power: 9.5, unit: 'kVA', voltage: '220V', fuel: 'gas', price: 3500, motor: 'OHV 420cc', start: 'Electrico', weight: 98, noise: '73 dB', tags: ['gas'], img: '', desc: 'Generador a gas 9.5 kVA.', specs: { 'Potencia': '9.5 kVA' }, faq: [] },
 
-        // ========== FAMILIAS ==========
-        const familiesData = {
-            'gas-residencial': {
-                name: 'Gas Residenciales',
-                subtitle: 'Insonorizados con TTA',
-                icon: 'fa-home',
-                type: 'gas',
-                products: ['GA8000', 'GA10000', 'GA13000', 'GA20000', 'GLG8000EM', 'GLG13000EM', 'GLG20000EM', 'GLG20000ET', 'GLT9500E']
-            },
-            'gas-comercial': {
-                name: 'Gas Comerciales',
-                subtitle: 'Para comercios y oficinas',
-                icon: 'fa-store',
-                type: 'gas',
-                products: ['GL027']
-            },
-            'gas-industrial': {
-                name: 'Gas Industriales',
-                subtitle: 'Alta potencia insonorizados',
-                icon: 'fa-industry',
-                type: 'gas',
-                products: ['GGW035', 'GGW050', 'GGW070', 'GGW080', 'GGW100G']
-            },
-            'diesel-silent': {
-                name: 'Diesel Silent 1500 RPM',
-                subtitle: 'Insonorizados de larga duracion',
-                icon: 'fa-volume-mute',
-                type: 'diesel',
-                products: ['LOGUS21BRS', 'LOGUS41BRS', 'LOGUS69BRS', 'LOGUS100BRS', 'LOGUS125BRS', 'LOGUS165BRS', 'LOGUS200BRS', 'LOGUS450BRS']
-            },
-            'diesel-abierto': {
-                name: 'Diesel Abierto 1500 RPM',
-                subtitle: 'Estructura abierta',
-                icon: 'fa-cogs',
-                type: 'diesel',
-                products: ['LOGUS21BRA', 'LOGUS41BRA', 'LOGUS69BRA', 'LOGUS125BRA']
-            },
-            'diesel-3000': {
-                name: 'Diesel 3000 RPM',
-                subtitle: 'Compactos y portatiles',
-                icon: 'fa-tachometer-alt',
-                type: 'diesel',
-                products: ['KDE6500T', 'KDE6500T3', 'KDE12STAF', 'KDE12STAF3', 'KDE19STA', 'KDE19STA3', 'KDE12EAF', 'KDE12EAF3', 'GLD9500ED']
-            },
-            'nafta-3000': {
-                name: 'Nafteros 3000 RPM',
-                subtitle: 'Economicos y versatiles',
-                icon: 'fa-gas-pump',
-                type: 'nafta',
-                products: ['GL3300E', 'GL5500E', 'GL5500EATS', 'GL6500E', 'GL6500EGAS', 'GL7500EATS', 'GL8500E', 'GL8500EGAS', 'GL8500E3', 'GE3300E', 'GL3300AM', 'GL12E', 'GL12E3', 'KGE12E']
-            },
-            'nafta-silent': {
-                name: 'Nafteros Silent/Inverter',
-                subtitle: 'Super silenciosos',
-                icon: 'fa-microchip',
-                type: 'nafta',
-                products: ['G11000', 'G12000', 'G14500', 'G14500E', 'G15500', 'Gl1000', 'Gl2000', 'Gl4500', 'Gl4500E', 'Gl5500']
-            },
-            'cummins-cs': {
-                name: 'Cummins Serie CS',
-                subtitle: 'Alta potencia industrial',
-                icon: 'fa-truck',
-                type: 'cummins',
-                products: ['CS200S', 'CS375S', 'CS450S', 'CS550S', 'CS650S', 'CS1000S', 'CS200A', 'CS275A', 'CS360A', 'CS450A', 'CS550A', 'CS1000A']
-            },
-            'cummins-yns': {
-                name: 'Cummins Serie YNS',
-                subtitle: 'Potencia media-alta',
-                icon: 'fa-truck-moving',
-                type: 'cummins',
-                products: ['YNS42S', 'YNS65S', 'YNS88S', 'YNS110S', 'YNS170S', 'YNS200S', 'YNS275S', 'YNS350S', 'YNS110A', 'YNS170A', 'YNS200A']
-            }
-        };
+            // GAS COMERCIAL
+            { id: 'GL027', name: 'Pramac GL027', brand: 'PRAMAC', family: 'gas-comercial', power: 27, unit: 'kVA', voltage: '220V/380V', fuel: 'gas', price: 12500, motor: 'Industrial', start: 'Automatico', weight: 450, noise: '68 dB', tags: ['gas', 'tta', 'silent'], img: '', desc: 'Generador comercial a gas 27 kVA insonorizado.', specs: { 'Potencia': '27 kVA' }, faq: [] },
 
-        // ========== ESTADO ==========
-        let currentView = 'home';
+            // GAS INDUSTRIAL
+            { id: 'GGW035', name: 'Pramac GGW035', brand: 'PRAMAC', family: 'gas-industrial', power: 35, unit: 'kVA', voltage: '380V', fuel: 'gas', price: 18000, motor: 'Industrial', start: 'Automatico', weight: 650, noise: '70 dB', tags: ['gas', 'trifasico', 'silent'], img: '', desc: 'Generador industrial a gas 35 kVA.', specs: { 'Potencia': '35 kVA' }, faq: [] },
+            { id: 'GGW050', name: 'Pramac GGW050', brand: 'PRAMAC', family: 'gas-industrial', power: 50, unit: 'kVA', voltage: '380V', fuel: 'gas', price: 24000, motor: 'Industrial', start: 'Automatico', weight: 750, noise: '72 dB', tags: ['gas', 'trifasico', 'silent'], img: '', desc: 'Generador industrial a gas 50 kVA.', specs: { 'Potencia': '50 kVA' }, faq: [] },
+            { id: 'GGW070', name: 'Pramac GGW070', brand: 'PRAMAC', family: 'gas-industrial', power: 70, unit: 'kVA', voltage: '380V', fuel: 'gas', price: 32000, motor: 'Industrial', start: 'Automatico', weight: 850, noise: '73 dB', tags: ['gas', 'trifasico', 'silent'], img: '', desc: 'Generador industrial a gas 70 kVA.', specs: { 'Potencia': '70 kVA' }, faq: [] },
+            { id: 'GGW080', name: 'Pramac GGW080', brand: 'PRAMAC', family: 'gas-industrial', power: 80, unit: 'kVA', voltage: '380V', fuel: 'gas', price: 38000, motor: 'Industrial', start: 'Automatico', weight: 900, noise: '74 dB', tags: ['gas', 'trifasico', 'silent'], img: '', desc: 'Generador industrial a gas 80 kVA.', specs: { 'Potencia': '80 kVA' }, faq: [] },
+            { id: 'GGW100G', name: 'Pramac GGW100G', brand: 'PRAMAC', family: 'gas-industrial', power: 100, unit: 'kVA', voltage: '380V', fuel: 'gas', price: 45000, motor: 'Industrial', start: 'Automatico', weight: 1100, noise: '75 dB', tags: ['gas', 'trifasico', 'silent'], img: '', desc: 'Generador industrial a gas 100 kVA.', specs: { 'Potencia': '100 kVA' }, faq: [] },
+            { id: 'LOGUS41BRGAS', name: 'Logus 41BR Gas', brand: 'LOGUS', family: 'gas-industrial', power: 41, unit: 'kVA', voltage: '380V', fuel: 'gas', price: 22000, motor: 'Diesel convertido', start: 'Electrico', weight: 700, noise: '72 dB', tags: ['gas', 'trifasico'], img: '', desc: 'Generador a gas 41 kVA.', specs: { 'Potencia': '41 kVA' }, faq: [] },
+            { id: 'LOGUS69BRGAS', name: 'Logus 69BR Gas', brand: 'LOGUS', family: 'gas-industrial', power: 69, unit: 'kVA', voltage: '380V', fuel: 'gas', price: 35000, motor: 'Diesel convertido', start: 'Electrico', weight: 850, noise: '74 dB', tags: ['gas', 'trifasico'], img: '', desc: 'Generador a gas 69 kVA.', specs: { 'Potencia': '69 kVA' }, faq: [] },
+            { id: 'LOGUS125BRGAS', name: 'Logus 125BR Gas', brand: 'LOGUS', family: 'gas-industrial', power: 125, unit: 'kVA', voltage: '380V', fuel: 'gas', price: 55000, motor: 'Diesel convertido', start: 'Electrico', weight: 1200, noise: '76 dB', tags: ['gas', 'trifasico'], img: '', desc: 'Generador a gas 125 kVA.', specs: { 'Potencia': '125 kVA' }, faq: [] },
+
+            // DIESEL SILENT 1500
+            { id: 'LOGUS21BRS', name: 'Logus 21BR Silent', brand: 'LOGUS', family: 'diesel-silent', power: 21, unit: 'kVA', voltage: '380V/220V', fuel: 'diesel', price: 8500, motor: 'Diesel 4 cil', start: 'Electrico', weight: 450, noise: '68 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Generador diesel insonorizado 21 kVA.', specs: { 'Potencia': '21 kVA', 'RPM': '1500' }, faq: [] },
+            { id: 'LOGUS41BRS', name: 'Logus 41BR Silent', brand: 'LOGUS', family: 'diesel-silent', power: 41, unit: 'kVA', voltage: '380V/220V', fuel: 'diesel', price: 12500, motor: 'Diesel 4 cil Turbo', start: 'Electrico', weight: 650, noise: '70 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Generador diesel insonorizado 41 kVA.', specs: { 'Potencia': '41 kVA' }, faq: [] },
+            { id: 'LOGUS69BRS', name: 'Logus 69BR Silent', brand: 'LOGUS', family: 'diesel-silent', power: 69, unit: 'kVA', voltage: '380V/220V', fuel: 'diesel', price: 18000, motor: 'Diesel 4 cil Turbo', start: 'Electrico', weight: 850, noise: '72 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Generador diesel insonorizado 69 kVA.', specs: { 'Potencia': '69 kVA' }, faq: [] },
+            { id: 'LOGUS100BRS', name: 'Logus 100BR Silent', brand: 'LOGUS', family: 'diesel-silent', power: 100, unit: 'kVA', voltage: '380V/220V', fuel: 'diesel', price: 28000, motor: 'Diesel 6 cil', start: 'Electrico', weight: 1100, noise: '73 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Generador diesel insonorizado 100 kVA.', specs: { 'Potencia': '100 kVA' }, faq: [] },
+            { id: 'LOGUS125BRS', name: 'Logus 125BR Silent', brand: 'LOGUS', family: 'diesel-silent', power: 125, unit: 'kVA', voltage: '380V/220V', fuel: 'diesel', price: 35000, motor: 'Diesel 6 cil', start: 'Electrico', weight: 1300, noise: '74 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Generador diesel insonorizado 125 kVA.', specs: { 'Potencia': '125 kVA' }, faq: [] },
+            { id: 'LOGUS165BRS', name: 'Logus 165BR Silent', brand: 'LOGUS', family: 'diesel-silent', power: 165, unit: 'kVA', voltage: '380V/220V', fuel: 'diesel', price: 45000, motor: 'Diesel 6 cil Turbo', start: 'Electrico', weight: 1600, noise: '75 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Generador diesel insonorizado 165 kVA.', specs: { 'Potencia': '165 kVA' }, faq: [] },
+            { id: 'LOGUS200BRS', name: 'Logus 200BR Silent', brand: 'LOGUS', family: 'diesel-silent', power: 200, unit: 'kVA', voltage: '380V/220V', fuel: 'diesel', price: 55000, motor: 'Diesel 6 cil Turbo', start: 'Electrico', weight: 1900, noise: '76 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Generador diesel insonorizado 200 kVA.', specs: { 'Potencia': '200 kVA' }, faq: [] },
+            { id: 'LOGUS450BRS', name: 'Logus 450BR Silent', brand: 'LOGUS', family: 'diesel-silent', power: 450, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 95000, motor: 'Diesel 12 cil', start: 'Electrico', weight: 3500, noise: '78 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Generador diesel insonorizado 450 kVA.', specs: { 'Potencia': '450 kVA' }, faq: [] },
+
+            // DIESEL ABIERTO 1500
+            { id: 'LOGUS21BRA', name: 'Logus 21BR Abierto', brand: 'LOGUS', family: 'diesel-abierto', power: 21, unit: 'kVA', voltage: '380V/220V', fuel: 'diesel', price: 6500, motor: 'Diesel 4 cil', start: 'Electrico', weight: 400, noise: '82 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Generador diesel abierto 21 kVA.', specs: { 'Potencia': '21 kVA' }, faq: [] },
+            { id: 'LOGUS41BRA', name: 'Logus 41BR Abierto', brand: 'LOGUS', family: 'diesel-abierto', power: 41, unit: 'kVA', voltage: '380V/220V', fuel: 'diesel', price: 9500, motor: 'Diesel 4 cil Turbo', start: 'Electrico', weight: 550, noise: '84 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Generador diesel abierto 41 kVA.', specs: { 'Potencia': '41 kVA' }, faq: [] },
+            { id: 'LOGUS69BRA', name: 'Logus 69BR Abierto', brand: 'LOGUS', family: 'diesel-abierto', power: 69, unit: 'kVA', voltage: '380V/220V', fuel: 'diesel', price: 14000, motor: 'Diesel 4 cil Turbo', start: 'Electrico', weight: 700, noise: '85 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Generador diesel abierto 69 kVA.', specs: { 'Potencia': '69 kVA' }, faq: [] },
+            { id: 'LOGUS125BRA', name: 'Logus 125BR Abierto', brand: 'LOGUS', family: 'diesel-abierto', power: 125, unit: 'kVA', voltage: '380V/220V', fuel: 'diesel', price: 28000, motor: 'Diesel 6 cil', start: 'Electrico', weight: 1000, noise: '86 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Generador diesel abierto 125 kVA.', specs: { 'Potencia': '125 kVA' }, faq: [] },
+
+            // DIESEL 3000 RPM
+            { id: 'KDE6500T', name: 'Kipor KDE6500T Silent', brand: 'KIPOR', family: 'diesel-3000', power: 6, unit: 'kVA', voltage: '220V', fuel: 'diesel', price: 2800, motor: 'Diesel 1 cil', start: 'Electrico', weight: 145, noise: '68 dB', tags: ['diesel', 'silent'], img: '', desc: 'Generador diesel portatil 6 kVA silent.', specs: { 'Potencia': '6 kVA', 'RPM': '3000' }, faq: [] },
+            { id: 'KDE6500T3', name: 'Kipor KDE6500T3 Silent', brand: 'KIPOR', family: 'diesel-3000', power: 6, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 3200, motor: 'Diesel 1 cil', start: 'Electrico', weight: 150, noise: '68 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Generador diesel portatil 6 kVA trifasico.', specs: { 'Potencia': '6 kVA' }, faq: [] },
+            { id: 'KDE12STAF', name: 'Kipor KDE12STAF Silent', brand: 'KIPOR', family: 'diesel-3000', power: 10, unit: 'kVA', voltage: '220V', fuel: 'diesel', price: 4500, motor: 'Diesel 2 cil', start: 'Electrico', weight: 220, noise: '70 dB', tags: ['diesel', 'silent', 'tta'], img: '', desc: 'Generador diesel 10 kVA con ATS.', specs: { 'Potencia': '10 kVA' }, faq: [] },
+            { id: 'KDE12STAF3', name: 'Kipor KDE12STAF3 Silent', brand: 'KIPOR', family: 'diesel-3000', power: 10, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 4800, motor: 'Diesel 2 cil', start: 'Electrico', weight: 225, noise: '70 dB', tags: ['diesel', 'silent', 'trifasico', 'tta'], img: '', desc: 'Generador diesel 10 kVA trifasico con ATS.', specs: { 'Potencia': '10 kVA' }, faq: [] },
+            { id: 'KDE19STA', name: 'Kipor KDE19STA Silent', brand: 'KIPOR', family: 'diesel-3000', power: 15, unit: 'kVA', voltage: '220V', fuel: 'diesel', price: 6500, motor: 'Diesel 2 cil', start: 'Electrico', weight: 350, noise: '72 dB', tags: ['diesel', 'silent'], img: '', desc: 'Generador diesel 15 kVA silent.', specs: { 'Potencia': '15 kVA' }, faq: [] },
+            { id: 'KDE19STA3', name: 'Kipor KDE19STA3 Silent', brand: 'KIPOR', family: 'diesel-3000', power: 15, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 6800, motor: 'Diesel 2 cil', start: 'Electrico', weight: 355, noise: '72 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Generador diesel 15 kVA trifasico.', specs: { 'Potencia': '15 kVA' }, faq: [] },
+            { id: 'KDE12EAF', name: 'Kipor KDE12EAF Open', brand: 'KIPOR', family: 'diesel-3000', power: 10, unit: 'kVA', voltage: '220V', fuel: 'diesel', price: 3500, motor: 'Diesel 2 cil', start: 'Electrico', weight: 180, noise: '82 dB', tags: ['diesel'], img: '', desc: 'Generador diesel abierto 10 kVA.', specs: { 'Potencia': '10 kVA' }, faq: [] },
+            { id: 'KDE12EAF3', name: 'Kipor KDE12EAF3 Open', brand: 'KIPOR', family: 'diesel-3000', power: 10, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 3800, motor: 'Diesel 2 cil', start: 'Electrico', weight: 185, noise: '82 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Generador diesel abierto 10 kVA trifasico.', specs: { 'Potencia': '10 kVA' }, faq: [] },
+            { id: 'GLD9500ED', name: 'Logus GLD9500ED Dual', brand: 'LOGUS', family: 'diesel-3000', power: 9.5, unit: 'kVA', voltage: '220V', fuel: 'diesel', price: 2200, motor: 'Diesel 1 cil', start: 'Electrico', weight: 160, noise: '76 dB', tags: ['diesel'], img: '', desc: 'Generador diesel 9.5 kVA dual fuel.', specs: { 'Potencia': '9.5 kVA' }, faq: [] },
+
+            // DIESEL ULTRA SILENT
+            { id: 'KDE20SS3', name: 'KDE20SS3 Ultra Silent', brand: 'KIPOR', family: 'diesel-ultra', power: 16, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 9500, motor: 'Diesel 2 cil', start: 'Electrico', weight: 420, noise: '62 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Generador diesel ultra silencioso 16 kVA.', specs: { 'Potencia': '16 kVA', 'Ruido': '62 dB' }, faq: [] },
+            { id: 'KDE30SS3', name: 'KDE30SS3 Ultra Silent', brand: 'KIPOR', family: 'diesel-ultra', power: 24, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 14500, motor: 'Diesel 3 cil', start: 'Electrico', weight: 580, noise: '63 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Generador diesel ultra silencioso 24 kVA.', specs: { 'Potencia': '24 kVA', 'Ruido': '63 dB' }, faq: [] },
+
+            // CUMMINS CS
+            { id: 'CS200S', name: 'Cummins CS200S Silent', brand: 'CUMMINS', family: 'cummins-cs', power: 200, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 65000, motor: 'Cummins 6 cil', start: 'Electrico', weight: 2200, noise: '75 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 200 kVA Silent.', specs: { 'Potencia': '200 kVA' }, faq: [] },
+            { id: 'CS375S', name: 'Cummins CS375S Silent', brand: 'CUMMINS', family: 'cummins-cs', power: 375, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 95000, motor: 'Cummins 6 cil Turbo', start: 'Electrico', weight: 3200, noise: '76 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 375 kVA Silent.', specs: { 'Potencia': '375 kVA' }, faq: [] },
+            { id: 'CS450S', name: 'Cummins CS450S Silent', brand: 'CUMMINS', family: 'cummins-cs', power: 450, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 120000, motor: 'Cummins 6 cil Turbo', start: 'Electrico', weight: 3800, noise: '77 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 450 kVA Silent.', specs: { 'Potencia': '450 kVA' }, faq: [] },
+            { id: 'CS550S', name: 'Cummins CS550S Silent', brand: 'CUMMINS', family: 'cummins-cs', power: 550, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 145000, motor: 'Cummins V8', start: 'Electrico', weight: 4500, noise: '78 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 550 kVA Silent.', specs: { 'Potencia': '550 kVA' }, faq: [] },
+            { id: 'CS650S', name: 'Cummins CS650S Silent', brand: 'CUMMINS', family: 'cummins-cs', power: 650, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 175000, motor: 'Cummins V8', start: 'Electrico', weight: 5200, noise: '79 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 650 kVA Silent.', specs: { 'Potencia': '650 kVA' }, faq: [] },
+            { id: 'CS1000S', name: 'Cummins CS1000S Silent', brand: 'CUMMINS', family: 'cummins-cs', power: 1000, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 280000, motor: 'Cummins V12', start: 'Electrico', weight: 8500, noise: '80 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 1000 kVA Silent.', specs: { 'Potencia': '1000 kVA' }, faq: [] },
+            { id: 'CS200A', name: 'Cummins CS200A Abierto', brand: 'CUMMINS', family: 'cummins-cs', power: 200, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 52000, motor: 'Cummins 6 cil', start: 'Electrico', weight: 1800, noise: '92 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 200 kVA Abierto.', specs: { 'Potencia': '200 kVA' }, faq: [] },
+            { id: 'CS275A', name: 'Cummins CS275A Abierto', brand: 'CUMMINS', family: 'cummins-cs', power: 275, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 68000, motor: 'Cummins 6 cil Turbo', start: 'Electrico', weight: 2100, noise: '93 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 275 kVA Abierto.', specs: { 'Potencia': '275 kVA' }, faq: [] },
+            { id: 'CS360A', name: 'Cummins CS360A Abierto', brand: 'CUMMINS', family: 'cummins-cs', power: 360, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 82000, motor: 'Cummins 6 cil Turbo', start: 'Electrico', weight: 2600, noise: '94 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 360 kVA Abierto.', specs: { 'Potencia': '360 kVA' }, faq: [] },
+            { id: 'CS450A', name: 'Cummins CS450A Abierto', brand: 'CUMMINS', family: 'cummins-cs', power: 450, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 98000, motor: 'Cummins 6 cil Turbo', start: 'Electrico', weight: 3200, noise: '95 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 450 kVA Abierto.', specs: { 'Potencia': '450 kVA' }, faq: [] },
+            { id: 'CS550A', name: 'Cummins CS550A Abierto', brand: 'CUMMINS', family: 'cummins-cs', power: 550, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 125000, motor: 'Cummins V8', start: 'Electrico', weight: 3800, noise: '96 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 550 kVA Abierto.', specs: { 'Potencia': '550 kVA' }, faq: [] },
+            { id: 'CS1000A', name: 'Cummins CS1000A Abierto', brand: 'CUMMINS', family: 'cummins-cs', power: 1000, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 220000, motor: 'Cummins V12', start: 'Electrico', weight: 7200, noise: '98 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 1000 kVA Abierto.', specs: { 'Potencia': '1000 kVA' }, faq: [] },
+
+            // CUMMINS YNS
+            { id: 'YNS42S', name: 'Cummins YNS42S Silent', brand: 'CUMMINS', family: 'cummins-yns', power: 42, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 22000, motor: 'Cummins 4 cil', start: 'Electrico', weight: 850, noise: '72 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 42 kVA Silent.', specs: { 'Potencia': '42 kVA' }, faq: [] },
+            { id: 'YNS65S', name: 'Cummins YNS65S Silent', brand: 'CUMMINS', family: 'cummins-yns', power: 65, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 28000, motor: 'Cummins 4 cil Turbo', start: 'Electrico', weight: 1000, noise: '73 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 65 kVA Silent.', specs: { 'Potencia': '65 kVA' }, faq: [] },
+            { id: 'YNS88S', name: 'Cummins YNS88S Silent', brand: 'CUMMINS', family: 'cummins-yns', power: 88, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 35000, motor: 'Cummins 4 cil Turbo', start: 'Electrico', weight: 1200, noise: '74 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 88 kVA Silent.', specs: { 'Potencia': '88 kVA' }, faq: [] },
+            { id: 'YNS110S', name: 'Cummins YNS110S Silent', brand: 'CUMMINS', family: 'cummins-yns', power: 110, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 42000, motor: 'Cummins 6 cil', start: 'Electrico', weight: 1500, noise: '74 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 110 kVA Silent.', specs: { 'Potencia': '110 kVA' }, faq: [] },
+            { id: 'YNS170S', name: 'Cummins YNS170S Silent', brand: 'CUMMINS', family: 'cummins-yns', power: 170, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 55000, motor: 'Cummins 6 cil Turbo', start: 'Electrico', weight: 1900, noise: '75 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 170 kVA Silent.', specs: { 'Potencia': '170 kVA' }, faq: [] },
+            { id: 'YNS200S', name: 'Cummins YNS200S Silent', brand: 'CUMMINS', family: 'cummins-yns', power: 200, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 62000, motor: 'Cummins 6 cil Turbo', start: 'Electrico', weight: 2100, noise: '75 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 200 kVA Silent.', specs: { 'Potencia': '200 kVA' }, faq: [] },
+            { id: 'YNS275S', name: 'Cummins YNS275S Silent', brand: 'CUMMINS', family: 'cummins-yns', power: 275, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 78000, motor: 'Cummins 6 cil Turbo', start: 'Electrico', weight: 2500, noise: '76 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 275 kVA Silent.', specs: { 'Potencia': '275 kVA' }, faq: [] },
+            { id: 'YNS350S', name: 'Cummins YNS350S Silent', brand: 'CUMMINS', family: 'cummins-yns', power: 350, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 92000, motor: 'Cummins 6 cil Turbo', start: 'Electrico', weight: 3000, noise: '76 dB', tags: ['diesel', 'silent', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 350 kVA Silent.', specs: { 'Potencia': '350 kVA' }, faq: [] },
+            { id: 'YNS110A', name: 'Cummins YNS110A Abierto', brand: 'CUMMINS', family: 'cummins-yns', power: 110, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 32000, motor: 'Cummins 6 cil', start: 'Electrico', weight: 1200, noise: '90 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 110 kVA Abierto.', specs: { 'Potencia': '110 kVA' }, faq: [] },
+            { id: 'YNS170A', name: 'Cummins YNS170A Abierto', brand: 'CUMMINS', family: 'cummins-yns', power: 170, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 42000, motor: 'Cummins 6 cil Turbo', start: 'Electrico', weight: 1500, noise: '91 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 170 kVA Abierto.', specs: { 'Potencia': '170 kVA' }, faq: [] },
+            { id: 'YNS200A', name: 'Cummins YNS200A Abierto', brand: 'CUMMINS', family: 'cummins-yns', power: 200, unit: 'kVA', voltage: '380V', fuel: 'diesel', price: 48000, motor: 'Cummins 6 cil Turbo', start: 'Electrico', weight: 1700, noise: '92 dB', tags: ['diesel', 'trifasico'], img: '', desc: 'Grupo electrogeno Cummins 200 kVA Abierto.', specs: { 'Potencia': '200 kVA' }, faq: [] },
+
+            // NAFTA 3000
+            { id: 'GL3300E', name: 'Logus GL3300E', brand: 'LOGUS', family: 'nafta-3000', power: 3, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 450, motor: 'OHV 210cc', start: 'Manual', weight: 45, noise: '74 dB', tags: ['nafta'], img: '', desc: 'Generador nafta basico 3 kVA.', specs: { 'Potencia': '3 kVA' }, faq: [] },
+            { id: 'GL5500E', name: 'Logus GL5500E Premium', brand: 'LOGUS', family: 'nafta-3000', power: 5.5, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 750, motor: 'OHV 390cc', start: 'Electrico', weight: 72, noise: '75 dB', tags: ['nafta'], img: 'https://acdn-us.mitiendanube.com/stores/006/185/083/products/layout-generadores-gi-02-a3c5e04281bfe6a0e817507694295190-480-0.webp', desc: 'Generador nafta 5.5 kVA Premium.', specs: { 'Potencia': '5.5 kVA' }, faq: [] },
+            { id: 'GL5500EATS', name: 'Logus GL5500E ATS', brand: 'LOGUS', family: 'nafta-3000', power: 5.5, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 1100, motor: 'OHV 390cc', start: 'Automatico', weight: 75, noise: '75 dB', tags: ['nafta', 'tta'], img: '', desc: 'Generador nafta 5.5 kVA con TTA.', specs: { 'Potencia': '5.5 kVA' }, faq: [] },
+            { id: 'GL6500E', name: 'Logus GL6500E Premium', brand: 'LOGUS', family: 'nafta-3000', power: 6.5, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 850, motor: 'OHV 390cc', start: 'Electrico', weight: 78, noise: '76 dB', tags: ['nafta'], img: '', desc: 'Generador nafta 6.5 kVA Premium.', specs: { 'Potencia': '6.5 kVA' }, faq: [] },
+            { id: 'GL6500EGAS', name: 'Logus GL6500E Gas', brand: 'LOGUS', family: 'nafta-3000', power: 6.5, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 1050, motor: 'OHV 390cc', start: 'Electrico', weight: 80, noise: '76 dB', tags: ['nafta', 'gas'], img: '', desc: 'Generador dual nafta/gas 6.5 kVA.', specs: { 'Potencia': '6.5 kVA' }, faq: [] },
+            { id: 'GL7500EATS', name: 'Logus GL7500E ATS', brand: 'LOGUS', family: 'nafta-3000', power: 7.5, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 1400, motor: 'OHV 420cc', start: 'Automatico', weight: 85, noise: '76 dB', tags: ['nafta', 'tta'], img: '', desc: 'Generador nafta 7.5 kVA con TTA.', specs: { 'Potencia': '7.5 kVA' }, faq: [] },
+            { id: 'GL8500E', name: 'Logus GL8500E Premium', brand: 'LOGUS', family: 'nafta-3000', power: 8.5, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 1200, motor: 'OHV 420cc', start: 'Electrico', weight: 85, noise: '76 dB', tags: ['nafta'], img: 'https://acdn-us.mitiendanube.com/stores/006/185/083/products/layout-generadores-gi-02-a3c5e04281bfe6a0e817507694295190-480-0.webp', desc: 'Generador nafta 8.5 kVA Premium.', specs: { 'Potencia': '8.5 kVA' }, faq: [] },
+            { id: 'GL8500EGAS', name: 'Logus GL8500E Gas', brand: 'LOGUS', family: 'nafta-3000', power: 8.5, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 1450, motor: 'OHV 420cc', start: 'Electrico', weight: 88, noise: '76 dB', tags: ['nafta', 'gas'], img: '', desc: 'Generador dual nafta/gas 8.5 kVA.', specs: { 'Potencia': '8.5 kVA' }, faq: [] },
+            { id: 'GL8500E3', name: 'Logus GL8500E3 Premium', brand: 'LOGUS', family: 'nafta-3000', power: 8.5, unit: 'kVA', voltage: '380V', fuel: 'nafta', price: 1350, motor: 'OHV 420cc', start: 'Electrico', weight: 88, noise: '76 dB', tags: ['nafta', 'trifasico'], img: '', desc: 'Generador nafta 8.5 kVA Trifasico.', specs: { 'Potencia': '8.5 kVA' }, faq: [] },
+            { id: 'GE3300E', name: 'Logus GE3300E Premium', brand: 'LOGUS', family: 'nafta-3000', power: 3.3, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 520, motor: 'OHV 210cc', start: 'Electrico', weight: 48, noise: '74 dB', tags: ['nafta'], img: '', desc: 'Generador nafta 3.3 kVA con arranque electrico.', specs: { 'Potencia': '3.3 kVA' }, faq: [] },
+            { id: 'GL3300AM', name: 'Logus GL3300AM', brand: 'LOGUS', family: 'nafta-3000', power: 3.3, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 380, motor: 'OHV 210cc', start: 'Manual', weight: 42, noise: '74 dB', tags: ['nafta'], img: '', desc: 'Generador nafta 3.3 kVA arranque manual.', specs: { 'Potencia': '3.3 kVA' }, faq: [] },
+            { id: 'GL12E', name: 'Logus GL12E', brand: 'LOGUS', family: 'nafta-3000', power: 12, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 1800, motor: 'V-Twin 620cc', start: 'Electrico', weight: 135, noise: '78 dB', tags: ['nafta'], img: '', desc: 'Generador nafta 12 kVA.', specs: { 'Potencia': '12 kVA' }, faq: [] },
+            { id: 'GL12E3', name: 'Logus GL12E3', brand: 'LOGUS', family: 'nafta-3000', power: 12, unit: 'kVA', voltage: '380V', fuel: 'nafta', price: 1950, motor: 'V-Twin 620cc', start: 'Electrico', weight: 138, noise: '78 dB', tags: ['nafta', 'trifasico'], img: '', desc: 'Generador nafta 12 kVA Trifasico.', specs: { 'Potencia': '12 kVA' }, faq: [] },
+            { id: 'KGE12E', name: 'Kipor KGE12E', brand: 'KIPOR', family: 'nafta-3000', power: 10, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 1650, motor: 'V-Twin', start: 'Electrico', weight: 120, noise: '77 dB', tags: ['nafta'], img: '', desc: 'Generador nafta Kipor 10 kVA.', specs: { 'Potencia': '10 kVA' }, faq: [] },
+
+            // NAFTA SILENT/INVERTER
+            { id: 'G11000', name: 'Logus G11000 Silent', brand: 'LOGUS', family: 'nafta-silent', power: 10, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 2200, motor: 'V-Twin 620cc', start: 'Electrico', weight: 150, noise: '68 dB', tags: ['nafta', 'silent'], img: '', desc: 'Generador nafta silent 10 kVA.', specs: { 'Potencia': '10 kVA' }, faq: [] },
+            { id: 'G12000', name: 'Logus G12000 Silent', brand: 'LOGUS', family: 'nafta-silent', power: 11, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 2400, motor: 'V-Twin 680cc', start: 'Electrico', weight: 165, noise: '68 dB', tags: ['nafta', 'silent'], img: '', desc: 'Generador nafta silent 11 kVA.', specs: { 'Potencia': '11 kVA' }, faq: [] },
+            { id: 'G14500', name: 'Logus G14500 Silent', brand: 'LOGUS', family: 'nafta-silent', power: 13, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 2800, motor: 'V-Twin 720cc', start: 'Manual', weight: 185, noise: '69 dB', tags: ['nafta', 'silent'], img: '', desc: 'Generador nafta silent 13 kVA.', specs: { 'Potencia': '13 kVA' }, faq: [] },
+            { id: 'G14500E', name: 'Logus G14500E Silent', brand: 'LOGUS', family: 'nafta-silent', power: 13, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 2950, motor: 'V-Twin 720cc', start: 'Electrico', weight: 188, noise: '69 dB', tags: ['nafta', 'silent'], img: '', desc: 'Generador nafta silent 13 kVA electrico.', specs: { 'Potencia': '13 kVA' }, faq: [] },
+            { id: 'G15500', name: 'Logus G15500 Silent', brand: 'LOGUS', family: 'nafta-silent', power: 14, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 3200, motor: 'V-Twin 800cc', start: 'Electrico', weight: 200, noise: '70 dB', tags: ['nafta', 'silent'], img: '', desc: 'Generador nafta silent 14 kVA.', specs: { 'Potencia': '14 kVA' }, faq: [] },
+            { id: 'Gl1000', name: 'Logus Gl1000 Silent', brand: 'LOGUS', family: 'nafta-silent', power: 1, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 650, motor: 'OHV 50cc', start: 'Manual', weight: 15, noise: '58 dB', tags: ['nafta', 'silent', 'inverter'], img: '', desc: 'Generador inverter 1 kVA ultra portatil.', specs: { 'Potencia': '1 kVA' }, faq: [] },
+            { id: 'Gl2000', name: 'Logus Gl2000 Silent', brand: 'LOGUS', family: 'nafta-silent', power: 2, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 850, motor: 'OHV 80cc', start: 'Manual', weight: 22, noise: '59 dB', tags: ['nafta', 'silent', 'inverter'], img: '', desc: 'Generador inverter 2 kVA portatil.', specs: { 'Potencia': '2 kVA' }, faq: [] },
+            { id: 'Gl4500', name: 'Logus Gl4500 Silent', brand: 'LOGUS', family: 'nafta-silent', power: 4, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 1200, motor: 'OHV 212cc', start: 'Manual', weight: 45, noise: '62 dB', tags: ['nafta', 'silent', 'inverter'], img: '', desc: 'Generador inverter 4 kVA.', specs: { 'Potencia': '4 kVA' }, faq: [] },
+            { id: 'Gl4500E', name: 'Logus Gl4500E Silent', brand: 'LOGUS', family: 'nafta-silent', power: 4, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 1350, motor: 'OHV 212cc', start: 'Electrico', weight: 48, noise: '62 dB', tags: ['nafta', 'silent', 'inverter'], img: '', desc: 'Generador inverter 4 kVA electrico.', specs: { 'Potencia': '4 kVA' }, faq: [] },
+            { id: 'Gl5500', name: 'Logus Gl5500 Silent', brand: 'LOGUS', family: 'nafta-silent', power: 5, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 1500, motor: 'OHV 300cc', start: 'Electrico', weight: 55, noise: '64 dB', tags: ['nafta', 'silent', 'inverter'], img: '', desc: 'Generador inverter 5 kVA.', specs: { 'Potencia': '5 kVA' }, faq: [] },
+        ];
+
+        // ========== STATE ==========
         let currentFamily = null;
-        let exchangeRate = 1200;
-        let internalMode = false;
-        let viewMode = 'list'; // list o grid
+        let filteredProducts = [...products];
+        let tc = 1200;
 
-        // ========== FUNCIONES ==========
-        function toggleFamily(element) {
-            const group = element.parentElement;
-            group.classList.toggle('open');
-        }
+        // ========== FUNCTIONS ==========
+        function formatUSD(n) { return 'USD ' + n.toLocaleString('es-AR'); }
+        function formatARS(n) { return '$ ' + (n * tc).toLocaleString('es-AR'); }
 
-        function formatPrice(usd) {
-            return 'USD ' + usd.toLocaleString('es-AR');
-        }
+        function renderProducts(list, title = 'Todos los Generadores') {
+            const main = document.getElementById('mainContent');
 
-        function formatPriceARS(usd) {
-            return '$ ' + (usd * exchangeRate).toLocaleString('es-AR');
-        }
-
-        function renderHome() {
-            currentView = 'home';
-            currentFamily = null;
-
-            let html = `
-                <div class="section-header">
-                    <h1 class="section-title">Categorias de Generadores</h1>
-                </div>
-                <div class="categories-grid">
-            `;
-
-            Object.entries(familiesData).forEach(([key, family]) => {
-                const productCount = family.products.length;
-                html += `
-                    <div class="category-card ${family.type}" onclick="showFamily('${key}')">
-                        <div class="category-icon">
-                            <i class="fas ${family.icon}"></i>
-                        </div>
-                        <h3 class="category-title">${family.name}</h3>
-                        <p class="category-subtitle">${family.subtitle}</p>
-                        <div class="category-stats">
-                            <div class="category-stat">
-                                <i class="fas fa-box"></i>
-                                <span>${productCount} productos</span>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-
-            html += '</div>';
-            document.getElementById('mainContent').innerHTML = html;
-        }
-
-        function showFamily(familyKey) {
-            currentView = 'family';
-            currentFamily = familyKey;
-            const family = familiesData[familyKey];
-
-            // Activar en sidebar
-            document.querySelectorAll('.family-header').forEach(h => h.classList.remove('active'));
-            const sidebarFamily = document.querySelector(`[data-family="${familyKey}"]`);
-            if (sidebarFamily) {
-                sidebarFamily.classList.add('open');
-                sidebarFamily.querySelector('.family-header').classList.add('active');
-            }
-
-            let html = `
-                <div class="breadcrumb">
-                    <a onclick="renderHome()">Inicio</a>
-                    <i class="fas fa-chevron-right"></i>
-                    <span class="current">${family.name}</span>
-                </div>
-                <div class="section-header">
-                    <h1 class="section-title">${family.name}</h1>
-                    <div class="view-controls">
-                        <button class="view-btn ${viewMode === 'list' ? 'active' : ''}" onclick="setViewMode('list')">
-                            <i class="fas fa-list"></i>
-                        </button>
-                        <button class="view-btn ${viewMode === 'grid' ? 'active' : ''}" onclick="setViewMode('grid')">
-                            <i class="fas fa-th-large"></i>
-                        </button>
-                    </div>
-                </div>
-            `;
-
-            if (viewMode === 'list') {
-                html += '<div class="products-list">';
-                family.products.forEach(productId => {
-                    const product = productsData[productId];
-                    if (product) {
-                        html += renderProductRow(product);
-                    }
-                });
-                html += '</div>';
-            } else {
-                html += '<div class="products-grid">';
-                family.products.forEach(productId => {
-                    const product = productsData[productId];
-                    if (product) {
-                        html += renderProductCard(product);
-                    }
-                });
-                html += '</div>';
-            }
-
-            document.getElementById('mainContent').innerHTML = html;
-        }
-
-        function renderProductRow(product) {
-            const tagsHtml = product.tags.map(tag => `<span class="tag ${tag}">${tag}</span>`).join('');
-            const imgSrc = product.images && product.images[0] ? product.images[0] : '';
-
-            return `
-                <div class="product-row" onclick="showProduct('${product.id}')">
-                    <div class="product-image">
-                        ${imgSrc ? `<img src="${imgSrc}" alt="${product.name}">` : `<i class="fas fa-bolt"></i>`}
-                    </div>
-                    <div class="product-info">
-                        <div class="product-name">${product.name}</div>
-                        <div class="product-specs">
-                            <span class="spec-item"><i class="fas fa-bolt"></i> ${product.voltage}</span>
-                            <span class="spec-item"><i class="fas fa-cog"></i> ${product.motor}</span>
-                            <span class="spec-item"><i class="fas fa-play"></i> ${product.startType}</span>
-                        </div>
-                    </div>
-                    <div class="product-power">
-                        <div class="power-value">${product.power}</div>
-                        <div class="power-unit">${product.powerUnit}</div>
-                    </div>
-                    <div class="product-tags">
-                        ${tagsHtml}
-                    </div>
-                    <div class="product-price">
-                        <div class="price-usd">${formatPrice(product.price)}</div>
-                        <div class="price-ars">${formatPriceARS(product.price)}</div>
-                    </div>
-                    <div class="product-action">
-                        <button class="btn-detail"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                </div>
-            `;
-        }
-
-        function renderProductCard(product) {
-            const tagsHtml = product.tags.map(tag => `<span class="tag ${tag}">${tag}</span>`).join('');
-            const imgSrc = product.images && product.images[0] ? product.images[0] : '';
-
-            return `
-                <div class="product-card" onclick="showProduct('${product.id}')">
-                    <div class="card-image">
-                        ${imgSrc ? `<img src="${imgSrc}" alt="${product.name}">` : `<i class="fas fa-bolt" style="font-size:3rem;color:var(--text-secondary)"></i>`}
-                    </div>
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">${product.name}</div>
-                            <div class="card-brand">${product.brand}</div>
-                        </div>
-                        <div class="card-power">
-                            <div class="power-value">${product.power}</div>
-                            <div class="power-unit">${product.powerUnit}</div>
-                        </div>
-                    </div>
-                    <div class="card-specs">
-                        <span>${product.voltage}</span>
-                        <span>|</span>
-                        <span>${product.fuel.toUpperCase()}</span>
-                    </div>
-                    <div class="product-tags" style="margin-bottom:1rem;">
-                        ${tagsHtml}
-                    </div>
-                    <div class="card-footer">
-                        <div>
-                            <div class="price-usd">${formatPrice(product.price)}</div>
-                            <div class="price-ars">${formatPriceARS(product.price)}</div>
-                        </div>
-                        <button class="btn btn-primary" style="padding:0.5rem 1rem;">Ver</button>
-                    </div>
-                </div>
-            `;
-        }
-
-        function setViewMode(mode) {
-            viewMode = mode;
-            if (currentFamily) {
-                showFamily(currentFamily);
-            }
-        }
-
-        function showProduct(productId) {
-            const product = productsData[productId];
-            if (!product) {
-                alert('Producto no encontrado: ' + productId);
+            if (list.length === 0) {
+                main.innerHTML = `<div class="empty-state"><i class="fas fa-search"></i><h3>Sin resultados</h3><p>No se encontraron productos</p></div>`;
                 return;
             }
 
-            document.getElementById('modalTitle').textContent = product.name;
-
-            const imgSrc = product.images && product.images[0] ? product.images[0] : '';
-
-            // Specs table
-            let specsHtml = '';
-            if (product.specs) {
-                Object.entries(product.specs).forEach(([key, value]) => {
-                    specsHtml += `<tr><td>${key}</td><td>${value}</td></tr>`;
-                });
-            }
-
-            // FAQ
-            let faqHtml = '';
-            if (product.faq && product.faq.length > 0) {
-                product.faq.forEach(category => {
-                    faqHtml += `<div class="faq-section">
-                        <div class="faq-category">${category.category}</div>`;
-                    category.questions.forEach((q, i) => {
-                        faqHtml += `
-                            <div class="faq-item" onclick="this.classList.toggle('open')">
-                                <div class="faq-question">
-                                    <span>${q.q}</span>
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
-                                <div class="faq-answer">${q.a}</div>
-                            </div>
-                        `;
-                    });
-                    faqHtml += '</div>';
-                });
-            }
-
-            // Advantages
-            let advantagesHtml = '';
-            if (product.advantages && product.advantages.length > 0) {
-                product.advantages.forEach(adv => {
-                    advantagesHtml += `
-                        <div class="spec-card">
-                            <div class="spec-label">${adv.title}</div>
-                            <div style="font-size:0.85rem;color:var(--text-secondary);margin-top:0.5rem;">${adv.desc}</div>
-                        </div>
-                    `;
-                });
-            }
-
-            // Badges
-            const featuresHtml = product.features ? product.features.map(f =>
-                `<span class="badge ${f.toLowerCase().includes('tta') ? 'success' : 'info'}">${f}</span>`
-            ).join('') : '';
-
-            const modalHtml = `
-                <div class="detail-layout">
-                    <div class="detail-gallery">
-                        <div class="gallery-main">
-                            ${imgSrc ? `<img src="${imgSrc}" alt="${product.name}">` : `<i class="fas fa-bolt" style="font-size:5rem;color:var(--text-secondary)"></i>`}
-                        </div>
-                    </div>
-                    <div class="detail-info">
-                        <div class="detail-badges">
-                            <span class="badge primary">${product.brand}</span>
-                            ${featuresHtml}
-                        </div>
-
-                        <p class="detail-description">${product.description}</p>
-
-                        <div class="price-box">
-                            <div class="price-box-header">
-                                <div>
-                                    <div class="price-main">${formatPrice(product.price)}</div>
-                                    <div class="price-iva">${formatPriceARS(product.price)} (TC $${exchangeRate})</div>
-                                </div>
-                            </div>
-                            <div class="price-actions">
-                                <button class="btn btn-primary">
-                                    <i class="fas fa-plus"></i> Agregar a Presupuesto
-                                </button>
-                                <button class="btn btn-secondary">
-                                    <i class="fas fa-file-pdf"></i> Ficha PDF
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="specs-grid">
-                            <div class="spec-card">
-                                <div class="spec-label">Potencia</div>
-                                <div class="spec-value">${product.power} ${product.powerUnit}</div>
-                            </div>
-                            <div class="spec-card">
-                                <div class="spec-label">Tension</div>
-                                <div class="spec-value">${product.voltage}</div>
-                            </div>
-                            <div class="spec-card">
-                                <div class="spec-label">Motor</div>
-                                <div class="spec-value">${product.motor}</div>
-                            </div>
-                            <div class="spec-card">
-                                <div class="spec-label">Peso</div>
-                                <div class="spec-value">${product.weight} kg</div>
-                            </div>
-                        </div>
-
-                        <div class="detail-tabs">
-                            <button class="tab-btn active" onclick="switchTab(this, 'specs')">Especificaciones</button>
-                            <button class="tab-btn" onclick="switchTab(this, 'faq')">Preguntas Frecuentes</button>
-                            <button class="tab-btn" onclick="switchTab(this, 'advantages')">Ventajas</button>
-                        </div>
-
-                        <div class="tab-content active" id="tab-specs">
-                            <table class="specs-table">
-                                ${specsHtml}
-                            </table>
-                        </div>
-
-                        <div class="tab-content" id="tab-faq">
-                            ${faqHtml || '<p style="color:var(--text-secondary)">No hay preguntas frecuentes disponibles para este producto.</p>'}
-                        </div>
-
-                        <div class="tab-content" id="tab-advantages">
-                            <div class="specs-grid">
-                                ${advantagesHtml || '<p style="color:var(--text-secondary)">No hay ventajas destacadas disponibles.</p>'}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-
-            document.getElementById('modalBody').innerHTML = modalHtml;
-            document.getElementById('productModal').classList.add('active');
-        }
-
-        function switchTab(btn, tabId) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-            btn.classList.add('active');
-            document.getElementById('tab-' + tabId).classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('productModal').classList.remove('active');
-        }
-
-        // Cerrar modal con ESC
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
-
-        // Cerrar modal clickeando fuera
-        document.getElementById('productModal').addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal-overlay')) closeModal();
-        });
-
-        // Busqueda
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            const query = e.target.value.toLowerCase().trim();
-
-            if (query.length > 0) {
-                document.body.classList.add('search-mode');
-                performSearch(query);
-            } else {
-                document.body.classList.remove('search-mode');
-                if (currentFamily) {
-                    showFamily(currentFamily);
-                } else {
-                    renderHome();
-                }
-            }
-        });
-
-        function performSearch(query) {
-            const results = [];
-
-            Object.values(productsData).forEach(product => {
-                const searchText = `${product.name} ${product.brand} ${product.subtitle} ${product.fuel} ${product.power}`.toLowerCase();
-                if (searchText.includes(query)) {
-                    results.push(product);
-                }
-            });
-
             let html = `
-                <div class="section-header">
-                    <h1 class="section-title">Resultados para "${query}"</h1>
-                    <span style="color:var(--text-secondary)">${results.length} productos encontrados</span>
+                <div class="content-header">
+                    <h1 class="content-title">${title} <span class="count">(${list.length})</span></h1>
                 </div>
                 <div class="products-list">
             `;
 
-            results.forEach(product => {
-                html += renderProductRow(product);
+            list.forEach(p => {
+                const tags = p.tags.map(t => `<span class="tag ${t}">${t}</span>`).join('');
+                html += `
+                    <div class="product-row" onclick="openProduct('${p.id}')">
+                        <div class="product-thumb">
+                            ${p.img ? `<img src="${p.img}" alt="${p.name}">` : `<i class="fas fa-bolt"></i>`}
+                        </div>
+                        <div class="product-details">
+                            <div class="product-name">
+                                ${p.name}
+                                <span class="brand">${p.brand}</span>
+                            </div>
+                            <div class="product-specs">
+                                <span><i class="fas fa-bolt"></i> ${p.voltage}</span>
+                                <span><i class="fas fa-cog"></i> ${p.motor}</span>
+                                <span><i class="fas fa-play"></i> ${p.start}</span>
+                                <span><i class="fas fa-weight-hanging"></i> ${p.weight} kg</span>
+                            </div>
+                        </div>
+                        <div class="product-power">
+                            <div class="power-value">${p.power}</div>
+                            <div class="power-unit">${p.unit}</div>
+                        </div>
+                        <div class="product-tags">${tags}</div>
+                        <div class="product-price">
+                            <div class="price-usd">${formatUSD(p.price)}</div>
+                            <div class="price-ars">${formatARS(p.price)}</div>
+                        </div>
+                        <div class="product-action">
+                            <button class="btn-view"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                `;
             });
 
             html += '</div>';
-
-            if (results.length === 0) {
-                html = `
-                    <div style="text-align:center;padding:4rem;">
-                        <i class="fas fa-search" style="font-size:4rem;color:var(--text-secondary);margin-bottom:1rem;"></i>
-                        <h2>No se encontraron resultados</h2>
-                        <p style="color:var(--text-secondary)">Intenta con otros terminos de busqueda</p>
-                    </div>
-                `;
-            }
-
-            document.getElementById('mainContent').innerHTML = html;
+            main.innerHTML = html;
         }
 
-        // Exchange rate
-        document.getElementById('exchangeRate').addEventListener('change', function(e) {
-            exchangeRate = parseFloat(e.target.value) || 1200;
-            if (currentFamily) {
-                showFamily(currentFamily);
+        function showAllProducts() {
+            currentFamily = null;
+            filteredProducts = [...products];
+            document.querySelectorAll('.family-item').forEach(el => el.classList.remove('active'));
+            document.querySelector('.family-item.all-products').classList.add('active');
+            renderProducts(filteredProducts);
+        }
+
+        function showFamily(family) {
+            currentFamily = family;
+            filteredProducts = products.filter(p => p.family === family);
+            document.querySelectorAll('.family-item').forEach(el => el.classList.remove('active'));
+            document.querySelector(`[data-family="${family}"]`).classList.add('active');
+
+            const familyNames = {
+                'gas-residencial': 'Gas Residenciales',
+                'gas-comercial': 'Gas Comerciales',
+                'gas-industrial': 'Gas Industriales',
+                'diesel-silent': 'Diesel Silent 1500 RPM',
+                'diesel-abierto': 'Diesel Abierto 1500 RPM',
+                'diesel-3000': 'Diesel 3000 RPM',
+                'diesel-ultra': 'Diesel Ultra Silent',
+                'cummins-cs': 'Cummins Serie CS',
+                'cummins-yns': 'Cummins Serie YNS',
+                'nafta-3000': 'Nafteros 3000 RPM',
+                'nafta-silent': 'Nafteros Silent/Inverter'
+            };
+
+            renderProducts(filteredProducts, familyNames[family] || family);
+        }
+
+        function search(query) {
+            query = query.toLowerCase().trim();
+            if (!query) {
+                document.body.classList.remove('focus-mode');
+                if (currentFamily) {
+                    filteredProducts = products.filter(p => p.family === currentFamily);
+                } else {
+                    filteredProducts = [...products];
+                }
+            } else {
+                document.body.classList.add('focus-mode');
+                const base = currentFamily ? products.filter(p => p.family === currentFamily) : products;
+                filteredProducts = base.filter(p => {
+                    const text = `${p.name} ${p.brand} ${p.power} ${p.fuel} ${p.motor} ${p.tags.join(' ')}`.toLowerCase();
+                    return text.includes(query);
+                });
             }
-        });
+            renderProducts(filteredProducts, query ? `Resultados: "${query}"` : undefined);
+        }
 
-        // Internal mode
-        document.getElementById('toggleInternal').addEventListener('click', function() {
-            internalMode = !internalMode;
-            this.classList.toggle('active');
-        });
+        let currentGalleryIndex = 0;
+        let currentProduct = null;
 
-        // Inicializar
-        renderHome();
+        function openProduct(id) {
+            const p = products.find(x => x.id === id);
+            if (!p) return;
+
+            currentProduct = p;
+            document.getElementById('modalTitle').textContent = p.name;
+            currentGalleryIndex = 0;
+
+            // === GALLERY ===
+            let galleryHtml = '';
+            if (p.gallery && p.gallery.length > 0) {
+                galleryHtml = `
+                    <div class="gallery-container">
+                        <div class="gallery-main">
+                            <img id="galleryMainImg" src="${p.gallery[0]}" alt="${p.name}">
+                            ${p.gallery.length > 1 ? `
+                                <button class="gallery-nav prev" onclick="changeGalleryImage(-1)"><i class="fas fa-chevron-left"></i></button>
+                                <button class="gallery-nav next" onclick="changeGalleryImage(1)"><i class="fas fa-chevron-right"></i></button>
+                            ` : ''}
+                        </div>
+                        ${p.gallery.length > 1 ? `
+                            <div class="gallery-thumbnails">
+                                ${p.gallery.map((img, i) => `
+                                    <img src="${img}" class="${i === 0 ? 'active' : ''}" onclick="setGalleryImage(${i})" alt="Thumbnail ${i+1}">
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            } else {
+                galleryHtml = `<div class="detail-image">${p.img ? `<img src="${p.img}" alt="${p.name}">` : `<i class="fas fa-bolt" style="font-size:5rem;color:var(--text-muted)"></i>`}</div>`;
+            }
+
+            // === SPECS ===
+            let specsHtml = '';
+            if (p.specs) {
+                Object.entries(p.specs).forEach(([k, v]) => {
+                    specsHtml += `<tr><td>${k}</td><td>${v}</td></tr>`;
+                });
+            }
+
+            // === FAQ (categorizado) ===
+            let faqHtml = '';
+            if (p.faq && p.faq.length > 0) {
+                const categories = {};
+                p.faq.forEach(f => {
+                    const cat = f.cat || 'General';
+                    if (!categories[cat]) categories[cat] = [];
+                    categories[cat].push(f);
+                });
+
+                Object.entries(categories).forEach(([cat, items]) => {
+                    faqHtml += `<div class="faq-category"><h4>${cat}</h4>`;
+                    items.forEach(f => {
+                        faqHtml += `
+                            <div class="faq-item" onclick="this.classList.toggle('open')">
+                                <div class="faq-q"><span>${f.q}</span><i class="fas fa-chevron-down"></i></div>
+                                <div class="faq-a">${f.a}</div>
+                            </div>
+                        `;
+                    });
+                    faqHtml += `</div>`;
+                });
+            } else {
+                faqHtml = '<p style="color:var(--text-muted)">No hay preguntas frecuentes para este producto.</p>';
+            }
+
+            // === ADVANTAGES ===
+            let advantagesHtml = '';
+            if (p.advantages && p.advantages.length > 0) {
+                advantagesHtml = `<div class="advantages-grid">`;
+                p.advantages.forEach(adv => {
+                    advantagesHtml += `
+                        <div class="advantage-card">
+                            <h4>${adv.title}</h4>
+                            <p>${adv.desc}</p>
+                        </div>
+                    `;
+                });
+                advantagesHtml += `</div>`;
+            } else {
+                advantagesHtml = '<p style="color:var(--text-muted)">No hay ventajas destacadas para este producto.</p>';
+            }
+
+            // === COMPARISON ===
+            let comparisonHtml = '';
+            if (p.comparison) {
+                comparisonHtml = `<div class="comparison-container">`;
+                Object.entries(p.comparison).forEach(([key, comp]) => {
+                    const title = key === 'vs_generico' ? 'vs. Generadores Genéricos' : key === 'vs_kohler' ? 'vs. Kohler' : key;
+                    comparisonHtml += `
+                        <div class="comparison-card">
+                            <h4>${title} <span class="price-diff ${comp.price_diff.includes('+') ? 'higher' : 'lower'}">${comp.price_diff}</span></h4>
+                            <div class="comparison-summary">${comp.summary}</div>
+                            <ul class="comparison-list">
+                                ${comp.advantages.map(adv => `<li><i class="fas fa-check"></i> ${adv}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                });
+                comparisonHtml += `</div>`;
+            } else {
+                comparisonHtml = '<p style="color:var(--text-muted)">No hay comparativas disponibles para este producto.</p>';
+            }
+
+            const tags = p.tags.map(t => `<span class="badge ${t === 'tta' ? 'success' : 'info'}">${t.toUpperCase()}</span>`).join('');
+
+            // === TABS ===
+            const hasTabs = (p.advantages && p.advantages.length > 0) || p.comparison;
+            const tabsHtml = `
+                <div class="detail-tabs">
+                    <button class="tab-btn active" onclick="switchTab(this,'specs')">Especificaciones</button>
+                    <button class="tab-btn" onclick="switchTab(this,'faq')">FAQ</button>
+                    ${p.advantages && p.advantages.length > 0 ? `<button class="tab-btn" onclick="switchTab(this,'advantages')">Ventajas</button>` : ''}
+                    ${p.comparison ? `<button class="tab-btn" onclick="switchTab(this,'comparison')">Comparativas</button>` : ''}
+                </div>
+            `;
+
+            const html = `
+                <div class="detail-grid">
+                    ${galleryHtml}
+                    <div class="detail-info">
+                        <div class="detail-badges">
+                            <span class="badge primary">${p.brand}</span>
+                            ${tags}
+                        </div>
+                        <p class="detail-desc">${p.desc}</p>
+
+                        <div class="price-box">
+                            <div class="main-price">${formatUSD(p.price)}</div>
+                            <div class="sub-price">${formatARS(p.price)} (TC $${tc})</div>
+                            <div class="actions">
+                                <button class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</button>
+                                <button class="btn btn-outline"><i class="fas fa-file-pdf"></i> PDF</button>
+                            </div>
+                        </div>
+
+                        <div class="specs-quick">
+                            <div class="spec-item">
+                                <div class="label">Potencia</div>
+                                <div class="value">${p.power} ${p.unit}</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="label">Tension</div>
+                                <div class="value">${p.voltage}</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="label">Motor</div>
+                                <div class="value">${p.motor}</div>
+                            </div>
+                            <div class="spec-item">
+                                <div class="label">Peso</div>
+                                <div class="value">${p.weight} kg</div>
+                            </div>
+                        </div>
+
+                        ${tabsHtml}
+
+                        <div class="tab-content active" id="tab-specs">
+                            <table class="specs-table">${specsHtml}</table>
+                        </div>
+                        <div class="tab-content" id="tab-faq">${faqHtml}</div>
+                        ${p.advantages && p.advantages.length > 0 ? `<div class="tab-content" id="tab-advantages">${advantagesHtml}</div>` : ''}
+                        ${p.comparison ? `<div class="tab-content" id="tab-comparison">${comparisonHtml}</div>` : ''}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('modalBody').innerHTML = html;
+            document.getElementById('modal').classList.add('active');
+        }
+
+        function changeGalleryImage(direction) {
+            if (!currentProduct || !currentProduct.gallery || currentProduct.gallery.length === 0) return;
+
+            currentGalleryIndex = (currentGalleryIndex + direction + currentProduct.gallery.length) % currentProduct.gallery.length;
+            setGalleryImage(currentGalleryIndex);
+        }
+
+        function setGalleryImage(index) {
+            if (!currentProduct || !currentProduct.gallery || currentProduct.gallery.length === 0) return;
+
+            currentGalleryIndex = index;
+            const mainImg = document.getElementById('galleryMainImg');
+            if (mainImg) {
+                mainImg.src = currentProduct.gallery[index];
+                document.querySelectorAll('.gallery-thumbnails img').forEach((thumb, i) => {
+                    thumb.classList.toggle('active', i === index);
+                });
+            }
+        }
+
+        function switchTab(btn, id) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('tab-' + id).classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        // ========== EVENTS ==========
+        document.getElementById('searchInput').addEventListener('input', e => search(e.target.value));
+        document.getElementById('tcInput').addEventListener('change', e => {
+            tc = parseFloat(e.target.value) || 1200;
+            renderProducts(filteredProducts);
+        });
+        document.getElementById('modal').addEventListener('click', e => {
+            if (e.target.classList.contains('modal-overlay')) closeModal();
+        });
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        // ========== INIT ==========
+        document.getElementById('totalCount').textContent = products.length;
+        showAllProducts();
     </script>
 </body>
 </html>

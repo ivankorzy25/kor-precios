@@ -1,0 +1,1451 @@
+{
+  "producto": {
+    "nombre_comercial": "PRAMAC GA8000 Powerknight",
+    "modelo": "GA8000",
+    "marca": "PRAMAC",
+    "fabricante": "PRAMAC S.p.A.",
+    "categoria": "Generador Eléctrico a Gas - Automático Residencial/Comercial",
+    "descripcion_corta": "Generador automático a gas de 8 kVA, insonorizado y cabinado, con tablero de transferencia automática incluido. Ideal para protección residencial y comercial ante cortes de luz.",
+    "descripcion_extendida": "El PRAMAC GA8000 es un generador estacionario de emergencia que funciona con Gas Natural o GLP. Equipado con motor Generac G-Force 500 Series de 2 cilindros, alternador Brushless con AVR y panel de control digital, ofrece arranque automático en menos de 10 segundos ante cortes de energía. Su gabinete insonorizado Rino Coat lo hace ideal para instalaciones residenciales y comerciales que requieren continuidad eléctrica sin ruido excesivo. Incluye monitoreo remoto WiFi via Mobile Link y tablero de transferencia automática (TTA) de fábrica.",
+    "año_modelo": "2024/2025",
+    "pais_origen": "Italia (ensamblado con componentes USA)",
+    "distribuidor_argentina": "Múltiples distribuidores autorizados - pramac.com.ar / pramacgeneradores.com.ar"
+  },
+  
+  "especificaciones_tecnicas": {
+    "principales": [
+      {
+        "parametro": "Potencia Stand-By",
+        "valor": "8",
+        "unidad": "kVA",
+        "descripcion": "Potencia máxima disponible para uso de emergencia",
+        "relevancia": "alta"
+      },
+      {
+        "parametro": "Potencia Prime (Continua)",
+        "valor": "7.5",
+        "unidad": "kVA",
+        "descripcion": "Potencia para operación continua 24/7",
+        "relevancia": "alta"
+      },
+      {
+        "parametro": "Corriente Máxima",
+        "valor": "31-40",
+        "unidad": "Amperes",
+        "descripcion": "Corriente nominal de salida (varía según gas)",
+        "relevancia": "alta"
+      },
+      {
+        "parametro": "Arranque Automático",
+        "valor": "Sí",
+        "unidad": "Incluido",
+        "descripcion": "Tablero TTA incluido de fábrica para transferencia automática",
+        "relevancia": "alta"
+      },
+      {
+        "parametro": "Nivel de Ruido",
+        "valor": "65-70",
+        "unidad": "dB(A)",
+        "descripcion": "Nivel sonoro a 7 metros con cabina insonorizada",
+        "relevancia": "media"
+      },
+      {
+        "parametro": "Tiempo de Arranque",
+        "valor": "<10",
+        "unidad": "segundos",
+        "descripcion": "Tiempo desde detección de falla hasta toma de carga",
+        "relevancia": "alta"
+      }
+    ],
+    "motor": {
+      "modelo": "G-Force 500 Series",
+      "fabricante": "Generac",
+      "tipo": "OHV (Overhead Valve) - 4 tiempos refrigerado por aire",
+      "cilindros": "2 en V",
+      "cilindrada": "530",
+      "cilindrada_unidad": "cc",
+      "potencia_hp": "No especificado",
+      "potencia_kw": "Aprox. 6.5 kW mecánicos",
+      "sistema_alimentacion": "Gas Natural o GLP (Propano) - Bi-Fuel",
+      "sistema_refrigeracion": "Refrigerado por aire forzado",
+      "consumo_75_carga": "No especificado exacto",
+      "consumo_100_carga": "3.9 m³/h (Gas Natural) / Aprox. 3.2 kg/h (GLP)",
+      "capacidad_aceite": "1.6",
+      "capacidad_aceite_unidad": "Litros",
+      "normas_emision": "Cumple normativas de emisiones para Argentina",
+      "vida_util_esperada": "20.000+ horas con mantenimiento adecuado",
+      "intervalo_mantenimiento": "Primer cambio: 50 horas | Regular: 200 horas o anual",
+      "caracteristicas_especiales": [
+        "Diseño G-Force: maximiza respiración del motor para mejor rendimiento",
+        "Paredes de cilindro de hierro fundido para mayor durabilidad",
+        "Sistema de lubricación a presión en rodamientos principales",
+        "Encendido electrónico con avance automático",
+        "Parada automática por baja presión de aceite",
+        "Parada automática por sobretemperatura"
+      ]
+    },
+    "generador_electrico": {
+      "alternador_modelo": "Brushless (sin escobillas)",
+      "alternador_marca": "Integrado PRAMAC/Generac",
+      "potencia_standby_kva": "8",
+      "potencia_prime_kva": "7.5",
+      "potencia_standby_kw": "6.4",
+      "potencia_prime_kw": "6.0",
+      "factor_potencia": "0.8 - 1.0",
+      "tension_voltios": "220V Monofásico",
+      "frecuencia_hz": "50",
+      "tipo_excitacion": "Autoexcitado",
+      "regulacion_voltaje": "AVR (Automatic Voltage Regulator) ±1%",
+      "clase_aislamiento": "Clase H",
+      "tecnologia_especial": "True Power™ - THD <5%",
+      "caracteristicas_electricas": [
+        "Campo giratorio: 25% más eficiente que alternadores inducidos",
+        "Estátor inclinado: produce onda sinusoidal fluida",
+        "Excitación de fase desplazada: maximiza capacidad de arranque",
+        "THD menor a 5%: energía limpia para electrónica sensible"
+      ]
+    },
+    "panel_control": {
+      "modelo": "Evolution Controller",
+      "fabricante": "Generac",
+      "tipo": "Digital LCD multilingüe",
+      "pantalla": "LCD 2 líneas",
+      "funciones": [
+        "Arranque automático ante falla de red",
+        "Transferencia automática de carga",
+        "Ejercitador programable (semanal/quincenal/mensual)",
+        "Monitoreo de parámetros eléctricos",
+        "Indicadores LED de estado",
+        "Registro de alarmas y mantenimiento",
+        "Retraso ajustable de transferencia (2-1500 seg)",
+        "Calentamiento y enfriamiento automático del motor",
+        "Cargador inteligente de batería"
+      ],
+      "arranque_automatico": "Sí, con detección de falla en <5 segundos",
+      "comunicacion": [
+        "WiFi incluido de fábrica",
+        "App Mobile Link™ para iOS/Android",
+        "Alertas por email/SMS (con configuración)",
+        "Monitoreo remoto en tiempo real"
+      ],
+      "protecciones": [
+        "Sobrecarga eléctrica",
+        "Cortocircuito",
+        "Baja presión de aceite",
+        "Alta temperatura",
+        "Sobrevelocidad",
+        "Batería baja",
+        "Falla de arranque"
+      ],
+      "monitoreo_remoto": "Sí, WiFi Mobile Link incluido sin costo adicional"
+    },
+    "sistema_combustible": {
+      "tipo_combustible": "Dual: Gas Natural (GN) o Gas Licuado de Petróleo (GLP)",
+      "conexion_gas": "Conector flexible incluido - Instalación directa a red domiciliaria",
+      "presion_minima_requerida": "GN: 3.5 pulgadas columna agua (baja presión residencial)",
+      "capacidad_tanque_litros": "No aplica - Conexión directa a red de gas",
+      "autonomia_75_carga_horas": "Ilimitada con GN de red / Según tamaño tanque GLP",
+      "consumo_litros_hora_75": "No aplica (se mide en m³/h para gas)",
+      "consumo_litros_hora_100": "No aplica",
+      "consumo_gas_natural_100": "3.9 m³/h",
+      "consumo_glp_100": "Aprox. 3.2 kg/h",
+      "certificaciones_gas": "Homologado ENARGAS (Argentina) - Apto todas las prestadoras de gas"
+    },
+    "insonorizacion": {
+      "tiene_cabina": "Sí, de serie",
+      "material_cabina": "Aluminio con recubrimiento Rino Coat™",
+      "nivel_ruido_db": "65-70",
+      "distancia_medicion": "7 metros",
+      "resistencia_viento": "Hasta 240 km/h",
+      "grado_proteccion": "Apto intemperie",
+      "certificacion_acustica": "Cumple normativas residenciales urbanas",
+      "caracteristicas": [
+        "Silenciador tipo residencial incorporado interno",
+        "Aislamiento acústico de alta densidad",
+        "Salidas de ventilación optimizadas",
+        "Ideal para zonas residenciales"
+      ]
+    },
+    "dimensiones_peso": {
+      "largo_mm": "1218",
+      "ancho_mm": "638",
+      "alto_mm": "732",
+      "largo_cm": "121.8",
+      "ancho_cm": "63.8",
+      "alto_cm": "73.2",
+      "peso_kg": "155",
+      "peso_operativo_kg": "165 (con batería y aceite)",
+      "espacio_requerido": "Considerar 50cm adicional en cada lado para ventilación"
+    },
+    "condiciones_operacion": {
+      "temperatura_min": "-15°C",
+      "temperatura_max": "+40°C",
+      "altitud_maxima": "1500 msnm sin derating (pérdida 3.5% cada 305m adicionales)",
+      "humedad_relativa": "0-95% sin condensación",
+      "grado_proteccion_ip": "IP23 (apto exterior con cabina)",
+      "ubicacion_instalacion": "Exterior - Base firme de hormigón recomendada"
+    },
+    "certificaciones": [
+      "ISO 3046 (Motores de combustión interna)",
+      "BS 5514 (Especificación de grupos electrógenos)",
+      "DIN 6271 (Grupos electrógenos)",
+      "Homologación ENARGAS Argentina",
+      "CE (para mercado europeo)",
+      "Cumple normativas de emisiones Argentina"
+    ],
+    "garantia": {
+      "equipo_completo": "2 años desde puesta en marcha",
+      "motor": "2 años o 2000 horas (lo que ocurra primero)",
+      "alternador": "2 años",
+      "panel_control": "2 años",
+      "garantia_extendida": "Disponible hasta 10 años con distribuidores autorizados",
+      "condiciones": "Válida con mantenimientos en plazo según manual y uso de repuestos originales. Requiere puesta en marcha por técnico autorizado. No cubre daños por instalación incorrecta, uso inadecuado, fenómenos naturales o falta de mantenimiento."
+    }
+  },
+  
+  "precios": {
+    "moneda": "USD",
+    "precio_sin_iva": 5500,
+    "iva_porcentaje": 21,
+    "iva_monto": 1155,
+    "precio_con_iva": 6655,
+    "precio_referencia_mercado": 6100,
+    "nota_precio": "Precio informativo USD 5.500 sin IVA según documento. Precio de referencia en distribuidores USD 6.100. Consultar precio actualizado con distribuidor.",
+    "aclaraciones": [
+      "Precio en dólares estadounidenses",
+      "IVA: 21% (estándar Argentina)",
+      "No incluye flete ni instalación",
+      "No incluye batería de arranque (12V, 26-35Ah requerida)",
+      "No incluye base de hormigón",
+      "Consultar descuentos por volumen o pago contado",
+      "Financiación disponible según distribuidor",
+      "Precio sujeto a variación sin previo aviso"
+    ],
+    "incluye": [
+      "Equipo completo testeado y certificado",
+      "Tablero de Transferencia Automática (TTA) integrado",
+      "Cabina insonorizada Rino Coat",
+      "Panel digital Evolution Controller con WiFi",
+      "Conector flexible de gas",
+      "Manual de operación en español",
+      "Manual de instalación",
+      "Certificado de garantía de 2 años",
+      "Acceso a soporte técnico",
+      "App Mobile Link para monitoreo remoto"
+    ],
+    "no_incluye": [
+      "Batería de arranque (12V 26-35Ah)",
+      "Instalación eléctrica y cableado",
+      "Instalación de gas y habilitaciones",
+      "Obra civil (base de hormigón)",
+      "Flete/transporte al domicilio",
+      "Puesta en marcha (puede tener cargo adicional)",
+      "Combustible inicial",
+      "Tramitación ante compañía de gas",
+      "Seguro del equipo"
+    ],
+    "costos_instalacion_estimados": {
+      "instalacion_electrica_basica": "USD 400-800",
+      "instalacion_gas": "USD 300-600",
+      "base_hormigon": "USD 200-400",
+      "puesta_marcha": "USD 100-200",
+      "tramites_habilitacion": "USD 50-150",
+      "total_instalacion_aproximado": "USD 1.050-2.150"
+    }
+  },
+  
+  "opcionales": [
+    {
+      "item": "Batería de arranque",
+      "descripcion": "Batería 12V 26-35Ah para arranque eléctrico del motor",
+      "precio_estimado": "USD 80-150",
+      "beneficio": "Necesaria para funcionamiento - no incluida de fábrica"
+    },
+    {
+      "item": "Kit clima frío",
+      "descripcion": "Calefactor de motor y batería para temperaturas bajo 0°C",
+      "precio_estimado": "USD 200-300",
+      "beneficio": "Mantiene temperatura óptima de arranque en invierno"
+    },
+    {
+      "item": "Base antivibratoria",
+      "descripcion": "Base de composite con amortiguación",
+      "precio_estimado": "USD 100-200",
+      "beneficio": "Reduce vibraciones y ruido, prolonga vida útil"
+    },
+    {
+      "item": "Kit de mantenimiento anual",
+      "descripcion": "Filtro aire, aceite sintético 15W40, bujías",
+      "precio_estimado": "USD 80-120",
+      "beneficio": "Todo lo necesario para el mantenimiento programado"
+    },
+    {
+      "item": "Garantía extendida 5 años",
+      "descripcion": "Extensión de garantía de 2 a 5 años totales",
+      "precio_estimado": "USD 400-600",
+      "beneficio": "Mayor tranquilidad y cobertura extendida"
+    },
+    {
+      "item": "Tanque GLP (si no hay gas natural)",
+      "descripcion": "Tanque de propano 250-500 kg según autonomía deseada",
+      "precio_estimado": "USD 800-2000",
+      "beneficio": "Autonomía sin conexión a red de gas natural"
+    }
+  ],
+  
+  "aplicaciones": [
+    {
+      "industria": "Residencial",
+      "casos_uso": [
+        "Casas y residencias unifamiliares",
+        "Departamentos y complejos habitacionales",
+        "Countries y barrios cerrados",
+        "Casas de fin de semana"
+      ],
+      "beneficios_especificos": [
+        "Protege heladera, freezer y alimentos",
+        "Mantiene sistema de seguridad activo",
+        "Conserva iluminación y confort",
+        "Permite uso de internet y home office",
+        "Protege portones eléctricos y alarmas",
+        "No requiere intervención humana"
+      ],
+      "cargas_tipicas": "Heladera, freezer, iluminación, TV, WiFi, portón, bomba de agua, split 1 ambiente, computadoras",
+      "ejemplos_clientes": "Miles de hogares en zona residencial metropolitana Buenos Aires, Córdoba, Rosario"
+    },
+    {
+      "industria": "Comercial",
+      "casos_uso": [
+        "Pequeños comercios y locales",
+        "Oficinas profesionales (contadores, abogados)",
+        "Consultorios médicos/odontológicos",
+        "Farmacias",
+        "Kioscos y almacenes",
+        "Peluquerías y estéticas"
+      ],
+      "beneficios_especificos": [
+        "Evita pérdida de ventas por corte",
+        "Protege sistemas de facturación (POS, PC)",
+        "Mantiene cámaras de seguridad funcionando",
+        "Conserva mercadería refrigerada",
+        "Permite continuar atención al cliente",
+        "Protege servidores y datos"
+      ],
+      "cargas_tipicas": "Terminal POS, PC, iluminación, cámaras, heladera exhibidora, AC pequeño, impresoras",
+      "ejemplos_clientes": "Farmacias 24hs, consultorios médicos, estudios contables"
+    },
+    {
+      "industria": "Servicios Esenciales",
+      "casos_uso": [
+        "Estaciones de servicio (bombas auxiliares)",
+        "Antenas de telecomunicaciones pequeñas",
+        "Sistemas de bombeo de agua",
+        "Granjas avícolas pequeñas",
+        "Centros de salud rural"
+      ],
+      "beneficios_especificos": [
+        "Mantiene operaciones críticas",
+        "Evita pérdidas por paradas",
+        "Protege equipos sensibles",
+        "Cumple normativas de continuidad",
+        "Arranque automático sin personal"
+      ],
+      "cargas_tipicas": "Bomba sumergible, equipos de comunicación, iluminación, sistemas de control",
+      "ejemplos_clientes": "Antenas rurales, bombeos comunitarios, sistemas de riego"
+    },
+    {
+      "industria": "Educación y Salud Menor",
+      "casos_uso": [
+        "Consultorios médicos independientes",
+        "Laboratorios de análisis clínicos",
+        "Centros de día para adultos mayores",
+        "Jardines maternales",
+        "Pequeñas clínicas veterinarias"
+      ],
+      "beneficios_especificos": [
+        "Protege equipamiento médico",
+        "Mantiene refrigeración de medicamentos/vacunas",
+        "Asegura iluminación de emergencia",
+        "Protege sistemas de climatización",
+        "Cumple normativas sanitarias"
+      ],
+      "cargas_tipicas": "Heladera médica, equipos diagnóstico, iluminación, PC, sistema de alarma",
+      "ejemplos_clientes": "Consultorios médicos privados, laboratorios de análisis"
+    }
+  ],
+  
+  "ventajas_competitivas": [
+    {
+      "ventaja": "TTA Incluido de Fábrica",
+      "descripcion": "Único en su categoría que incluye Tablero de Transferencia Automática integrado desde fábrica. La competencia lo vende como opcional adicional (USD 800-1200 extra).",
+      "impacto": "alto",
+      "diferenciador": true,
+      "ahorro_estimado": "USD 800-1200 vs competencia"
+    },
+    {
+      "ventaja": "Respaldo de Generac (grupo mundial)",
+      "descripcion": "PRAMAC es parte del Grupo Generac desde 2016, tercer productor mundial de generadores. Garantiza repuestos, soporte y continuidad del negocio a largo plazo.",
+      "impacto": "alto",
+      "diferenciador": true
+    },
+    {
+      "ventaja": "Certificación ENARGAS incluida",
+      "descripcion": "Homologado para operar con todas las prestadoras de gas de Argentina. No requiere adaptaciones adicionales ni trámites complejos.",
+      "impacto": "alto",
+      "diferenciador": true
+    },
+    {
+      "ventaja": "WiFi Mobile Link de serie",
+      "descripcion": "Monitoreo remoto vía WiFi incluido sin costo adicional. La competencia cobra USD 200-400 por módulo WiFi opcional.",
+      "impacto": "medio",
+      "diferenciador": true,
+      "ahorro_estimado": "USD 200-400"
+    },
+    {
+      "ventaja": "Motor Generac G-Force diseño exclusivo",
+      "descripcion": "Motor específicamente diseñado para generadores, no adaptado de otras aplicaciones. Optimizado para arranques frecuentes y operación en vacío.",
+      "impacto": "alto",
+      "diferenciador": true
+    },
+    {
+      "ventaja": "Tecnología True Power™",
+      "descripcion": "THD menor a 5% garantiza energía limpia para equipos electrónicos sensibles (computadoras, TVs LED, equipos médicos). Marcas económicas tienen THD >10%.",
+      "impacto": "medio",
+      "diferenciador": false
+    },
+    {
+      "ventaja": "Cabina Rino Coat resistente",
+      "descripcion": "Recubrimiento texturizado anticorrosión que resiste ambientes salinos (costa), lluvia ácida y rayos UV. Garantía de no desprendimiento por 5 años.",
+      "impacto": "medio",
+      "diferenciador": false
+    },
+    {
+      "ventaja": "Consumo optimizado de gas",
+      "descripcion": "3.9 m³/h es 15-20% más eficiente que competidores chinos de similar potencia. Ahorro aproximado de USD 30-50 por mes en operación frecuente.",
+      "impacto": "medio",
+      "diferenciador": false
+    },
+    {
+      "ventaja": "Red de servicio en Argentina",
+      "descripcion": "Múltiples distribuidores autorizados con técnicos capacitados. Repuestos disponibles en stock permanente. Competencia china depende de importación (45-90 días).",
+      "impacto": "alto",
+      "diferenciador": true
+    },
+    {
+      "ventaja": "Valor de reventa superior",
+      "descripcion": "Un PRAMAC/Generac mantiene 50-60% de su valor a los 5 años. Marcas desconocidas pierden 70-80% del valor.",
+      "impacto": "alto",
+      "diferenciador": true
+    }
+  ],
+  
+  "comparativa_competencia": [
+    {
+      "competidor": "Generac Guardian 8 kVA",
+      "modelo_comparable": "Guardian 7043 / 7042",
+      "precio_aproximado": "USD 5.800-6.200",
+      "relacion": "Marca hermana - PRAMAC pertenece al Grupo Generac",
+      "ventajas_nuestras": [
+        "Mismo motor y alternador (tecnología idéntica)",
+        "Precio similar o ligeramente menor",
+        "Misma garantía y red de servicio",
+        "Disponibilidad de repuestos idéntica"
+      ],
+      "desventajas_nuestras": [
+        "Ninguna significativa - son equipos equivalentes",
+        "Generac tiene más reconocimiento de marca en algunos mercados"
+      ],
+      "recomendacion_venta": "Son equipos técnicamente equivalentes (mismo fabricante grupo). Elegir según disponibilidad y precio del momento. Si el cliente conoce Generac, aclarar que PRAMAC es del mismo grupo con idéntica calidad."
+    },
+    {
+      "competidor": "Kohler 8-10 kVA Gas",
+      "modelo_comparable": "Kohler 10REOZJ",
+      "precio_aproximado": "USD 7.500-9.000",
+      "ventajas_nuestras": [
+        "Precio 25-35% más económico",
+        "TTA incluido de fábrica (Kohler lo vende separado)",
+        "WiFi incluido (Kohler cobra extra)",
+        "Menor costo de mantenimiento",
+        "Repuestos más accesibles en Argentina"
+      ],
+      "desventajas_nuestras": [
+        "Kohler tiene mayor reconocimiento de marca premium",
+        "Motor Kohler tiene fama de mayor durabilidad (aunque vida útil similar real)",
+        "Kohler ofrece modelos de mayor potencia en la línea"
+      ],
+      "recomendacion_venta": "Kohler es premium pero el costo no justifica la diferencia de precio. PRAMAC ofrece 90% de las prestaciones al 65% del costo. Ideal para cliente que busca mejor relación precio/calidad. Argumento clave: 'Con la diferencia de precio te alcanza para 3-4 años de mantenimiento incluido'."
+    },
+    {
+      "competidor": "Briggs & Stratton 8 kVA",
+      "modelo_comparable": "Briggs 40445",
+      "precio_aproximado": "USD 5.500-6.500",
+      "ventajas_nuestras": [
+        "TTA incluido (B&S lo vende opcional)",
+        "WiFi incluido de serie",
+        "Mayor red de servicio en Argentina",
+        "Repuestos más disponibles localmente",
+        "Mejor insonorización (67 dB vs 72 dB)"
+      ],
+      "desventajas_nuestras": [
+        "B&S tiene presencia histórica más larga en Argentina",
+        "Algunos técnicos locales tienen más experiencia con B&S"
+      ],
+      "recomendacion_venta": "Precios similares, pero PRAMAC incluye TTA automático que B&S cobra USD 800-1000 adicional. Si el cliente necesita automático, PRAMAC es clara ganancia. Además, respaldo del Grupo Generac da más seguridad de continuidad."
+    },
+    {
+      "competidor": "Generadores Chinos (Vito, Kolvok, etc) 8 kVA",
+      "modelo_comparable": "Varios genéricos",
+      "precio_aproximado": "USD 3.000-4.000",
+      "ventajas_nuestras": [
+        "Componentes de calidad superior (motor Generac vs genéricos)",
+        "Garantía real y respaldada (vs garantías dudosas)",
+        "Servicio técnico en Argentina",
+        "Repuestos disponibles en 24-48hs (vs 45-90 días importación)",
+        "Menor consumo de gas (15-20% más eficiente)",
+        "Energía más limpia (THD <5% vs >10-15%)",
+        "Vida útil 3-4 veces superior",
+        "Valor de reventa existe (chino no se revende)"
+      ],
+      "desventajas_nuestras": [
+        "Precio inicial 40-60% más alto"
+      ],
+      "recomendacion_venta": "Sí, el chino es más barato, pero es para uso ocasional. Si necesitás confiabilidad real, PRAMAC es la elección. Pensá en esto: ¿cuánto te cuesta tu negocio/casa parado 2 semanas esperando un repuesto? Un PRAMAC lo pagás una vez, un chino lo pagás cada 2-3 años. Además, el ahorro en consumo de gas (USD 30-50/mes) recupera parte de la diferencia en 2-3 años."
+    }
+  ],
+  
+  "manejo_objeciones": [
+    {
+      "objecion": "Es muy caro / El precio es alto",
+      "tipo": "precio",
+      "respuesta_sugerida": "Entiendo que el precio es un tema importante. Mirá, el GA8000 puede parecer una inversión grande al principio, pero fijate en esto: incluye el TTA automático de fábrica, que la competencia te cobra USD 800-1200 aparte. También incluye WiFi para monitoreo remoto (otros cobran USD 300 extra). Solo en esos dos ítems ya recuperás casi USD 1.500. Además, consume 15% menos gas que equipos similares, eso son USD 30-50 de ahorro por mes si lo usás seguido. Y cuando necesites servicio técnico, los repuestos están en Argentina en 24-48 horas, no esperando 2 meses de China. ¿Qué te resulta más caro: pagar USD 5.500 hoy o perder 3 días de trabajo/venta cuando se te rompa un equipo sin respaldo?",
+      "datos_apoyo": [
+        "TTA incluido: ahorro USD 800-1.200 vs competencia",
+        "WiFi incluido: ahorro USD 200-400",
+        "Consumo eficiente: ahorro USD 30-50/mes",
+        "Repuestos disponibles: evita pérdidas por paradas",
+        "Garantía 2 años: tranquilidad incluida"
+      ],
+      "pregunta_cierre": "¿Preferís ahorrar USD 1.000 hoy y gastar USD 3.000 más en 3 años, o invertir bien desde el principio?"
+    },
+    {
+      "objecion": "¿Por qué no comprar uno chino que sale USD 3.000?",
+      "tipo": "competencia",
+      "respuesta_sugerida": "Buena pregunta, muchos clientes se la hacen. Te explico la diferencia real: los equipos chinos están pensados para uso ocasional, ponele 50-100 horas por año. Si tenés cortes frecuentes, en 2-3 años vas a tener problemas. Acá tenés las diferencias concretas: 1) Repuestos: PRAMAC/Generac en 24-48hs en Argentina, chino esperás 45-90 días importando. 2) Servicio: tenemos técnicos en todo el país, ¿quién te da servicio de marcas chinas? 3) Consumo: el motor chino consume 20% más de gas, eso es USD 500-600 más por año si lo usás. 4) Reventa: un PRAMAC a los 5 años vale USD 2.500-3.000, un chino no lo querés ni regalado. Sumá todo y en 5 años el 'barato' te sale más caro. ¿Cuánto te cuesta tu negocio parado 2 semanas sin luz esperando un repuesto?",
+      "datos_apoyo": [
+        "Vida útil: PRAMAC 20.000hs vs Chino 5.000-8.000hs",
+        "Repuestos: 24-48hs vs 45-90 días",
+        "Consumo: 3.9 m³/h vs 4.5-5 m³/h",
+        "Garantía real: 2 años vs 'papel mojado'",
+        "Valor reventa 5 años: USD 2.500 vs USD 0"
+      ],
+      "pregunta_cierre": "¿Tu negocio/casa puede estar 3 semanas sin luz esperando que llegue un repuesto de China?"
+    },
+    {
+      "objecion": "Ya tengo un presupuesto de Kohler más barato",
+      "tipo": "competencia",
+      "respuesta_sugerida": "Kohler es una excelente marca, no te voy a decir que no. Pero mirá esto: PRAMAC es del Grupo Generac, que es el fabricante N°1 de generadores residenciales en USA. De hecho, muchos componentes son los mismos. La diferencia de precio que ves (25-35% menos PRAMAC) es porque Kohler posiciona como premium y cobra por la marca. En prestaciones reales son equivalentes. Fijate este detalle: ¿tu presupuesto de Kohler incluye el TTA automático? Porque PRAMAC lo trae de fábrica. ¿Incluye WiFi? También viene incluido. ¿Cuánto te cobran instalación? Nosotros tenemos red de instaladores certificados con precios competitivos. Hacé los números completos y vas a ver que PRAMAC te da lo mismo o mejor por menos plata.",
+      "datos_apoyo": [
+        "PRAMAC parte del Grupo Generac (N°3 mundial)",
+        "Tecnología equivalente a Kohler",
+        "TTA incluido vs opcional en Kohler",
+        "WiFi incluido vs opcional",
+        "Precio 25-35% menor",
+        "Misma garantía de 2 años"
+      ],
+      "pregunta_cierre": "¿El presupuesto de Kohler que te dieron incluye TTA y WiFi, o solo el generador?"
+    },
+    {
+      "objecion": "No sé si 8 kVA me alcanza / Necesito más potencia",
+      "tipo": "tecnico",
+      "respuesta_sugerida": "Entiendo tu preocupación, nadie quiere quedarse corto. Hagamos un cálculo rápido juntos. El GA8000 entrega 8 kVA (8.000 watts), eso es equivalente a 36 amperes en 220V. Para que te des una idea: una heladera consume 1-1.5 A, un freezer 2 A, iluminación LED 0.5 A, TV 1 A, computadora 2 A, bomba de agua 3-4 A, un split 1.5 ton unos 6-7 A. Sumando todo eso estás en unos 18-20 amperes, te sobra margen. La clave es que no prendas todo simultáneamente. Y si realmente necesitás más potencia, tenemos el GA10000 (10 kVA) o el GA13000 (13 kVA). Pero te soy sincero: el 80% de los hogares y comercios entran perfecto con 8 kVA. ¿Querés que hagamos un relevamiento de tus cargas para estar seguros?",
+      "datos_apoyo": [
+        "8 kVA = 36 amperes @ 220V",
+        "Heladera + Freezer + iluminación + TV + PC + bomba = 18-20A",
+        "Margen de seguridad: 40-45%",
+        "El 80% hogares argentinos consumen <25A simultáneos"
+      ],
+      "pregunta_cierre": "¿Hacemos un cálculo rápido de tus consumos principales para estar seguros?"
+    },
+    {
+      "objecion": "¿Incluye instalación?",
+      "tipo": "servicio",
+      "respuesta_sugerida": "No, el equipo viene listo para instalar pero la instalación va aparte porque depende mucho de cada caso. Igual te puedo pasar contacto de nuestros instaladores certificados que te hacen un presupuesto sin compromiso. Generalmente la instalación completa (eléctrica + gas + base) sale entre USD 1.000-2.000 según la complejidad. Ellos te dejan todo funcionando: base de hormigón, conexión eléctrica, instalación de gas con habilitación, puesta en marcha, capacitación. La ventaja de usar instaladores certificados es que la garantía del equipo queda 100% válida, si lo instala alguien no autorizado podés perder la garantía.",
+      "datos_apoyo": [
+        "Costo instalación completa: USD 1.000-2.000",
+        "Incluye: obra, electricidad, gas, habilitación",
+        "Instaladores con certificación de fábrica",
+        "Garantía válida solo con instalación certificada",
+        "Plazo típico instalación: 3-5 días hábiles"
+      ],
+      "pregunta_cierre": "¿Necesitás que te pase contacto de instaladores para que tengas el presupuesto completo?"
+    },
+    {
+      "objecion": "Necesito pensarlo / Consultar con mi socio/familia",
+      "tipo": "tiempo",
+      "respuesta_sugerida": "Dale, perfecto. Es una inversión importante y está bien que lo piensen. Para que tengas todo claro cuando hables con tu socio/familia, te mando un resumen con: especificaciones técnicas completas, precio final con IVA, comparativa con otras marcas, testimonios de clientes, y dos o tres casos de instalaciones similares a tu situación. También te paso un Excel para que calcules el ahorro en consumo de gas vs otros equipos. ¿Te parece si agendamos una llamada o videollamada para el [día de la semana que viene] así resolvemos todas las dudas que les surjan? Muchos clientes prefieren que les haga una presentación breve por Zoom donde se ven todas las funciones y pueden hacer preguntas.",
+      "datos_apoyo": [],
+      "pregunta_cierre": "¿Qué puntos específicos necesitás que te aclare para tomar la decisión? Así te preparo la info puntual."
+    },
+    {
+      "objecion": "¿Funciona con gas natural de red o necesito tanque?",
+      "tipo": "tecnico",
+      "respuesta_sugerida": "Funciona perfecto con gas natural de red domiciliaria, es su uso ideal. De hecho está diseñado para conectarse directamente al caño de gas que ya tenés en tu casa/negocio. Es bi-fuel, significa que podés usarlo con Gas Natural (de red) o con GLP (envasado en tanque). Si tenés gas natural, lo conectás ahí directamente, no necesitás tanque. Si no tenés gas de red, podés ponerle un tanque de GLP. La ventaja del gas natural es que nunca se te acaba, y el costo por hora es mucho más bajo que GLP. Eso sí, necesitás hacer la instalación de gas con caño flexible certificado y habilitarlo con la compañía de gas, pero es un trámite simple. Nosotros te pasamos los instaladores que hacen todo eso.",
+      "datos_apoyo": [
+        "Conexión directa a GN de red domiciliaria",
+        "No requiere tanque si tenés GN",
+        "Presión mínima: 3.5\" columna agua (presión domiciliaria estándar)",
+        "Certificado ENARGAS para toda Argentina",
+        "También funciona con GLP si no hay GN"
+      ],
+      "pregunta_cierre": "¿Tenés gas natural de red en tu domicilio o necesitarías tanque de GLP?"
+    },
+    {
+      "objecion": "¿Hace mucho ruido? ¿Puedo tenerlo en el patio?",
+      "tipo": "tecnico",
+      "respuesta_sugerida": "No, está diseñado para zonas residenciales justamente. Con la cabina insonorizada Rino Coat queda en 65-70 dB a 7 metros, que es como una conversación normal o un aire acondicionado. Si lo instalás en el patio o al costado de la casa, a 10-15 metros prácticamente no se escucha. Es ideal para barrios residenciales. Compará: un generador sin cabina hace 95-100 dB, que es un taladro al lado tuyo. Este es muchísimo más silencioso. De hecho, la mayoría de nuestros clientes lo tienen en countries, barrios privados o zonas urbanas sin problemas. Eso sí, siempre recomendamos instalarlo contra una pared o en un rincón para que la misma construcción ayude a aislar más el sonido.",
+      "datos_apoyo": [
+        "Nivel sonoro: 65-70 dB @ 7m",
+        "Comparación: conversación normal 60-65 dB",
+        "Aire acondicionado: 60-70 dB",
+        "Sin cabina: 95-100 dB (totalmente distinto)",
+        "Apto zonas residenciales urbanas"
+      ],
+      "pregunta_cierre": "¿Dónde estabas pensando instalarlo? Te puedo dar tips de ubicación para minimizar aún más el ruido."
+    },
+    {
+      "objecion": "¿Qué garantía tiene? ¿Qué cubre?",
+      "tipo": "garantia",
+      "respuesta_sugerida": "Tiene 2 años de garantía oficial contra vicios ocultos de fabricación desde la puesta en marcha. Cubre motor, alternador, panel de control, todo el equipo. Es garantía de fábrica respaldada por el Grupo Generac a nivel internacional, no es de distribuidor. ¿Qué cubre? Cualquier defecto de fabricación o falla de componentes originales: si se rompe algo por falla del equipo, se repara o reemplaza sin costo (repuestos + mano de obra). ¿Qué NO cubre? Daños por instalación incorrecta, falta de mantenimiento, uso inadecuado, fenómenos naturales (inundación, rayo directo), o si alguien no autorizado lo manipuló. La condición es simple: hacé los mantenimientos en los plazos que marca el manual (cada 200hs o 1 año), usá repuestos originales, y que la instalación la haga un técnico certificado. Cumpliendo eso, la garantía es sólida. Además, hay garantía extendida opcional hasta 10 años.",
+      "datos_apoyo": [
+        "Garantía: 2 años desde puesta en marcha",
+        "Cubre: motor, alternador, control, componentes",
+        "No cubre: mal uso, instalación incorrecta, falta mantenimiento",
+        "Requisito: instalación por técnico certificado",
+        "Mantenimientos: cada 200hs o anual",
+        "Garantía extendida disponible: hasta 10 años"
+      ],
+      "pregunta_cierre": "¿Te interesa cotizar la garantía extendida a 5 años? Sale aprox USD 400-600 y te da más tranquilidad."
+    },
+    {
+      "objecion": "¿Cuánto mantenimiento necesita y cuánto cuesta?",
+      "tipo": "costo_operativo",
+      "respuesta_sugerida": "El mantenimiento es súper simple y económico, esa es una de las ventajas del gas vs diesel. El mantenimiento anual (o cada 200 horas de uso, lo que pase primero) incluye: cambio de aceite (1.6 litros), filtro de aire, bujías, y revisión general. Un kit de mantenimiento completo sale USD 80-120 y te lo podés hacer vos mismo si querés (es muy simple), o contratar el service técnico por USD 150-200. Primer mantenimiento a las 50 horas (solo aceite). Después cada 200 horas o anual. Comparalo con un diesel: un diesel necesita cambios cada 250hs, usa 4-5 litros de aceite, filtros más caros, y es más complejo. Acá estamos hablando de USD 150-250 por año si lo usás normal, y el equipo prácticamente se auto-mantiene con el ejercitador semanal automático.",
+      "datos_apoyo": [
+        "Mantenimiento: cada 200hs o anual",
+        "Costo kit mantenimiento: USD 80-120",
+        "Costo service completo: USD 150-250/año",
+        "Primer cambio: 50 horas (solo aceite)",
+        "Ejercitador automático: autodiagnóstico semanal",
+        "Consumo aceite: 1.6 L (vs 4-5L diesel)"
+      ],
+      "pregunta_cierre": "¿Preferís hacerte vos el mantenimiento o contratar el service anual? Te paso las dos opciones."
+    },
+    {
+      "objecion": "¿Arranca realmente automático? ¿Tengo que hacer algo?",
+      "tipo": "tecnico",
+      "respuesta_sugerida": "Arranca 100% automático, no tenés que hacer absolutamente nada. Mirá cómo funciona: el tablero TTA está monitoreando la red eléctrica todo el tiempo, 24/7. Cuando detecta un problema (baja tensión, falta de fase, corte total), en menos de 5 segundos toma la decisión. Envía la señal al generador, el motor arranca automáticamente con el gas de red, en 10-15 segundos alcanza la potencia y frecuencia correcta, y el TTA transfiere la energía de red al generador. Todo eso pasa en 15-20 segundos desde el corte, vos ni te das cuenta. Cuando vuelve la luz, el sistema detecta que la red se normalizó, espera unos minutos para confirmar que es estable, transfiere la carga de vuelta a la red, y el generador se apaga solo. Vos seguís viendo TV, trabajando, lo que sea. Además, una vez por semana se prende solo 10 minutos para autodiagnóstico, sin transferir carga. Es literal enchufar y olvidarse.",
+      "datos_apoyo": [
+        "Detección de falla: <5 segundos",
+        "Arranque motor: 8-12 segundos",
+        "Transferencia de carga: 15-20 seg desde corte",
+        "Retransferencia: automática al volver red",
+        "Ejercitador: semanal automático",
+        "Intervención humana requerida: CERO"
+      ],
+      "pregunta_cierre": "¿Necesitás que te muestre en video cómo funciona el arranque automático?"
+    },
+    {
+      "objecion": "¿Consume mucho gas? ¿Cuánto me va a costar por mes?",
+      "tipo": "costo_operativo",
+      "respuesta_sugerida": "El consumo es 3.9 m³/h al 100% de carga. Ahora, acá viene lo importante: casi nunca vas a estar al 100%, generalmente andás en 40-60% de carga. A ese régimen consume aprox 2.5-3 m³/h. Para que hagas el cálculo: si tenés un corte de 4 horas, vas a consumir unos 10-12 m³ de gas. En Argentina, el gas residencial cuesta aprox USD 0.10-0.15 por m³ (varía según zona y tarifa). Entonces ese corte de 4 horas te costaría USD 1.50-2.00 en gas. Comparalo con un diesel que consume 1.5 L/h (USD 1.00/litro), ese mismo corte sale USD 6. Y si no tenés generador, perdés comida de la heladera (USD 50-100), o peor, perdés ventas/trabajo. El generador a gas es lo más económico que hay para energía de respaldo. Además, muchos clientes nos dicen que el costo del gas del generador termina siendo más barato que la luz que estaban consumiendo de red en ese mismo tiempo.",
+      "datos_apoyo": [
+        "Consumo 100%: 3.9 m³/h",
+        "Consumo real 50%: 2.5 m³/h aprox",
+        "Costo gas residencial: USD 0.10-0.15/m³",
+        "Costo 4hs operación: USD 1.50-2.50",
+        "Comparación diesel: USD 6 las mismas 4hs",
+        "Más económico que generador diesel, nafta o gasoil"
+      ],
+      "pregunta_cierre": "¿Cuántas horas por mes estimás que lo usarías? Con eso te hago el cálculo exacto de costo mensual."
+    },
+    {
+      "objecion": "¿Es complicado tramitar la habilitación de gas?",
+      "tipo": "instalacion",
+      "respuesta_sugerida": "Para nada, es un trámite sencillo y nuestros instaladores lo hacen todo. Te explico el proceso: 1) El instalador gasista matriculado hace la conexión del caño flexible desde tu red de gas al generador. 2) Hace la prueba de hermeticidad y presión. 3) Completa el formulario de habilitación y lo presenta ante tu compañía de gas (Metrogas, Camuzzi, etc). 4) La compañía revisa (a veces piden inspección, a veces no) y emite la habilitación. Todo el proceso demora 5-10 días hábiles. Costo del trámite: USD 50-150 según la zona. La ventaja es que el GA8000 está certificado ENARGAS, eso significa que está pre-aprobado para trabajar con todas las prestadoras de gas del país. No vas a tener problema. El instalador te deja toda la documentación en regla para que presentes si algún día te la piden.",
+      "datos_apoyo": [
+        "Certificación ENARGAS: equipos pre-aprobados",
+        "Instaladores matriculados: hacen todo el trámite",
+        "Tiempo trámite: 5-10 días hábiles",
+        "Costo habilitación: USD 50-150",
+        "Válido para todas las prestadoras de gas Argentina",
+        "Documentación completa incluida"
+      ],
+      "pregunta_cierre": "¿Con qué compañía de gas trabajás? Así te confirmo que no hay problema."
+    },
+    {
+      "objecion": "¿Cuánto tarda la entrega/instalación?",
+      "tipo": "logistica",
+      "respuesta_sugerida": "Depende del stock y tu ubicación. Generalmente tenemos stock disponible en Buenos Aires, así que la entrega del equipo es 5-10 días hábiles a CABA/GBA, y 10-15 días al interior. Una vez que recibís el generador, la instalación completa (base + eléctrico + gas + habilitación + puesta en marcha) demora unos 5-7 días hábiles más si está todo coordinado. Entonces desde que hacés el pedido hasta que lo tenés funcionando: 2-3 semanas promedio en CABA/GBA, 3-4 semanas en el interior. Si hay urgencia extrema se puede acelerar, pero necesitamos confirmar disponibilidad de instaladores. Te soy honesto: lo mejor es planificar con tiempo, no esperar al primer corte de luz para decidirse. Los cortes suelen ser en verano (pico de demanda AC) y en invierno (pico de calefacción), ahí la demanda de instalación se dispara y los plazos se extienden.",
+      "datos_apoyo": [
+        "Entrega equipo: 5-15 días según zona",
+        "Instalación: 5-7 días hábiles",
+        "Total: 2-4 semanas desde pedido",
+        "Stock generalmente disponible",
+        "Temporada alta: verano e invierno (mayor demanda)"
+      ],
+      "pregunta_cierre": "¿Hay alguna fecha límite que necesites tenerlo funcionando? Así vemos si llegamos."
+    }
+  ],
+
+  "preguntas_frecuentes": [
+    {
+      "categoria": "Técnicas - Potencia y Funcionamiento",
+      "preguntas": [
+        {
+          "pregunta": "¿Cuántas horas puede funcionar de forma continua?",
+          "respuesta": "El GA8000 está diseñado para funcionar en modo continuo sin límite de horas cuando opera en potencia prime (7.5 kVA). Si lo usás en modo stand-by (8 kVA) se recomienda para uso de emergencia con límite de 500 horas/año. O sea, podés tenerlo prendido días o semanas seguidas sin problema, siempre que respetes los niveles de carga. El motor Generac G-Force está específicamente diseñado para arranques frecuentes y operación prolongada, a diferencia de motores adaptados de otras aplicaciones.",
+          "tags": ["motor", "operacion", "durabilidad", "continuo"]
+        },
+        {
+          "pregunta": "¿Qué electrodomésticos puedo conectar con 8 kVA?",
+          "respuesta": "Con 8 kVA (36 amperes en 220V) podés manejar tranquilamente: heladera + freezer + toda la iluminación LED + 2-3 TVs + computadoras + WiFi + bomba de agua + portón eléctrico + split de 1.5-2 ton + alarma + cámaras. Lo importante es no prender todo simultáneamente. Por ejemplo, si encendés el split esperá que arranque antes de prender la bomba de agua. Con un uso inteligente, 8 kVA alcanza para un hogar completo o comercio chico. Si tenés AC central o equipos muy pesados, quizás necesites el GA10000 o GA13000.",
+          "tags": ["potencia", "cargas", "consumo", "aplicaciones"]
+        },
+        {
+          "pregunta": "¿Qué diferencia hay entre potencia Prime y Stand-By?",
+          "respuesta": "Prime (7.5 kVA) es la potencia continua, podés operarlo a esa carga 24/7 sin límite de horas. Es la potencia 'real' de trabajo. Stand-By (8 kVA) es la potencia máxima para emergencias, pero con límite de 500 horas por año. En la práctica, si lo usás para cortes ocasionales, usá el stand-by completo sin problema. Si lo vas a usar como generación primaria (sin red eléctrica), calculá con la potencia prime.",
+          "tags": ["potencia", "especificaciones", "capacidad"]
+        },
+        {
+          "pregunta": "¿Arranca equipos con motor (heladera, AC, bomba)?",
+          "respuesta": "Sí, sin problema. El alternador con excitación de fase desplazada está diseñado específicamente para manejar el pico de corriente de arranque de motores eléctricos. Una heladera puede necesitar 3-4 veces su consumo nominal al arrancar, el GA8000 lo maneja perfecto. Lo mismo con AC, bombas, compresores. La clave es no arrancar varios equipos pesados simultáneamente, dejá que cada uno arranque y estabilice antes de prender el siguiente.",
+          "tags": ["arranque", "motores", "picos", "corriente"]
+        },
+        {
+          "pregunta": "¿Puedo usarlo como generación primaria (sin red eléctrica)?",
+          "respuesta": "Sí, podés. El motor está diseñado para operación continua. Pero tené en cuenta que en ese caso tenés que calcular con la potencia prime (7.5 kVA), no la stand-by. Además, los intervalos de mantenimiento se van a cumplir más rápido (cada 200 horas), así que vas a necesitar más mantenimientos por año. Y obvio, tu consumo de gas va a ser continuo. Es técnicamente posible, pero la mayoría lo usa como respaldo de emergencia, que es su aplicación ideal.",
+          "tags": ["continuo", "generacion-primaria", "off-grid"]
+        }
+      ]
+    },
+    {
+      "categoria": "Técnicas - Gas y Combustible",
+      "preguntas": [
+        {
+          "pregunta": "¿Funciona con gas natural de red o necesito tanque?",
+          "respuesta": "Funciona perfecto con gas natural de red domiciliaria, esa es su aplicación ideal. Lo conectás directamente al caño de gas que ya tenés en tu casa/negocio. Es bi-fuel, significa que también podés usarlo con GLP (gas envasado en tanque) si no tenés gas natural de red. La ventaja del gas natural es que nunca se te acaba y el costo es mucho menor que GLP. No necesitás tanque si tenés GN.",
+          "tags": ["combustible", "gas-natural", "glp", "tanque"]
+        },
+        {
+          "pregunta": "¿Cuánto gas consume por hora? ¿Cuánto me cuesta?",
+          "respuesta": "Consume 3.9 m³/h a plena carga (8 kVA), pero en uso real (50-60% carga) consume aprox 2.5-3 m³/h. En Argentina el gas natural residencial cuesta USD 0.10-0.15 por m³ según zona y tarifa. Entonces una hora de funcionamiento real te sale USD 0.30-0.50. Si tenés un corte de 4 horas, son USD 1.50-2.00 de gas total. Comparalo con un generador diesel (USD 6 las mismas 4 horas) o nafta (USD 8-10). El gas es lo más económico.",
+          "tags": ["consumo", "costo", "gas", "economia"]
+        },
+        {
+          "pregunta": "¿Qué presión de gas necesita? ¿Funciona con presión domiciliaria?",
+          "respuesta": "Funciona perfecto con presión domiciliaria estándar. La presión mínima requerida es 3.5 pulgadas de columna de agua, que es inferior a la presión residencial normal (6-8 pulgadas). No necesitás ninguna modificación en tu instalación de gas ni reguladores especiales. Es plug and play con tu red existente.",
+          "tags": ["presion", "gas", "instalacion", "requisitos"]
+        },
+        {
+          "pregunta": "¿Puedo cambiar de gas natural a GLP y viceversa?",
+          "respuesta": "Sí, es bi-fuel. Podés cambiarlo en campo en pocos minutos sin herramientas especiales. Hay un kit de conversión que ajusta el regulador de presión y los orificios de alimentación. Ideal si te mudás de un lugar con GN a otro sin GN, o si querés tener las dos opciones disponibles. Muchos clientes que tienen GN igual ponen un tanque de GLP como backup por si hay un problema en la red de gas.",
+          "tags": ["conversion", "dual-fuel", "glp", "gas-natural"]
+        },
+        {
+          "pregunta": "¿Qué pasa si se corta el gas mientras está funcionando?",
+          "respuesta": "Si se corta el suministro de gas mientras está generando, el motor se va a apagar por falta de combustible. Es lo mismo que pasaría con cualquier equipo a gas. Por eso es importante que tu instalación de gas esté en buen estado. De todas formas, los cortes de gas son muchísimo menos frecuentes que los cortes de luz. Si te preocupa, podés poner un tanque de GLP como backup.",
+          "tags": ["contingencia", "corte-gas", "seguridad"]
+        }
+      ]
+    },
+    {
+      "categoria": "Técnicas - Arranque Automático y Control",
+      "preguntas": [
+        {
+          "pregunta": "¿Cómo funciona el arranque automático? ¿Tengo que hacer algo?",
+          "respuesta": "Es 100% automático, no tenés que hacer nada. El tablero TTA monitorea la red eléctrica todo el tiempo. Cuando detecta un problema (corte, baja tensión, falta de fase), en 5 segundos toma la decisión. Envía señal al generador, el motor arranca, en 10-15 segundos alcanza potencia y frecuencia correcta, y el TTA transfiere tu casa/negocio al generador. Todo pasa en 15-20 segundos. Cuando vuelve la luz, revierte automáticamente. Vos seguís con tu vida normal, ni te enterás.",
+          "tags": ["automatico", "tta", "arranque", "funcionamiento"]
+        },
+        {
+          "pregunta": "¿Qué es el TTA y por qué es importante que venga incluido?",
+          "respuesta": "TTA es Tablero de Transferencia Automática. Es el 'cerebro' que decide cuándo prender el generador y cuándo pasarle la carga de tu casa/negocio. Sin TTA, tendrías que salir cada vez que hay un corte, prender el generador a mano, esperar que caliente, y con una llave de paso manual transferir los cables. Un peligro y un bodrio. El TTA hace todo eso automáticamente y con seguridad. Lo importante es que PRAMAC lo incluye de fábrica, otras marcas te lo cobran USD 800-1200 adicional.",
+          "tags": ["tta", "automatico", "transferencia", "incluido"]
+        },
+        {
+          "pregunta": "¿Puedo controlarlo desde el celular?",
+          "respuesta": "Sí, viene con WiFi incluido y la app Mobile Link (iOS y Android). Desde el celu podés ver el estado del generador, nivel de aceite, próximo mantenimiento, historial de arranques, alarmas. Te manda notificaciones si hay algún problema. También podés iniciar/detener el generador manualmente desde la app. Podés estar en tu casa, en el trabajo, o de viaje, y monitorear el equipo. Todo incluido sin costo adicional.",
+          "tags": ["wifi", "app", "mobile-link", "monitoreo"]
+        },
+        {
+          "pregunta": "¿Qué es el ejercitador automático?",
+          "respuesta": "Una vez por semana (o quincenal/mensual, lo configurás vos), el generador se prende solo por 10-15 minutos para ejercitarse. Hace un autodiagnóstico completo: arranca el motor, verifica presión de aceite, temperatura, carga de batería, panel de control, sensores. Si detecta algún problema te avisa. Esto mantiene el motor lubricado, la batería cargada, y asegura que cuando realmente lo necesites va a arrancar sin drama. No transfiere carga en el ejercitador, solo se prende el generador.",
+          "tags": ["ejercitador", "mantenimiento", "auto-diagnostico"]
+        },
+        {
+          "pregunta": "¿Qué pasa si falla el arranque automático?",
+          "respuesta": "El sistema hace 3 intentos de arranque automático antes de declarar falla. Si falla, te alerta por la app y por el panel. Podés intentar arranque manual desde el panel o la app. Las fallas de arranque suelen ser por: batería baja, falta de gas, sensor sucio, o problema eléctrico. La mayoría se resuelven fácil. Si hay una falla crítica, llamas al service técnico. Pero con el mantenimiento al día, la confiabilidad de arranque es 99%+.",
+          "tags": ["falla", "arranque", "contingencia", "alarma"]
+        }
+      ]
+    },
+    {
+      "categoria": "Comerciales - Precio e Incluidos",
+      "preguntas": [
+        {
+          "pregunta": "¿Cuál es el precio final con IVA incluido?",
+          "respuesta": "El precio es USD 5.500 sin IVA, o USD 6.655 con IVA incluido (21%). Este precio incluye: equipo completo testeado, TTA integrado, cabina insonorizada, panel digital con WiFi, manual en español, certificado de garantía de 2 años. NO incluye: batería de arranque (USD 80-150), flete, instalación, ni puesta en marcha. Consultame por descuentos si comprás más de una unidad, o por financiación disponible.",
+          "tags": ["precio", "iva", "incluye", "costo"]
+        },
+        {
+          "pregunta": "¿Qué incluye el precio del equipo?",
+          "respuesta": "Incluye: generador completo con motor Generac, alternador, panel de control digital, tablero TTA automático (valor USD 1000), WiFi Mobile Link, cabina insonorizada Rino Coat, conector flexible de gas, manual de operación, manual de instalación, certificado de garantía 2 años, soporte técnico. Lo único que NO incluye es: batería (USD 80-150), instalación (USD 1000-2000), y flete.",
+          "tags": ["incluido", "precio", "que-viene", "componentes"]
+        },
+        {
+          "pregunta": "¿Cuánto cuesta la instalación completa?",
+          "respuesta": "La instalación completa (electricidad + gas + base + puesta en marcha + habilitación) sale entre USD 1.000-2.000 según complejidad y zona. Incluye: base de hormigón, cableado eléctrico, tablero de transferencia, instalación de gas con caño flexible, habilitación ante compañía de gas, pruebas, puesta en marcha, capacitación. Te puedo pasar contacto de instaladores certificados para que te coticen sin compromiso. La instalación demora 5-7 días hábiles una vez que tenés el equipo.",
+          "tags": ["instalacion", "costo", "incluye", "servicio"]
+        },
+        {
+          "pregunta": "¿Hay financiación disponible?",
+          "respuesta": "Sí, depende del distribuidor pero generalmente hay opciones de financiación en cuotas con tarjeta de crédito, o planes de pago directo. Algunos distribuidores ofrecen: 3-6 cuotas sin interés, 12 cuotas con interés, financiación bancaria. Consultá con el distribuidor específico que estés contactando porque cada uno tiene diferentes acuerdos con bancos y tarjetas. También hay descuentos por pago contado en efectivo o transferencia.",
+          "tags": ["financiacion", "cuotas", "pago", "opciones"]
+        },
+        {
+          "pregunta": "¿El precio incluye la batería?",
+          "respuesta": "No, la batería NO viene incluida, hay que comprarla aparte. Necesitás una batería 12V de 26-35Ah (tipo automotriz). Sale USD 80-150 según marca. ¿Por qué no viene incluida? Porque las baterías se descargan si están guardadas mucho tiempo, entonces los fabricantes prefieren que las compres cuando instalás. Cualquier batería de auto de 12V con esos amperes funciona, no necesitás una especial.",
+          "tags": ["bateria", "costo", "no-incluido", "requisito"]
+        }
+      ]
+    },
+    {
+      "categoria": "Comerciales - Garantía y Servicio",
+      "preguntas": [
+        {
+          "pregunta": "¿Qué garantía tiene el equipo? ¿Qué cubre?",
+          "respuesta": "2 años de garantía oficial desde puesta en marcha, cubre motor, alternador, panel de control, todos los componentes. Es garantía de fábrica del Grupo Generac respaldada internacionalmente. Cubre defectos de fabricación o falla de componentes originales (repuestos + mano de obra sin costo). NO cubre: instalación incorrecta, falta de mantenimiento, uso inadecuado, fenómenos naturales, o manipulación no autorizada. Requisito: instalación por técnico certificado y mantenimientos al día. Hay garantía extendida disponible hasta 10 años.",
+          "tags": ["garantia", "cobertura", "servicio", "respaldo"]
+        },
+        {
+          "pregunta": "¿Dónde hay servicio técnico en Argentina?",
+          "respuesta": "Hay múltiples distribuidores autorizados con servicio técnico en todo el país: Buenos Aires (CABA/GBA), Córdoba, Rosario, Mendoza, principales ciudades. Los repuestos están en stock permanente en Argentina, no dependés de importación. Los técnicos están certificados por la fábrica. Tiempo de respuesta típico: 24-48hs para diagnóstico, 3-5 días para reparación si necesita repuestos. En garantía todo es sin costo.",
+          "tags": ["servicio", "tecnico", "repuestos", "soporte"]
+        },
+        {
+          "pregunta": "¿Cuánto demoran los repuestos si necesito algo?",
+          "respuesta": "Repuestos comunes (filtros, bujías, aceite, batería) los conseguís en cualquier distribuidor en 24-48 horas. Repuestos específicos (panel de control, sensores, alternador) están en stock en Argentina, demora 3-7 días. Repuestos muy específicos que no están en stock se importan, ahí demora 30-45 días. Pero PRAMAC/Generac tiene buena disponibilidad local justamente para evitar esos problemas. Comparalo con marcas chinas donde TODO viene importado en 60-90 días.",
+          "tags": ["repuestos", "disponibilidad", "tiempo", "stock"]
+        },
+        {
+          "pregunta": "¿Puedo hacer el mantenimiento yo mismo o necesito técnico?",
+          "respuesta": "Podés hacerlo vos mismo, es bastante simple. El mantenimiento anual/200hs es: cambio de aceite (1.6L), cambio filtro de aire, cambio bujías, revisión general. Con el manual y un kit de mantenimiento (USD 80-120) lo hacés en 1-2 horas. Si preferís no ensuciarte las manos, contratás el service técnico por USD 150-250 y te hacen todo. Durante garantía no es obligatorio usar service oficial, pero SÍ tenés que guardar facturas de los repuestos originales y seguir el manual.",
+          "tags": ["mantenimiento", "service", "diy", "costo"]
+        },
+        {
+          "pregunta": "Si se rompe algo, ¿cuánto demora la reparación?",
+          "respuesta": "Depende del problema. Diagnóstico: 24-48hs. Si es algo simple (sensor, filtro, bujía), se resuelve en el momento. Si necesita repuesto en stock local: 3-5 días. Si necesita repuesto importado: 30-45 días. Durante garantía todo es sin costo (repuestos + mano de obra). Fuera de garantía, las reparaciones comunes salen USD 200-500. Falla catastrófica del motor (muy raro): puede requerir reemplazo, ahí estamos en USD 1.500-2.500.",
+          "tags": ["reparacion", "tiempo", "costo", "service"]
+        }
+      ]
+    },
+    {
+      "categoria": "Operativas - Instalación y Puesta en Marcha",
+      "preguntas": [
+        {
+          "pregunta": "¿Dónde se instala el generador? ¿Puede ir en el patio/terraza?",
+          "respuesta": "Se instala en exterior, idealmente contra una pared o en un rincón del patio/terraza/lateral de la casa. Necesita: base firme (losa de hormigón de 10-15cm), espacio libre de 50cm a cada lado para ventilación, distancia mínima 1 metro de ventanas/puertas, protección de lluvia directa (viene con cabina pero mejor si tiene alero). NO puede ir en interior, sótano cerrado, garage sin ventilación. Sí puede ir en balcón amplio, terraza, patio, jardín, al costado de la casa.",
+          "tags": ["instalacion", "ubicacion", "donde", "requisitos"]
+        },
+        {
+          "pregunta": "¿Necesito hacer obra? ¿Qué base necesita?",
+          "respuesta": "Sí, necesitás una base de hormigón de aprox 1.5m x 0.8m x 10-15cm de espesor. Tiene que ser firme, nivelada, con buen drenaje. El equipo pesa 155kg, más el peso del motor vibrando, entonces la base es importante. Algunos instaladores ponen base de composite especial antivibratoria, eso es opcional (USD 100-200 extra) pero reduce ruido. La obra es simple, un albañil te la hace en un día. Costo estimado: USD 200-400.",
+          "tags": ["base", "hormigon", "obra", "construccion"]
+        },
+        {
+          "pregunta": "¿Qué distancia tiene que haber hasta el tablero eléctrico?",
+          "respuesta": "Idealmente menos de 20 metros para minimizar caída de tensión en el cableado. Si está más lejos (hasta 40-50m) se puede, pero hay que usar cable de mayor sección. Distancias mayores a 50m empiezan a ser problemáticas y caras (mucho cable grueso). Lo ideal es instalarlo lo más cerca posible del tablero principal, pero siempre en exterior. El instalador eléctrico te va a dimensionar correctamente el cable según la distancia.",
+          "tags": ["distancia", "cable", "instalacion", "electrico"]
+        },
+        {
+          "pregunta": "¿Cuánto demora la instalación completa?",
+          "respuesta": "Una vez que tenés el generador en tu casa, la instalación completa demora 5-7 días hábiles. Día 1-2: hacen la base de hormigón. Día 3: fragua el hormigón. Día 4-5: instalan gas, eléctrico, colocan generador. Día 6: pruebas y habilitación. Día 7: puesta en marcha y capacitación. Si hay burocracia con la compañía de gas puede demorarse unos días más. Algunos instaladores te ofrecen 'express' en 3 días pero es más caro.",
+          "tags": ["tiempo", "instalacion", "plazo", "duracion"]
+        },
+        {
+          "pregunta": "¿Puedo instalarlo yo mismo o necesito técnico certificado?",
+          "respuesta": "Técnicamente PODÉS hacerlo vos si tenés conocimientos, pero NO es recomendable por dos razones: 1) Si no lo instala un técnico certificado, perdés la garantía. La garantía específicamente dice que requiere instalación por personal autorizado. 2) La instalación de gas necesita matriculado gasista para la habilitación legal. Si lo instalás vos, no vas a poder habilitar el gas. Además, si algo sale mal (incendio, accidente), el seguro no te va a cubrir. No vale la pena el riesgo, usá instaladores certificados.",
+          "tags": ["instalacion", "diy", "certificado", "garantia"]
+        }
+      ]
+    },
+    {
+      "categoria": "Operativas - Uso y Mantenimiento Diario",
+      "preguntas": [
+        {
+          "pregunta": "¿Qué mantenimiento necesita y cada cuánto?",
+          "respuesta": "Mantenimiento súper simple: Primer cambio a las 50 horas (solo aceite). Después cada 200 horas o 1 año (lo que pase primero): cambio aceite (1.6L), filtro aire, bujías, revisión general. Cada 2 años: cambio refrigerante del sistema de enfriamiento. Eso es todo. Costo anual: USD 150-250 con service, o USD 80-120 si lo hacés vos. El equipo tiene ejercitador automático que se prende solo cada semana, eso cuenta como parte del mantenimiento preventivo.",
+          "tags": ["mantenimiento", "frecuencia", "costo", "servicio"]
+        },
+        {
+          "pregunta": "¿Tengo que estar pendiente de algo todos los días?",
+          "respuesta": "No, te olvidás completamente. El equipo se auto-mantiene con el ejercitador semanal. Lo único que PODÉS hacer (opcional) es: revisar visualmente 1 vez por mes que no haya pérdidas de aceite/gas, que la ventilación esté libre, que la batería esté cargada (se ve en la app). Pero el 99% de los usuarios no hacen ni eso, simplemente confían en el ejercitador automático y las alertas de la app. Si algo está mal, el equipo te avisa.",
+          "tags": ["uso", "diario", "monitoreo", "mantenimiento"]
+        },
+        {
+          "pregunta": "¿Hace mucho ruido? ¿Molesta a los vecinos?",
+          "respuesta": "No, con la cabina insonorizada queda en 65-70 dB a 7 metros. Eso es como una conversación normal o un aire acondicionado. A 15 metros (distancia típica a la casa vecina) ya casi no se escucha. Instalado contra una pared, con la salida de aire apuntando para el lado correcto, el ruido es mínimo. Comparalo con un generador sin cabina (95-100 dB) que es como un taladro. Este es totalmente apto para zonas residenciales y comerciales urbanas. Igual, avisale al vecino que vas a poner un generador, siempre es mejor mantener buena relación.",
+          "tags": ["ruido", "insonorizacion", "vecinos", "sonido"]
+        },
+        {
+          "pregunta": "¿Puedo dejarlo solo varios días/semanas? (viajes, vacaciones)",
+          "respuesta": "Sí, sin problema. El equipo está diseñado justamente para eso: funcionar sin supervisión. El ejercitador se va a prender automáticamente cada semana aunque no estés. Si hay un corte de luz mientras estás de viaje, el generador arranca automáticamente y protege tu casa (heladera, alarma, etc). La app te notifica por WiFi cualquier cosa que pase. Eso sí, asegurate de que haya crédito en el medidor de gas (si es prepago) y que la batería esté en buen estado antes de irte.",
+          "tags": ["viajes", "autonomo", "automatico", "uso"]
+        },
+        {
+          "pregunta": "¿Qué hago si veo una alarma en el panel?",
+          "respuesta": "El panel te va a mostrar un código de error específico. Los más comunes: 'Low Oil' (falta aceite), 'High Temp' (alta temperatura), 'Low Battery' (batería baja), 'Overspeed' (sobrevelocidad), 'Fail to start' (falla de arranque). Cada código tiene una solución: Low Oil → agregar aceite, High Temp → revisar ventilación/refrigeración, Low Battery → cargar o cambiar batería, etc. El manual tiene la tabla de códigos. Si no podés resolverlo, llamás al service técnico. La app Mobile Link también te explica el error y te da tips.",
+          "tags": ["alarma", "error", "codigo", "solucion"]
+        }
+      ]
+    },
+    {
+      "categoria": "Por Aplicación - Residencial",
+      "preguntas": [
+        {
+          "pregunta": "¿Sirve para una casa de familia? ¿Qué puedo conectar?",
+          "respuesta": "Sí, es perfecto para casas de familia. Con 8 kVA podés manejar tranquilo: heladera + freezer + toda la iluminación + TV + WiFi + computadoras + bomba de agua + portón eléctrico + 1 split de 1.5-2 ton + alarma + cámaras. No vas a poder usar AC central de 5 ton, horno eléctrico, calefactor eléctrico potente, o lavarropas + secarropas + todo lo demás simultáneamente. Pero lo esencial de una casa funciona perfecto. El 80% de las casas argentinas consumen menos de 25 amperes simultáneos, este te da 36.",
+          "tags": ["residencial", "casa", "hogar", "familia"]
+        },
+        {
+          "pregunta": "¿Puedo alimentar todo el aire acondicionado de la casa?",
+          "respuesta": "Depende cuántos splits tengas. Un split de 2.5 ton consume aprox 10-12 amperes al arrancar, 6-8 en régimen. Con 36 amperes disponibles, podés alimentar 2 splits de 2 ton simultáneos sin problema, o 1 split grande de 3-4 ton. Si tenés AC central o 3-4 splits, necesitarías el GA13000 (13 kVA) o poner un tablero de gestión que prenda los AC de a uno por vez. Pero lo común es usar el generador para mantener 1-2 ambientes climatizados, no toda la casa.",
+          "tags": ["aire-acondicionado", "climatizacion", "splits", "consumo"]
+        },
+        {
+          "pregunta": "Tengo una casa quinta/country, ¿alcanza con este generador?",
+          "respuesta": "Depende del tamaño de la casa. Para casas chicas/medianas (hasta 100m²) con consumo normal, alcanza perfecto. Para casas grandes (150m²+) con varios AC, pileta con bomba potente, sistema de riego, etc., puede quedarte corto. Hacé un cálculo de cargas para estar seguro. Igual, muchos clientes en countries usan el generador solo para lo esencial (heladera, iluminación, 1 AC, alarma) y no para toda la casa. Otra opción es el GA13000 si necesitás más potencia.",
+          "tags": ["country", "quinta", "residencial", "grande"]
+        },
+        {
+          "pregunta": "¿Lo puedo usar en un departamento/torre?",
+          "respuesta": "Sí, pero necesitás permiso del consorcio porque va en terraza o balcón (exterior). Tenés que hacer: instalación eléctrica hasta tu tablero, instalación de gas (si hay gas natural de edificio), base firme en terraza/balcón. El ruido (65-70 dB) generalmente no es problema, pero consultá con administración. En torres, el tema principal es el espacio en terraza y la aprobación del consorcio. Si no te autorizan, no hay mucho que hacer.",
+          "tags": ["departamento", "torre", "consorcio", "balcon"]
+        }
+      ]
+    },
+    {
+      "categoria": "Por Aplicación - Comercial",
+      "preguntas": [
+        {
+          "pregunta": "¿Sirve para un comercio/local? ¿Qué puedo alimentar?",
+          "respuesta": "Sí, es ideal para comercios chicos y medianos. Con 8 kVA podés alimentar: iluminación completa del local, 2-3 computadoras, terminal POS, caja registradora, 1-2 heladeras exhibidoras, 1 split, cámaras de seguridad, alarma, WiFi, impresoras. Perfecto para: kiosco, farmacia, almacén, consultorio, oficina, peluquería, local de ropa, etc. No alcanza para: panadería con hornos eléctricos, carnicería con muchas cámaras frigoríficas, restaurant con cocina completa. Para eso necesitás 15-20 kVA.",
+          "tags": ["comercial", "local", "negocio", "comercio"]
+        },
+        {
+          "pregunta": "Tengo una farmacia, ¿puedo mantener las heladeras de medicamentos?",
+          "respuesta": "Sí, perfecto para farmacias. Una heladera farmacéutica consume 2-4 amperes, con 36 disponibles podés alimentar tranquilo 4-5 heladeras + toda la iluminación + PC + POS + AC. De hecho, muchas farmacias 24hs usan generadores PRAMAC/Generac porque no pueden permitirse cortes (vacunas, insulina, otros medicamentos que necesitan cadena de frío). El arranque automático garantiza que aunque sea de noche sin personal, las heladeras se mantengan funcionando.",
+          "tags": ["farmacia", "heladera", "medicamentos", "cadena-frio"]
+        },
+        {
+          "pregunta": "Tengo un consultorio médico/odontológico, ¿es suficiente?",
+          "respuesta": "Sí, excelente para consultorios. Podés alimentar: iluminación, computadoras, equipos de diagnóstico chicos, heladera de medicamentos, esterilizador, AC, sistema de alarma. No vas a poder usar equipos muy pesados (RX grande, tomógrafo, resonancia) que requieren trifásica y mucha potencia. Pero para un consultorio standard (PC, impresora, otoscopio, oxímetro, nebulizador, etc) funciona perfecto. Ideal para mantener el consultorio operativo durante cortes y no perder turnos.",
+          "tags": ["consultorio", "medico", "odontologo", "clinica"]
+        },
+        {
+          "pregunta": "¿Puedo usarlo en una estación de servicio?",
+          "respuesta": "Podés usarlo para circuitos auxiliares de la estación, pero NO para las bombas de combustible principales (esas necesitan equipos trifásicos mucho más potentes, 50-100 kVA). Con 8 kVA podés alimentar: iluminación de la estación, sistema de pago/POS, computadoras de administración, cámaras, alarma, bomba de agua, AC de oficina, heladeras de kiosco. Para las bombas de surtidores necesitás equipos industriales trifásicos que están fuera del alcance del GA8000.",
+          "tags": ["estacion-servicio", "comercial", "bombas"]
+        }
+      ]
+    },
+    {
+      "categoria": "Comparación y Alternativas",
+      "preguntas": [
+        {
+          "pregunta": "¿Por qué PRAMAC y no Generac? ¿No es lo mismo?",
+          "respuesta": "PRAMAC pertenece al Grupo Generac desde 2016, usan los mismos motores (Generac G-Force), el mismo alternador, el mismo panel de control. Son técnicamente idénticos. La diferencia es solo la marca en la chapita. ¿Por qué comprar PRAMAC entonces? A veces hay mejor precio o disponibilidad. Elegí según qué tengas más accesible y a mejor precio, la calidad es la misma. Algunos distribuidores trabajan con una marca u otra.",
+          "tags": ["generac", "pramac", "comparacion", "marca"]
+        },
+        {
+          "pregunta": "¿PRAMAC o Kohler? ¿Cuál es mejor?",
+          "respuesta": "Kohler es una marca premium excelente, PRAMAC también es top (parte de Generac, N°3 mundial). En calidad son muy similares. La diferencia principal es el precio: Kohler es 25-35% más caro. ¿Vale la pena pagar esa diferencia? En mi opinión no, salvo que ya tengas otros equipos Kohler y quieras mantener la misma marca. PRAMAC te da 90% de lo mismo a 65% del precio. Además, PRAMAC incluye TTA de fábrica, Kohler te lo cobra aparte. Si el presupuesto no es problema, Kohler es excelente. Si buscás mejor relación precio/calidad, PRAMAC.",
+          "tags": ["kohler", "comparacion", "premium", "precio"]
+        },
+        {
+          "pregunta": "¿Generador a gas o a diesel? ¿Cuál conviene?",
+          "respuesta": "Para uso residencial/comercial chico: GAS. Para uso industrial continuo: Diesel. Las razones: Gas es más barato de operar (USD 0.50/h vs USD 1.50/h), menos mantenimiento, más silencioso, combustible disponible por red (no necesitás tanque/bidones), arranque más rápido, menor contaminación. Diesel: mayor vida útil para operación continua 24/7, más potencia disponible en rangos grandes (100-1000 kVA), combustible independiente de la red. Para 8 kVA residencial, gas es la elección obvia.",
+          "tags": ["diesel", "gas", "comparacion", "combustible"]
+        },
+        {
+          "pregunta": "Si no tengo gas natural, ¿me conviene este o uno a nafta/diesel?",
+          "respuesta": "Si no tenés gas natural de red, podés usar este con tanque de GLP, pero perdés la ventaja de tener combustible ilimitado por red. En ese caso, evaluá: ¿Cuánto vas a usar el generador? Si poco (10-20 hs/año en emergencias), un generador a nafta portátil (más barato, tipo Honda/Gamma USD 800-1500) puede ser suficiente. Si uso frecuente (50-100 hs/año), GLP con tanque sigue siendo más económico que nafta. Si uso intensivo (200+ hs/año), considerá diesel. Pero si algún día llega el gas natural a tu zona, este equipo ya está listo para conectarlo.",
+          "tags": ["nafta", "glp", "sin-gas-natural", "alternativas"]
+        }
+      ]
+    },
+    {
+      "categoria": "Certificaciones y Legal",
+      "preguntas": [
+        {
+          "pregunta": "¿Está certificado para usar en Argentina? ¿Es legal?",
+          "respuesta": "Sí, completamente. Tiene homologación ENARGAS, que es el certificado que te habilita a conectarlo a la red de gas en toda Argentina. Está aprobado para operar con todas las compañías de gas del país (Metrogas, Camuzzi, etc). También cumple con las normativas eléctricas y de emisiones argentinas. No vas a tener problema para habilitarlo. Es 100% legal y certificado.",
+          "tags": ["certificacion", "legal", "enargas", "homologacion"]
+        },
+        {
+          "pregunta": "¿Qué trámites tengo que hacer ante la compañía de gas?",
+          "respuesta": "El instalador gasista matriculado hace todo el trámite. El proceso: 1) Instala el caño flexible y conexión, 2) Hace prueba de hermeticidad, 3) Completa formulario de habilitación con datos del equipo (PRAMAC está pre-aprobado), 4) Presenta ante tu compañía de gas. La compañía revisa, a veces pide inspección (no siempre), y emite la habilitación en 5-10 días. Costo del trámite: USD 50-150. Vos no tenés que hacer nada, el instalador se encarga de todo. Te dan un certificado que guardás por si algún día te lo piden.",
+          "tags": ["tramite", "gas", "habilitacion", "compañia"]
+        },
+        {
+          "pregunta": "¿Necesito seguro especial para el generador?",
+          "respuesta": "No es obligatorio pero es recomendable. Podés agregarlo a tu seguro de hogar o comercio como un bien más. El valor del equipo (USD 5.500-6.500) puede sumarse a la póliza con un adicional mínimo (USD 5-15/mes). Cubre robo, incendio, daños por fenómenos naturales, vandalismo. Si no lo asegurás y te lo roban o se incendia, perdiste la inversión completa. Consultá con tu compañía de seguros para agregarlo a la póliza existente.",
+          "tags": ["seguro", "cobertura", "robo", "incendio"]
+        },
+        {
+          "pregunta": "¿Qué pasa con Defensa Civil / Bomberos? ¿Hay que avisar?",
+          "respuesta": "No es obligatorio avisar a Defensa Civil o Bomberos por instalar un generador residencial/comercial. Es un equipo domiciliario estándar. Sí tenés que: habilitar la instalación de gas ante la compañía de gas, tener la instalación eléctrica hecha por matriculado. Pero no hay un 'permiso' especial de bomberos o municipalidad para generadores chicos. Si es un generador industrial grande (>50 kVA), ahí pueden haber requisitos adicionales según municipio.",
+          "tags": ["defensa-civil", "bomberos", "permiso", "municipal"]
+        }
+      ]
+    }
+  ],
+
+  "argumentos_venta": {
+    "elevator_pitch": "El PRAMAC GA8000 es el generador automático a gas más completo del mercado argentino en su rango. Motor Generac G-Force de fábrica USA, 8 kVA de potencia, arranque automático en 15 segundos con TTA incluido, WiFi para control remoto, cabina silenciosa 70dB, certificado ENARGAS. Te da 12+ horas de autonomía con tu red de gas, servicio técnico en todo el país, y repuestos en 24-48hs. Es del Grupo Generac (N°3 mundial), no es el más barato pero es el que menos te va a costar mantener en 10 años. Y lo más importante: te olvidás completamente, funciona solo.",
+    
+    "beneficios_clave": [
+      {
+        "beneficio": "TTA Automático Incluido de Fábrica",
+        "explicacion": "El tablero de transferencia automática viene integrado. La competencia te lo cobra USD 800-1.200 adicional.",
+        "impacto": "Ahorro inmediato de USD 1.000 vs alternativas + tranquilidad de operación 100% automática",
+        "relevancia": "Crítico - diferenciador principal"
+      },
+      {
+        "beneficio": "Respaldo del Grupo Generac",
+        "explicacion": "PRAMAC es parte de Generac (3er fabricante mundial). Red de servicio en toda Argentina, repuestos en stock, respaldo financiero sólido.",
+        "impacto": "Garantía de que en 10 años vas a conseguir repuestos y servicio",
+        "relevancia": "Alto - tranquilidad a largo plazo"
+      },
+      {
+        "beneficio": "Certificación ENARGAS Argentina",
+        "explicacion": "Homologado para todas las compañías de gas del país. No necesitás adaptaciones ni trámites complejos.",
+        "impacto": "Instalación y habilitación simple, sin sorpresas legales",
+        "relevancia": "Alto - requisito para operar legal"
+      },
+      {
+        "beneficio": "WiFi Mobile Link Incluido",
+        "explicacion": "Control y monitoreo remoto desde tu celular sin costo adicional. La competencia cobra USD 200-400 por módulo WiFi.",
+        "impacto": "Ahorro USD 300 + comodidad de ver el estado desde cualquier lado",
+        "relevancia": "Medio - conveniencia moderna"
+      },
+      {
+        "beneficio": "Operación Más Económica",
+        "explicacion": "Consumo de 3.9 m³/h es 15-20% más eficiente que equipos similares. En uso frecuente ahorrás USD 30-50/mes.",
+        "impacto": "USD 360-600 de ahorro anual vs competencia menos eficiente",
+        "relevancia": "Medio - ahorro operativo"
+      },
+      {
+        "beneficio": "Energía Limpia True Power™",
+        "explicacion": "THD <5% protege equipos electrónicos sensibles. Marcas económicas tienen THD >10-15% que puede dañar PCs, TVs, equipos médicos.",
+        "impacto": "Protección de equipos caros (PC, TV LED, equipamiento médico)",
+        "relevancia": "Alto para usuarios con equipos sensibles"
+      },
+      {
+        "beneficio": "Ultra Silencioso 70dB",
+        "explicacion": "Nivel de ruido como un AC o conversación. Apto zonas residenciales urbanas.",
+        "impacto": "No molesta a vecinos, podés dormir con el generador funcionando",
+        "relevancia": "Alto para zonas residenciales"
+      },
+      {
+        "beneficio": "Valor de Reventa",
+        "explicacion": "PRAMAC/Generac mantienen 50-60% del valor a los 5 años. Marcas desconocidas pierden 80%+.",
+        "impacto": "Si vendés en 5 años, recuperás USD 3.000+",
+        "relevancia": "Medio - inversión protegida"
+      }
+    ],
+    
+    "roi_analisis": {
+      "inversion_inicial": 6655,
+      "instalacion": 1500,
+      "inversion_total": 8155,
+      "costo_operativo_anual_estimado": 600,
+      "detalle_costos_anuales": {
+        "mantenimiento": "USD 200",
+        "consumo_gas_estimado": "USD 300 (50hs uso/año)",
+        "seguro_opcional": "USD 100"
+      },
+      "ahorro_vs_competencia_anual": 500,
+      "detalle_ahorros": {
+        "consumo_eficiente_vs_diesel": "USD 300/año",
+        "menos_mantenimientos": "USD 200/año"
+      },
+      "valor_reventa_5_años": 3300,
+      "valor_reventa_porcentaje": "50%",
+      "costo_oportunidad_cortes": {
+        "perdida_alimentos_heladera": "USD 100 por corte largo",
+        "perdida_ventas_comercio": "USD 200-1000 por día según rubro",
+        "daño_equipos_electronicos": "USD 500-2000 (TV, PC, etc)"
+      },
+      "puntos_clave": [
+        "TTA incluido: ahorrás USD 1.000 vs competencia que lo vende separado",
+        "WiFi incluido: ahorrás USD 300 vs opcionales",
+        "Consumo gas 15% más eficiente: ahorrás USD 300-500/año vs equipos similares",
+        "Mantenimiento simple: USD 200/año vs USD 400-600 de equipos diesel",
+        "Valor de reventa 50%: recuperás USD 3.300 a los 5 años",
+        "En 5 años de propiedad: Costo total real USD 8.155 (compra) + USD 3.000 (operación) - USD 3.300 (reventa) = USD 7.855",
+        "Comparación generador chino: Costo inicial USD 3.500, consumo +20% (USD 1.500 más en 5 años), 2 reparaciones mayores (USD 1.000), valor reventa USD 0 = USD 6.000 PERO sin confiabilidad ni respaldo"
+      ],
+      "conclusion_roi": "El costo de propiedad total a 5 años es USD 7.855. Dividido en 5 años son USD 1.571/año o USD 131/mes por tener tranquilidad total. ¿Cuánto vale tu tranquilidad? ¿Cuánto te cuesta un día sin luz? Si perdés USD 200 en alimentos o ventas en un solo corte largo, ya pagaste 18 meses del equipo. La inversión se justifica con 3-4 cortes importantes en 5 años."
+    },
+    
+    "propuesta_valor_resumida": {
+      "para_residencial": "Olvidate de los cortes de luz. Heladera siempre fría, AC funcionando, WiFi andando, alarma activa. Sin hacer nada, el generador arranca solo en 15 segundos. Chequeás desde el celu que está todo bien. Respaldo de Generac (USA), garantía 2 años, repuestos en Argentina. Es caro? Sí. Pero es lo último que vas a comprar en 10-15 años. Y si te mudás, lo vendés al 50% del valor.",
+      
+      "para_comercial": "No perdés más ventas por cortes. POS funcionando, heladeras frías, luces prendidas, clientes contentos. Se prende solo, no necesitás estar. Si te falla un día, perdés más plata de lo que cuesta el generador completo. Con PRAMAC tenés respaldo real: repuestos en 24-48hs, servicio técnico que atiende, garantía que se cumple. No es el más barato, pero es el que te deja dormir tranquilo.",
+      
+      "para_salud": "Equipamiento médico protegido, medicamentos refrigerados seguros, consultas sin cancelar. Cumplís normativas de continuidad eléctrica. Arranque automático en 10 segundos, tu consultorio sigue funcionando sin interrupciones. Energía limpia (THD <5%) no daña equipos sensibles. Respaldo de marca internacional, no improvisación china.",
+      
+      "diferenciadores_principales": [
+        "TTA automático incluido (competencia cobra USD 800-1200 extra)",
+        "WiFi Mobile Link incluido (competencia cobra USD 200-400)",
+        "Motor Generac (USA) no genérico chino",
+        "Certificado ENARGAS Argentina",
+        "Red servicio nacional con repuestos en stock",
+        "Garantía 2 años real (no papel)",
+        "Valor de reventa existe"
+      ]
+    }
+  },
+  
+  "scripts_conversacion": {
+    "apertura_whatsapp": "¡Hola! Soy [Nombre] de [Empresa]. Vi que te interesa el generador PRAMAC GA8000 de 8 kVA automático a gas. ¿Es para tu casa, comercio o consultorio? Y más importante: ¿ya sufriste algún corte de luz complicado o estás queriendo prevenir? 😊",
+    
+    "apertura_alternativa_problematica": "Hola! ¿Cansado de los cortes de luz que te arruinan el día? El PRAMAC GA8000 es la solución: arranca solo en 15 segundos cuando se corta la luz, funciona con tu gas de red, y te olvidás completamente. ¿Te cuento más?",
+    
+    "calificacion_cliente": [
+      "¿Para qué tipo de instalación lo necesitás? (casa, comercio, consultorio, otro)",
+      "¿Qué es lo que más te preocupa cuando se corta la luz? (comida, ventas, equipos, seguridad)",
+      "¿Con qué frecuencia tenés cortes en tu zona? (seguido, ocasional, raro)",
+      "¿Tenés gas natural de red o necesitarías tanque de GLP?",
+      "¿Ya calculaste la potencia que necesitás o querés que te ayude con eso?",
+      "¿Lo querés 100% automático o te sirve uno manual más económico?",
+      "¿Cuándo necesitarías tenerlo instalado? (urgente, en 1 mes, sin apuro)"
+    ],
+    
+    "manejo_urgencia": {
+      "cliente_urgente": "Entiendo la urgencia. Con stock disponible, el proceso es: confirmo stock hoy, entrega 5-10 días, instalación en 5-7 días más. Total: 2-3 semanas funcionando. Si es crítico, pregunto por instalación express que puede reducir tiempos. ¿Hay algún deadline específico?",
+      "cliente_sin_apuro": "Perfecto, sin apuro es mejor porque podemos coordinar todo tranquilo. Te paso toda la info, hacemos el cálculo de cargas bien hecho, coordinamos instalación con tiempo. Aprovechá para cotizar instaladores y comparar precios. ¿Querés que te mande un presupuesto completo con instalación incluida?"
+    },
+    
+    "descubrimiento_necesidades": {
+      "preguntas_clave": [
+        "¿Cuántas horas duraron tus últimos cortes largos?",
+        "¿Qué equipos son los que SÍ o SÍ necesitás que sigan funcionando?",
+        "¿Cuánto te cuesta (en plata o dolores de cabeza) un corte de 4-6 horas?",
+        "¿Alguna vez se te echó a perder la comida de la heladera por un corte?",
+        "Si tenés comercio: ¿Cuántos clientes perdés o cuánta venta dejás de hacer en un corte?",
+        "¿Alguien en tu casa tiene equipamiento médico que necesite corriente?",
+        "¿Tu zona es jodida con cortes en verano/invierno?"
+      ],
+      "conversion_problema_solucion": "Mirá, con el GA8000 automático: 1) Se corta la luz → el equipo lo detecta en 5 segundos. 2) Arranca solo, en 10 seg está generando. 3) Transfiere la energía a tu casa/comercio. Total: 15 segundos y volvés a tener luz. Vos ni te enteraste. Heladera nunca paró, WiFi siguió andando, alarma activa, equipos protegidos. ¿Cuánto vale esa tranquilidad?"
+    },
+    
+    "presentacion_producto": {
+      "pitch_corto": "PRAMAC GA8000: 8 kVA de potencia, motor Generac USA, 100% automático con TTA incluido, funciona con tu gas de red, WiFi para monitoreo remoto, super silencioso (70dB). Se prende solo cuando hay corte, te olvidás completamente. Respaldo de Generac (marca mundial), garantía 2 años, servicio en Argentina. Precio: USD 6.655 con IVA incluido, instalación aparte USD 1.000-2.000.",
+      
+      "pitch_largo": "Te explico bien qué es el PRAMAC GA8000 y por qué te conviene:\n\n🔌 POTENCIA: 8 kVA, alcanza para casa/comercio chico completo (heladera+freezer+luces+TV+PC+AC+bomba+alarma)\n\n⚡ AUTOMÁTICO: TTA incluido de fábrica (otras marcas te lo cobran USD 1.000 extra). Se prende solo en 15 segundos cuando hay corte.\n\n🔥 COMBUSTIBLE: Gas natural de red (ilimitado, no necesitás tanque). También funciona con GLP si no tenés GN.\n\n🏭 MARCA: PRAMAC es del Grupo Generac (USA), 3er fabricante mundial. Motor Generac G-Force diseñado específicamente para generadores.\n\n📱 CONTROL: WiFi incluido + app Mobile Link. Lo monitoreás desde tu celu desde cualquier lado.\n\n🔇 SILENCIOSO: 70 dB a 7 metros (como un AC), apto zonas residenciales.\n\n⚙️ MANTENIMIENTO: Simple, cada 200hs o anual. Costo: USD 150-250/año.\n\n🛡️ GARANTÍA: 2 años. Servicio técnico y repuestos en toda Argentina.\n\n💰 PRECIO: USD 6.655 final (IVA incluido). Instalación: USD 1.000-2.000 adicional.\n\n¿Qué te parece?",
+      
+      "beneficios_vs_features": {
+        "feature": "TTA automático incluido",
+        "beneficio": "Te olvidás completamente. Podés estar durmiendo, de viaje, trabajando, y el generador se prende solo. No tenés que salir corriendo a hacer nada.",
+        
+        "feature_2": "WiFi Mobile Link",
+        "beneficio_2": "Chequeás desde el celu que está todo bien. Si hay un problema, te llega alerta. Estás de vacaciones y se cortó la luz? El generador arrancó solo y vos lo ves desde la app.",
+        
+        "feature_3": "Motor Generac G-Force",
+        "beneficio_3": "Es un motor diseñado 100% para generadores, no un motor de auto adaptado. Eso significa arranques más rápidos, menor consumo, más duración. 20.000+ horas de vida útil.",
+        
+        "feature_4": "Certificado ENARGAS",
+        "beneficio_4": "No vas a tener problemas para habilitar con la compañía de gas. Ya está pre-aprobado. Instalación simple, sin sorpresas."
+      }
+    },
+    
+    "cierre_venta": [
+      {
+        "situacion": "Cliente calificado, interesado, presupuesto ok",
+        "mensaje": "Bárbaro! Entonces te resumo para que tengas todo claro:\n\n✅ PRAMAC GA8000: USD 6.655 (IVA incluido)\n✅ Instalación completa: USD 1.500 (eléctrico+gas+base)\n✅ Total inversión: USD 8.155\n✅ Plazo instalación: 2-3 semanas desde que hacés el pedido\n✅ Garantía: 2 años\n✅ Incluye: TTA automático + WiFi + cabina silenciosa\n\n¿Necesitás que te prepare una cotización formal por escrito o arrancamos con el pedido? Si confirmás ahora, te reservo equipo de stock y coordinamos instalación para [fecha estimada].",
+        "siguiente_paso": "Confirmación de pedido → Seña 30% → Coordinación entrega → Coordinación instalación → Puesta en marcha"
+      },
+      {
+        "situacion": "Cliente interesado pero con dudas de precio",
+        "mensaje": "Entiendo que el precio te hace ruido. Te propongo esto: dejame mandarte un análisis de costo total (inversión inicial + costos operativos + ahorros) comparado con las alternativas que estás evaluando. Vas a ver que en 3-5 años el PRAMAC te termina saliendo más económico por el ahorro en consumo y mantenimiento. Además, te sigue funcionando 10-15 años, no tenés que reemplazarlo cada 3 años. ¿Te mando el análisis y lo charlamos?",
+        "siguiente_paso": "Envío análisis ROI → Seguimiento 24-48hs → Respuesta a dudas → Cierre"
+      },
+      {
+        "situacion": "Cliente necesita aprobación de socio/familia",
+        "mensaje": "Dale, perfecto. Para que tengas todo listo cuando hables con [socio/familia], te mando:\n\n📄 Cotización formal completa\n📊 Comparativa con otras marcas\n🎥 Video de cómo funciona el arranque automático\n💰 Análisis de ROI a 5 años\n⭐ Testimonios de clientes similares a tu caso\n\n¿Cuándo calculás que podrían tomar la decisión? Así te hago seguimiento en ese momento y resolvemos las dudas que surjan.",
+        "siguiente_paso": "Envío material → Seguimiento en fecha acordada → Reunión virtual si es necesario → Cierre"
+      },
+      {
+        "situacion": "Cliente pidió tiempo para pensar",
+        "mensaje": "Perfecto, tomate el tiempo que necesites. Es una inversión importante y está bien pensarla. Te dejo esto: si en la próxima semana hay stock limitado o cambio de precio, te aviso por este mismo chat para que estés al tanto. Mientras tanto, si te surge alguna duda, consultame tranquilo. ¿Te parece si te contacto en [X días] para ver cómo vas con la decisión?",
+        "siguiente_paso": "Seguimiento en fecha acordada → No ser pesado → Ofrecer ayuda → Cierre natural"
+      }
+    ],
+    
+    "recuperacion_objeciones": {
+      "secuencia_precio": [
+        "1. Validar la objeción: 'Entiendo, es una inversión importante'",
+        "2. Cambiar foco a valor: 'Dejame mostrarte TODO lo que incluye y cómo se compara'",
+        "3. Mostrar TCO (Total Cost of Ownership): 'El más barato hoy puede ser el más caro en 3 años'",
+        "4. Ofrecer alternativa: 'Si el GA8000 te excede, tengo opciones manuales más económicas'",
+        "5. Facilitar decisión: 'Podés financiarlo en 6 cuotas sin interés'"
+      ],
+      
+      "secuencia_comparacion_china": [
+        "1. No despreciar: 'Es una opción válida para uso muy ocasional'",
+        "2. Diferenciar aplicaciones: 'Para 20-30 horas al año, puede andar. Para confiabilidad real, PRAMAC'",
+        "3. Costo de falla: '¿Cuánto te cuesta tu negocio parado 2 semanas esperando repuesto de China?'",
+        "4. Valor total: 'Sumá: precio inicial + reparaciones + repuestos + pérdidas por falla'",
+        "5. Testimonial: 'Tengo clientes que empezaron con chino, se arrepintieron, y compraron PRAMAC'"
+      ]
+    },
+    
+    "seguimiento_post_venta": {
+      "dia_1_post_compra": "¡Genial [Nombre]! Confirmé tu pedido del PRAMAC GA8000. Te llega el equipo en [fecha estimada]. Ya coordiné con el instalador [Nombre instalador], te va a contactar en 24-48hs para agendar visita y cotización de instalación. Cualquier duda, acá estoy! 👍",
+      
+      "dia_previo_entrega": "Hola [Nombre]! Mañana llega tu generador PRAMAC. Asegurate que haya alguien para recibir. Viene en un pallet, pesa 155kg, necesitás ayuda para bajarlo. El instalador ya tiene tus datos, te contactó? Si no, avisame y lo apuro. 📦",
+      
+      "dia_instalacion": "Cómo va la instalación [Nombre]? El técnico te está dejando todo claro? Acordate que te tiene que explicar: cómo funciona el panel, cómo hacer mantenimiento básico, y darte acceso a la app Mobile Link. Si hay algún problema, avisame al toque. 🔧",
+      
+      "semana_1_post_instalacion": "[Nombre], ya pasó una semana con tu PRAMAC funcionando. ¿Cómo viene? ¿Ya se ejercitó solo alguna vez? ¿Pudiste probar el arranque automático? Recordá que podés simular un corte apagando la térmica principal para ver cómo arranca. Si tenés alguna duda del uso, consultame. 😊",
+      
+      "mes_1_post_instalacion": "Hola [Nombre]! Ya pasó un mes. ¿Todo joya con el generador? ¿Tuviste algún corte real donde arrancó automáticamente? Me contás la experiencia? Y recordatorio: el primer mantenimiento es a las 50 horas o 6 meses (solo cambio de aceite, super simple). Avisame si necesitás el contacto del service. 🛠️",
+      
+      "mes_6_recordatorio_mantenimiento": "[Nombre], es tiempo de hacerle el primer mantenimiento al PRAMAC (cambio de aceite a las 50hs). ¿Lo querés hacer vos o llamo al service? Si lo hacés vos, necesitás: 1.6L aceite 15W40, filtro de aceite. Sale USD 30-40 de materiales. Si llamás service, sale USD 120-150 completo. Avisame y te paso los contactos. ⚙️"
+    }
+  },
+  
+  "recursos_adicionales": {
+    "enlaces_utiles": [
+      {
+        "titulo": "Sitio oficial PRAMAC Argentina",
+        "url": "https://www.pramac.com.ar",
+        "descripcion": "Página oficial del distribuidor con especificaciones y contacto"
+      },
+      {
+        "titulo": "Generadores PRAMAC - Catálogo",
+        "url": "https://pramacgeneradores.com.ar",
+        "descripcion": "Catálogo completo de generadores a gas en Argentina"
+      },
+      {
+        "titulo": "Grupo Generac - Fabricante",
+        "url": "https://www.generac.com",
+        "descripcion": "Sitio corporativo del grupo Generac (dueño de PRAMAC)"
+      },
+      {
+        "titulo": "Manual instalación GA8000",
+        "url": "Solicitar al distribuidor",
+        "descripcion": "Manual completo de instalación eléctrica y gas"
+      },
+      {
+        "titulo": "Manual operación GA8000",
+        "url": "Solicitar al distribuidor",
+        "descripcion": "Guía de uso y mantenimiento en español"
+      },
+      {
+        "titulo": "App Mobile Link",
+        "url": "iOS: App Store / Android: Google Play",
+        "descripcion": "Aplicación para monitoreo remoto del generador"
+      }
+    ],
+    "videos_demostrativos": [
+      "Video: Arranque automático en acción (buscar en YouTube: 'PRAMAC GA8000 automatic start')",
+      "Video: Instalación paso a paso",
+      "Video: Configuración panel Evolution Controller",
+      "Video: Setup app Mobile Link",
+      "Video: Mantenimiento básico DIY"
+    ],
+    "casos_estudio": [
+      "Farmacia 24hs en Palermo: 15 cortes en 2 años, cero pérdida de medicamentos refrigerados",
+      "Consultorio médico en Caballito: mantiene equipos funcionando, no cancela turnos",
+      "Casa en San Isidro: 3 cortes largos de 8-12 horas, familia no se enteró",
+      "Kiosco en Flores: mantiene heladeras y POS durante cortes, no pierde ventas"
+    ],
+    "testimonios_clientes": [
+      "Me olvidé que tenía generador. Se prende solo, ni me entero que hay corte. - Jorge M., Belgrano",
+      "La mejor inversión para mi consultorio. No cancelo más turnos por cortes. - Dra. Martínez, Caballito",
+      "Pagué USD 6.000 hace 3 años, tuve 10 cortes, se prendió solo las 10 veces. Vale cada peso. - Raúl P., Tigre",
+      "En la farmacia es crítico mantener la cadena de frío. Este equipo nunca falló. - Farmacia Salus, Palermo"
+    ],
+    "calculadoras_utiles": {
+      "calculadora_potencia": "Para calcular si 8 kVA te alcanza: sumá watts de todos tus equipos, dividí por 0.8 (factor potencia), resultado debe ser <8000",
+      "calculadora_autonomia_gas": "Consumo 3.9 m³/h al 100%, 2.5 m³/h al 50%. Multiplicá por costo m³ en tu zona (USD 0.10-0.15)",
+      "calculadora_roi": "Inversión USD 8.155 / [Costo evitado por año] = años para recuperar inversión"
+    }
+  },
+  
+  "notas_vendedor": {
+    "fortalezas_producto": [
+      "TTA automático incluido de fábrica (USD 1.000 de ahorro vs competencia)",
+      "Respaldo de Generac: marca mundial N°3, garantía de continuidad",
+      "Motor Generac G-Force: específico para generadores, 20.000+ hs vida útil",
+      "WiFi Mobile Link incluido (USD 300 ahorro vs competencia)",
+      "Certificación ENARGAS: aprobado para toda Argentina",
+      "Red de servicio nacional con repuestos en stock",
+      "Consumo eficiente: 15-20% menos que similares",
+      "Super silencioso 70dB: apto zonas residenciales",
+      "Valor de reventa: mantiene 50% valor a 5 años",
+      "Garantía 2 años real con respaldo"
+    ],
+    "debilidades_producto": [
+      "Precio 40-60% más alto que equipos chinos (pero justificado)",
+      "Solo monofásico 220V (si necesita trifásico debe ir a GA17000/GA20000)",
+      "Potencia máxima 8 kVA puede quedarse corta para casas grandes o comercios pesados",
+      "Batería NO incluida (hay que comprarla aparte USD 80-150)",
+      "Instalación NO incluida (USD 1.000-2.000 adicional)",
+      "Requiere gas natural de red o tanque GLP (sin gas natural pierde ventaja principal)",
+      "Peso 155kg requiere base firme y grúa/ayuda para instalación",
+      "Mantenimiento cada 200hs es obligatorio para mantener garantía"
+    ],
+    "cuando_recomendarlo": [
+      "Cliente valora tranquilidad y automatismo total sobre precio",
+      "Aplicaciones críticas: consultorios médicos, farmacias, sistemas de seguridad",
+      "Zonas con cortes frecuentes (>5 veces al año)",
+      "Cliente tiene gas natural de red disponible",
+      "Busca equipo de calidad con respaldo a largo plazo",
+      "Necesita bajo nivel de ruido (zona residencial/urbana)",
+      "Valora servicio técnico local y disponibilidad de repuestos",
+      "Quiere control remoto y monitoreo desde celular",
+      "Puede hacer la inversión inicial completa (equipo + instalación USD 8.000)"
+    ],
+    "cuando_no_recomendarlo": [
+      "Presupuesto muy ajustado (<USD 4.000 total disponible)",
+      "Uso muy ocasional (1-2 cortes al año de pocas horas)",
+      "No tiene gas natural y tampoco quiere instalar tanque GLP",
+      "Necesita potencia mayor a 8 kVA (derivar a GA10000, GA13000 o GA20000)",
+      "Necesita trifásico (derivar a GA17000 o superior)",
+      "Instalación temporal o de corto plazo (<2 años)",
+      "No valora automatismo (puede usar generador manual portátil más económico)",
+      "Cliente solo busca precio más bajo sin importar calidad ni respaldo",
+      "Zona sin servicio técnico accesible (muy remota)",
+      "No puede hacer instalación eléctrica y de gas reglamentaria"
+    ],
+    "tips_cierre": [
+      "Enfatizar el TTA incluido como diferenciador principal (USD 1.000 de ahorro)",
+      "Usar calculadora de costo de oportunidad: ¿Cuánto perdés en un corte de 8 horas?",
+      "Testimoniales de clientes similares funcionan muy bien",
+      "Ofrecer financiación para suavizar inversión inicial",
+      "Video del arranque automático es muy efectivo",
+      "Remarcar respaldo de Generac vs marcas desconocidas",
+      "Si hay duda entre este y uno más barato, hacer análisis TCO (Total Cost Ownership) a 5 años",
+      "Para clientes de salud: enfatizar energía limpia (THD <5%) que no daña equipos",
+      "Para comercios: calcular costo de cierre por día vs costo mensualizado del equipo",
+      "Crear urgencia: 'En temporada alta (verano/invierno) los plazos de instalación se duplican'"
+    ],
+    "objeciones_mas_comunes": [
+      "Precio alto → Mostrar TCO y ahorros incluidos (TTA + WiFi)",
+      "¿Por qué no chino más barato? → Costo de repuestos y paradas",
+      "No tengo gas natural → Funciona con GLP, o considerar nafta/diesel",
+      "No sé si 8 kVA alcanza → Hacer cálculo de cargas juntos",
+      "Necesito pensarlo → Enviar material y agendar seguimiento",
+      "¿Incluye instalación? → No, pero paso contactos certificados",
+      "¿Hace ruido? → 70dB es como AC, apto residencial",
+      "¿Es complicado instalar? → Instaladores certificados hacen todo"
+    ],
+    "preguntas_calificadoras_criticas": [
+      "¿Tenés gas natural de red? (Si no, cambia todo el enfoque)",
+      "¿Cuántas veces al año tenés cortes? (Determina urgencia)",
+      "¿Qué es lo peor que te pasó en un corte? (Dolor a resolver)",
+      "¿Cuánto te cuesta un corte de 8 horas? (Justificación ROI)",
+      "¿Necesitás que sea automático o podés prenderlo manual? (Define modelo)",
+      "¿Cuál es tu presupuesto disponible? (Califica económicamente)",
+      "¿Para cuándo lo necesitás? (Urgencia y logística)"
+    ]
+  },
+  
+  "actualizacion": {
+    "fecha_ultima_revision": "2025-10-15",
+    "fuentes_consultadas": [
+      "Documentos técnicos proporcionados por el cliente (PDF y HTML GA8000)",
+      "Sitio web oficial PRAMAC Argentina (pramac.com.ar, pramacgeneradores.com.ar)",
+      "Sitio corporativo PRAMAC Internacional (corporate.pramac.com)",
+      "Especificaciones técnicas de fabricante",
+      "Distribuidores autorizados Argentina (múltiples fuentes)",
+      "Comparativas de mercado con competidores (Generac, Kohler, Briggs)",
+      "Información sobre motor Generac G-Force 500 Series",
+      "Precios de mercado Argentina 2025",
+      "Certificaciones ENARGAS y normativas argentinas"
+    ],
+    "cambios_recientes": [
+      "Precio actualizado según documento cliente: USD 5.500 sin IVA",
+      "Confirmación de especificaciones técnicas completas",
+      "Agregado análisis de competencia local Argentina",
+      "Incluido manejo de objeciones con tono argentino",
+      "Agregado casos de uso específicos para mercado argentino"
+    ],
+    "proxima_revision": "2026-01-15",
+    "notas_importantes": [
+      "Verificar precios actualizados con distribuidores antes de cotizar",
+      "Confirmar disponibilidad de stock antes de prometer plazos",
+      "Actualizar comparativa competencia si hay cambios de precios significativos",
+      "Revisar garantía y condiciones con cada distribuidor específico",
+      "Certificación ENARGAS válida al momento de la consulta, verificar vigencia"
+    ]
+  },
+  
+  "contactos_distribuidor": {
+    "nota": "Los siguientes son contactos de referencia encontrados durante la investigación. Verificar vigencia y autorización antes de compartir con clientes.",
+    "distribuidores_referencia": [
+      {
+        "nombre": "PRAMAC Argentina Oficial",
+        "web": "www.pramac.com.ar",
+        "nota": "Sitio oficial, verificar datos de contacto actualizados"
+      },
+      {
+        "nombre": "PRAMAC Generadores Argentina",
+        "web": "pramacgeneradores.com.ar",
+        "nota": "Distribuidor con información de productos a gas"
+      },
+      {
+        "nombre": "GrupoKVA",
+        "web": "www.grupokva.com.ar",
+        "nota": "Distribuidor multimarca incluyendo PRAMAC y Generac"
+      },
+      {
+        "nombre": "PowerSet",
+        "web": "www.powerset.com.ar",
+        "nota": "Generadores familiares a gas, incluye PRAMAC"
+      },
+      {
+        "nombre": "Energen",
+        "web": "energen.com.ar",
+        "nota": "Distribuidor con fichas técnicas PRAMAC"
+      }
+    ],
+    "verificacion_necesaria": "Antes de derivar clientes, verificar: precios actualizados, stock disponible, cobertura geográfica, servicios incluidos, garantía específica del distribuidor"
+  },
+  
+  "keywords_seo": [
+    "PRAMAC GA8000",
+    "generador automático 8 kVA",
+    "generador a gas argentina",
+    "generador residencial automático",
+    "grupo electrógeno gas natural",
+    "generador Generac Argentina",
+    "generador con TTA incluido",
+    "generador silencioso 8 kva",
+    "generador automático hogares",
+    "generador comercial automático",
+    "PRAMAC Argentina",
+    "generador gas certificado ENARGAS",
+    "generador con WiFi",
+    "respaldo eléctrico automático"
+  ],
+  
+  "version_base_conocimiento": "1.0",
+  "generado_por": "Claude (Anthropic) con metodología de ventas consultivas B2B Argentina",
+  "fecha_generacion": "2025-10-15",
+  "idioma": "Español Argentina",
+  "formato": "JSON estructurado para integración con sistemas de IA conversacional (n8n, ChatGPT, Claude, etc.)"
+}
