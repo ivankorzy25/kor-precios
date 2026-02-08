@@ -9,23 +9,23 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --bg-primary: #08080c;
-            --bg-secondary: #0f0f15;
-            --bg-card: #131318;
-            --bg-hover: #1a1a22;
-            --text-primary: #f5f5f5;
-            --text-secondary: #888;
-            --text-muted: #555;
-            --accent: #ff6b00;
-            --accent-hover: #ff8533;
-            --border: #222;
-            --border-light: #333;
-            --gas: #22c55e;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-card: #ffffff;
+            --bg-hover: #f3f4f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-muted: #9ca3af;
+            --accent: #dc2626;
+            --accent-hover: #b91c1c;
+            --border: #e5e7eb;
+            --border-light: #f3f4f6;
+            --gas: #059669;
             --diesel: #6b7280;
-            --nafta: #f59e0b;
-            --cummins: #ef4444;
-            --success: #10b981;
-            --info: #3b82f6;
+            --nafta: #d97706;
+            --cummins: #dc2626;
+            --success: #059669;
+            --info: #2563eb;
             --purple: #8b5cf6;
         }
 
@@ -39,12 +39,13 @@
 
         /* ========== HEADER MINIMALISTA ========== */
         .header {
-            background: var(--bg-secondary);
+            background: var(--bg-card);
             padding: 0.5rem 1rem;
             display: flex;
             align-items: center;
             gap: 1rem;
             border-bottom: 1px solid var(--border);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -152,8 +153,9 @@
 
         /* ========== SIDEBAR COMPACTO ========== */
         .sidebar {
-            background: var(--bg-secondary);
+            background: var(--bg-card);
             border-right: 1px solid var(--border);
+            box-shadow: 1px 0 3px 0 rgba(0, 0, 0, 0.05);
             overflow-y: auto;
             padding: 0.5rem 0;
             transition: width 0.3s;
@@ -298,6 +300,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border);
             border-radius: 8px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
             cursor: pointer;
             transition: all 0.15s;
         }
@@ -305,6 +308,7 @@
         .product-row:hover {
             border-color: var(--accent);
             background: var(--bg-hover);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transform: translateX(2px);
         }
 
@@ -457,7 +461,8 @@
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.85);
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
             z-index: 1000;
             display: none;
             align-items: flex-start;
@@ -469,11 +474,12 @@
         .modal-overlay.active { display: flex; }
 
         .modal-content {
-            background: var(--bg-secondary);
+            background: var(--bg-card);
             border-radius: 12px;
             width: 100%;
             max-width: 1000px;
             border: 1px solid var(--border);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
             overflow: hidden;
         }
 
@@ -759,9 +765,10 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0,0,0,0.7);
-            border: none;
-            color: white;
+            background: rgba(255,255,255,0.95);
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            color: var(--text-primary);
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -775,6 +782,7 @@
 
         .gallery-nav:hover {
             background: var(--accent);
+            color: white;
             transform: translateY(-50%) scale(1.1);
         }
 
