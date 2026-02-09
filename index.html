@@ -1473,7 +1473,8 @@
                         summary: 'Tecnología equivalente a Kohler (mismo grupo) pero con mejor relación precio-prestaciones. PRAMAC incluye de serie lo que Kohler cobra extra.'
                     }
                 },
-                video_url: 'https://www.youtube.com/embed/VIDEO_ID',
+                video_url: 'assets/docs/products/ga8000/video.mp4',
+                audio_url: 'assets/docs/products/ga8000/audio-ga8000.m4a',
                 pdf_url: 'assets/docs/products/ga8000/GA8000-KOR.pdf',
                 folleto_url: 'assets/docs/products/ga8000/GA8000-KOR.html',
                 infografia_url: 'assets/docs/products/ga8000/infografia-ga8000.png',
@@ -1855,13 +1856,39 @@
             // === VIDEO ===
             let videoHtml = '';
             if (p.video_url) {
-                videoHtml = `
-                    <div class="video-container">
-                        <iframe src="${p.video_url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                `;
+                const isYouTube = p.video_url.includes('youtube.com') || p.video_url.includes('youtu.be');
+                if (isYouTube) {
+                    videoHtml = `
+                        <div class="video-container">
+                            <iframe src="${p.video_url}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    `;
+                } else {
+                    videoHtml = `
+                        <div class="video-container">
+                            <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
+                                <source src="${p.video_url}" type="video/mp4">
+                                Tu navegador no soporta el tag de video.
+                            </video>
+                        </div>
+                    `;
+                }
             } else {
                 videoHtml = '<p style="color:var(--text-muted)">No hay video disponible para este producto.</p>';
+            }
+
+            // === AUDIO ===
+            let audioHtml = '';
+            if (p.audio_url) {
+                audioHtml = `
+                    <div class="audio-player" style="margin-top: 1.5rem; padding: 1.5rem; background: var(--bg-secondary); border-radius: 12px; border: 1px solid var(--border);">
+                        <h4 style="margin: 0 0 1rem 0; color: var(--text-primary); font-size: 1rem;"><i class="fas fa-headphones"></i> Audio Descriptivo</h4>
+                        <audio controls style="width: 100%; outline: none;">
+                            <source src="${p.audio_url}" type="audio/mp4">
+                            Tu navegador no soporta el elemento de audio.
+                        </audio>
+                    </div>
+                `;
             }
 
             // === PRICING ===
@@ -2042,7 +2069,7 @@
                         <div class="tab-content" id="tab-faq">${faqHtml}</div>
                         ${p.advantages && p.advantages.length > 0 ? `<div class="tab-content" id="tab-advantages">${advantagesHtml}</div>` : ''}
                         ${p.comparison ? `<div class="tab-content" id="tab-comparison">${comparisonHtml}</div>` : ''}
-                        ${p.video_url ? `<div class="tab-content" id="tab-video">${videoHtml}</div>` : ''}
+                        ${p.video_url ? `<div class="tab-content" id="tab-video">${videoHtml}${audioHtml}</div>` : ''}
                         ${p.pricing ? `<div class="tab-content" id="tab-pricing">${pricingHtml}</div>` : ''}
                         ${p.installation ? `<div class="tab-content" id="tab-installation">${installationHtml}</div>` : ''}
                         ${p.warranty ? `<div class="tab-content" id="tab-warranty">${warrantyHtml}</div>` : ''}
