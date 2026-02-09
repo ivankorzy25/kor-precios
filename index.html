@@ -1474,7 +1474,8 @@
                     }
                 },
                 video_url: 'https://www.youtube.com/embed/VIDEO_ID',
-                pdf_url: 'assets/data/GA8000.pdf',
+                pdf_url: 'assets/docs/products/ga8000/GA8000-KOR.pdf',
+                folleto_url: 'assets/docs/products/ga8000/GA8000-KOR.html',
                 pricing: {
                     equipment: {
                         base: 5500,
@@ -2005,7 +2006,8 @@
                             <div class="sub-price">${formatARS(p.price)} (TC $${tc})</div>
                             <div class="actions">
                                 <button class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</button>
-                                <button class="btn btn-outline"><i class="fas fa-file-pdf"></i> PDF</button>
+                                ${p.pdf_url ? `<a href="${p.pdf_url}" target="_blank" class="btn btn-outline"><i class="fas fa-file-pdf"></i> Ficha Técnica</a>` : ''}
+                                ${p.folleto_url ? `<a href="${p.folleto_url}" target="_blank" class="btn btn-outline"><i class="fas fa-book-open"></i> Ver Folleto</a>` : ''}
                             </div>
                         </div>
 
