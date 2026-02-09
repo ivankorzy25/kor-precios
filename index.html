@@ -1476,6 +1476,8 @@
                 video_url: 'https://www.youtube.com/embed/VIDEO_ID',
                 pdf_url: 'assets/docs/products/ga8000/GA8000-KOR.pdf',
                 folleto_url: 'assets/docs/products/ga8000/GA8000-KOR.html',
+                infografia_url: 'assets/docs/products/ga8000/infografia-ga8000.png',
+                sitio_web: 'https://ga8000.generadores.ar/',
                 pricing: {
                     equipment: {
                         base: 5500,
@@ -2008,6 +2010,8 @@
                                 <button class="btn btn-primary"><i class="fas fa-plus"></i> Agregar</button>
                                 ${p.pdf_url ? `<a href="${p.pdf_url}" target="_blank" class="btn btn-outline"><i class="fas fa-file-pdf"></i> Ficha Técnica</a>` : ''}
                                 ${p.folleto_url ? `<a href="${p.folleto_url}" target="_blank" class="btn btn-outline"><i class="fas fa-book-open"></i> Ver Folleto</a>` : ''}
+                                ${p.infografia_url ? `<a href="${p.infografia_url}" target="_blank" class="btn btn-outline"><i class="fas fa-image"></i> Infografía</a>` : ''}
+                                ${p.sitio_web ? `<a href="${p.sitio_web}" target="_blank" class="btn btn-outline" style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; border: none;"><i class="fas fa-external-link-alt"></i> Ver Sitio Web</a>` : ''}
                             </div>
                         </div>
 
