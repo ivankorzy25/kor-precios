@@ -1629,6 +1629,88 @@
             { id: 'Gl5500', name: 'Logus Gl5500 Silent', brand: 'LOGUS', family: 'nafta-silent', power: 5, unit: 'kVA', voltage: '220V', fuel: 'nafta', price: 1500, motor: 'OHV 300cc', start: 'Electrico', weight: 55, noise: '64 dB', tags: ['nafta', 'silent', 'inverter'], img: '', desc: 'Generador inverter 5 kVA.', specs: { 'Potencia': '5 kVA' }, faq: [] },
         ];
 
+        // ========== ODOO API INTEGRATION ==========
+        async function loadProductsFromOdoo() {
+            try {
+                console.log('🔄 Cargando productos desde Odoo API...');
+                const response = await fetch('https://odoo19.generadores.ar/api/v1/products');
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                if (data.success && data.products && data.products.length > 0) {
+                    console.log(`✅ ${data.products.length} productos cargados desde Odoo`);
+
+                    // Transformar productos de Odoo al formato local
+                    const odooProducts = data.products.map(p => {
+                        // Determinar familia según el tipo de combustible
+                        let family = 'otros';
+                        if (p.fuel === 'gas') family = 'gas-residencial';
+                        else if (p.fuel === 'gasoline') family = 'nafta-portatil';
+                        else if (p.fuel === 'diesel') family = 'diesel-industrial';
+
+                        // Extraer potencia del nombre o specs
+                        let power = 0;
+                        const powerMatch = p.name.match(/(\d+(?:\.\d+)?)\s*(kva|kw|w)/i);
+                        if (powerMatch) {
+                            power = parseFloat(powerMatch[1]);
+                            if (powerMatch[2].toLowerCase() === 'w') power = power / 1000;
+                        }
+
+                        return {
+                            id: p.id,
+                            name: p.name,
+                            brand: p.brand || 'GENERADOR',
+                            family: family,
+                            power: power,
+                            unit: 'kVA',
+                            voltage: p.voltage || '220V',
+                            fuel: p.fuel || 'nafta',
+                            price: p.price || 0,
+                            motor: p.kor_model || '',
+                            start: p.start_type || 'Manual',
+                            weight: parseInt(p.weight) || 0,
+                            noise: '',
+                            tags: p.tags || [],
+                            img: p.images && p.images.length > 0 ? p.images[0].url : '',
+                            gallery: p.gallery && p.gallery.length > 0 ? p.gallery.map(img => img.url) : [],
+                            desc: p.description || '',
+                            specs: p.specs && p.specs.length > 0 ? Object.fromEntries(p.specs.map(s => [s.label, s.value])) : {},
+                            faq: [],
+                            // Campos adicionales de Odoo
+                            odoo_source: true,
+                            website_url: p.website_url,
+                            pdf_url: p.pdf_url,
+                            video_url: p.video_url,
+                            audio_url: p.audio_url,
+                            folleto_url: p.folleto_url,
+                            infografia_url: p.infografia_url,
+                            sitio_web: p.sitio_web
+                        };
+                    });
+
+                    // Mezclar con productos locales (priorizar locales si tienen el mismo ID)
+                    const localIds = new Set(products.map(p => p.id));
+                    const newProducts = odooProducts.filter(p => !localIds.has(p.id));
+
+                    // Agregar productos de Odoo que no existen localmente
+                    products.push(...newProducts);
+
+                    console.log(`📦 Total productos después de merge: ${products.length}`);
+                    console.log(`   - Locales: ${products.length - newProducts.length}`);
+                    console.log(`   - Odoo: ${newProducts.length}`);
+                } else {
+                    console.warn('⚠️ No se recibieron productos desde Odoo');
+                }
+            } catch (error) {
+                console.error('❌ Error cargando productos desde Odoo:', error);
+                console.log('ℹ️ Continuando solo con productos locales');
+            }
+        }
+
         // ========== STATE ==========
         let currentFamily = null;
         let filteredProducts = [...products];
@@ -2124,8 +2206,18 @@
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
         // ========== INIT ==========
-        document.getElementById('totalCount').textContent = products.length;
-        showAllProducts();
+        async function init() {
+            // Cargar productos desde Odoo
+            await loadProductsFromOdoo();
+
+            // Actualizar contadores y mostrar productos
+            document.getElementById('totalCount').textContent = products.length;
+            filteredProducts = [...products];
+            showAllProducts();
+        }
+
+        // Iniciar la aplicación
+        init();
     </script>
 </body>
 </html>
